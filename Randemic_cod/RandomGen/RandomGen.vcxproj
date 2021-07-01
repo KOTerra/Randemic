@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\jsoncpp.cpp" />
+    <ClCompile Include="Buton.cpp" />
     <ClCompile Include="OmClass.cpp" />
     <ClCompile Include="SimulareScenariu1.cpp" />
     <ClCompile Include="Generare.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="..\SFML-2.5.1\include\SFML\OpenGL.hpp" />
     <ClInclude Include="..\SFML-2.5.1\include\SFML\System.hpp" />
     <ClInclude Include="..\SFML-2.5.1\include\SFML\Window.hpp" />
+    <ClInclude Include="Buton.h" />
     <ClInclude Include="HeaderSimulari.h" />
     <ClInclude Include="HeaderVirus.h" />
     <ClInclude Include="HeaderNpc.h" />

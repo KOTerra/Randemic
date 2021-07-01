@@ -35,6 +35,9 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Buton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\dist\json\json-forwards.h">
@@ -80,6 +83,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderSimulari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Buton.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

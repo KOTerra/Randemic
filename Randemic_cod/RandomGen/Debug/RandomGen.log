@@ -1,9 +1,10 @@
 ﻿  Source.cpp
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(75,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(96,27): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(93,7): warning C4102: 'window': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(99,11): warning C4102: 'background': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(108,10): warning C4102: 'font_text': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(117,8): warning C4102: 'display': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(78,6): warning C4101: 'nrNpcuri': unreferenced local variable
-  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(78,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(99,27): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(96,7): warning C4102: 'window': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(102,11): warning C4102: 'background': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(110,10): warning C4102: 'font_text': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(114,8): warning C4102: 'butoane': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(121,8): warning C4102: 'display': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Source.cpp(81,6): warning C4101: 'nrNpcuri': unreferenced local variable
+  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe

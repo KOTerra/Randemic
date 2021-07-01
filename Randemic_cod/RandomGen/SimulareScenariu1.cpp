@@ -38,7 +38,6 @@ si mortalitatea(in procente_default 20):
                                                                             
 )";
 	}*/
-
 	bool pauza;
 	void pause() { pauza = true; }
 	void resume() { pauza = false; }
@@ -280,6 +279,7 @@ adaugOameni:
 		
 		window.draw(om.shape);
 	}
+
 
 
 display:

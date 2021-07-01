@@ -12,7 +12,7 @@
 
 //header
 #include "HeaderSimulari.h"
-
+#include "Buton.h"
 
 //.
 
@@ -102,16 +102,17 @@ window:
 background:
 	//fundalul
 	sf::Texture backTexture;
-	backTexture.loadFromFile("Sprites/fundal.png");
+	backTexture.loadFromFile("Sprites/fundalStart.png");
 	sf::Sprite backSprite(backTexture);
 	window.clear();
 	window.draw(backSprite);
-
 
 font_text:
 	sf::Font font;
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
+butoane:
+	Buton butonStart(1,"Sprites/butonStart.png",920,390);
 
 
 	
@@ -157,7 +158,7 @@ display:
 				start::resume();
 				break;
 			}
-			default: {
+			/*default: {
 				//ca sa poti sa dai click pe oamenii astia simulati
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 				{
@@ -168,7 +169,7 @@ display:
 				break;
 
 
-			}
+			}*/
 
 
 			}
@@ -180,7 +181,15 @@ display:
 			window.draw(backSprite);//fundalul
 			start::dt = start::deltaTime();
 			
-			window.display();
+
+			//butoane
+			
+			window.draw(butonStart.butonSprite);
+			butonStart.clic();
+			butonStart.update( sf::Vector2f(sf::Mouse::getPosition(window)));
+				
+				
+				window.display();
 
 		}
 
