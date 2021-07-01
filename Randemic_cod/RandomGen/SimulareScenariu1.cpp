@@ -16,6 +16,7 @@
 #include "OmClass.h"
 #include "HeaderSimulari.h"
 
+
 namespace sim1 {
 	/*void logo() {
 		//functie de logo ca sa fie frumos
@@ -91,13 +92,13 @@ void miscareNpc(std::map<string, OmClass>::iterator itr) {
 	om.pY = pozitie.y+razaShape;
 
 	if (om.pX >= 939.f || om.pX <= 37.f) {
-		//om.shape.setPosition(om.pX, om.pY);
+		//om.shape.setPosition(om.pX-om.pX*20/100, om.pY);
 		
 		om.misc.x = om.misc.x * (-1);
 	}
 
 	if (om.pY >= 682.f || om.pY <= 37.f) {
-		//om.shape.setPosition(om.pX, om.pY);
+		//om.shape.setPosition(om.pX, om.pY - om.pY * 20 / 100);
 		om.misc.y = om.misc.y* (-1);
 	}
 
@@ -286,6 +287,9 @@ display:
 	window.display();
 
 	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
+	
+	
+
 
 	deltaTime();
 	while (window.isOpen())

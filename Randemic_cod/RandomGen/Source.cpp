@@ -18,6 +18,7 @@
 
 int simulare1();
 
+
 namespace start {
 	/*void logo() {
 		//functie de logo ca sa fie frumos
@@ -121,11 +122,18 @@ butoane:
 display:
 	window.display();
 
-	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
-
+	//aici incepe nebunia, dar tot Strafer e mai misto #quierres?
+	bool simOpen;
+	simOpen = false;
+	
 	start::deltaTime();
 	while (window.isOpen())
 	{
+	
+		if (simOpen == true) {
+			window.close();
+		}
+
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -187,6 +195,9 @@ display:
 			//butoane
 			
 			window.draw(butonStart.butonSprite);
+			if (butonStart.apasat == true) {
+				window.close();
+			}
 			butonStart.clic();
 			butonStart.update( sf::Vector2f(sf::Mouse::getPosition(window)));
 				

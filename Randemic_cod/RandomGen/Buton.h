@@ -1,4 +1,4 @@
-#pragma once
+
 #include <sstream>
 #include <cstdlib>
 
@@ -10,22 +10,25 @@
 class Buton {
 private:
 	
-	bool apasat;
+	
 	sf::RectangleShape shape;
 	sf::Texture butonImg;
 	
+
 
 public:
 	
 	Buton(int tip, std::string Textura, float x, float y);
 	~Buton();
-	
+
+	bool apasat;
 	int tipButon;
 	sf::Sprite butonSprite;
 	int counter = 1;
-
-
+	
+	
 	void clic();
 	void update(const sf::Vector2f mousePos);
 	void render(sf::RenderTarget* target);
 };
+

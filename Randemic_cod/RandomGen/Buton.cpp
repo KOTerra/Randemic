@@ -20,13 +20,7 @@ void Buton::update(const sf::Vector2f mousePos) {
 			this->apasat = true;
 			
 		}
-	
 	}
-
-
-
-
-	
 }
 
 void Buton::clic() {
@@ -45,8 +39,8 @@ void Buton::clic() {
 			break;
 		}
 		case(1): {
-
 			simulare1();
+
 
 			break;
 		}
