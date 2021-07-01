@@ -9,18 +9,21 @@
 
 class Buton {
 private:
+	
 	bool apasat;
-
 	sf::RectangleShape shape;
 	sf::Texture butonImg;
 	
 
-	int tipButon;
-
 public:
-	sf::Sprite butonSprite;
+	
 	Buton(int tip, std::string Textura, float x, float y);
 	~Buton();
+	
+	int tipButon;
+	sf::Sprite butonSprite;
+	int counter = 1;
+
 
 	void clic();
 	void update(const sf::Vector2f mousePos);

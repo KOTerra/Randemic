@@ -8,6 +8,7 @@ Buton::Buton(int tip, std::string Textura, float x, float y) {
 	this->butonSprite.setPosition(sf::Vector2f(x, y));
 }
 
+
 Buton::~Buton() {
 
 }
@@ -31,8 +32,16 @@ void Buton::update(const sf::Vector2f mousePos) {
 void Buton::clic() {
 	if (this->apasat == true) {
 		switch (this->tipButon) {
+		case(-1): {
+			//sageti stanga
+			
+			counter -= 1;
+			break;
+		}
 		case(0): {
-			//sageti
+			//sageti dreapta
+			
+			counter += 1;
 			break;
 		}
 		case(1): {

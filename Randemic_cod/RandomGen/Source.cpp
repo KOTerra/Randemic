@@ -112,9 +112,9 @@ font_text:
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
 butoane:
-	Buton butonStart(1,"Sprites/butonStart.png",920,390);
-
-
+	Buton butonStart(0,"Sprites/butonStart.png",920,390);
+	Buton butonScenariuStanga(-1, "Sprites/selectStanga.png", 390, 200);
+	Buton butonScenariuDreapta(0, "Sprites/selectDreapta.png", 805, 200);
 	
 
 
@@ -178,9 +178,11 @@ display:
 		if (start::pauza == false) {
 			//ruleaza
 			window.clear();
-			window.draw(backSprite);//fundalul
-			start::dt = start::deltaTime();
 			
+			//fundalul
+			window.draw(backSprite);
+			start::dt = start::deltaTime();
+			//fundalul
 
 			//butoane
 			
@@ -188,7 +190,28 @@ display:
 			butonStart.clic();
 			butonStart.update( sf::Vector2f(sf::Mouse::getPosition(window)));
 				
-				
+			window.draw(butonScenariuStanga.butonSprite);
+			butonScenariuStanga.clic();
+			butonScenariuStanga.update(sf::Vector2f(sf::Mouse::getPosition(window)));
+
+			window.draw(butonScenariuDreapta.butonSprite);
+			butonScenariuDreapta.clic();
+			butonScenariuDreapta.update(sf::Vector2f(sf::Mouse::getPosition(window)));
+			
+			int localScenariuCount = butonScenariuDreapta.counter + butonScenariuStanga.counter;
+			
+			if (localScenariuCount < 1) {
+				localScenariuCount = 1;
+			}
+			if (localScenariuCount > 1) {
+				localScenariuCount = 1;
+			}
+
+			butonStart.tipButon = localScenariuCount;
+			
+			//butoane
+
+
 				window.display();
 
 		}

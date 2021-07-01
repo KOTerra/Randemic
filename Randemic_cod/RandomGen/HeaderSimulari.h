@@ -3,4 +3,5 @@
 const float FPS = 30;
 
 //simulari
-	int simulare1();
+
+int simulare1();
