@@ -92,13 +92,12 @@ void miscareNpc(std::map<string, OmClass>::iterator itr) {
 	om.pY = pozitie.y+razaShape;
 
 	if (om.pX >= 939.f || om.pX <= 37.f) {
-		//om.shape.setPosition(om.pX-om.pX*20/100, om.pY);
 		
 		om.misc.x = om.misc.x * (-1);
 	}
 
 	if (om.pY >= 682.f || om.pY <= 37.f) {
-		//om.shape.setPosition(om.pX, om.pY - om.pY * 20 / 100);
+		
 		om.misc.y = om.misc.y* (-1);
 	}
 
@@ -318,14 +317,7 @@ display:
 				window.close();
 				break;
 			}
-			case sf::Event::LostFocus: {
-				sim1::pause();
-				break;
-			}
-			case sf::Event::GainedFocus: {
-				sim1::resume();
-				break;
-			}
+			
 			default: {
 				//ca sa poti sa dai click pe oamenii astia simulati
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
