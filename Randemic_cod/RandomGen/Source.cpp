@@ -13,6 +13,9 @@
 //header
 #include "HeaderSimulari.h"
 
+
+//.
+
 int simulare1();
 
 namespace start {
