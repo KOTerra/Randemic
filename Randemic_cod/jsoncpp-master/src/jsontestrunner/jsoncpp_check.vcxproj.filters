@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\HACKERMAN\programing\libraries\jsoncpp-master\CMakeFiles\26b93bc5bfbc1d8903d82244310999a5\jsoncpp_check.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\src\jsontestrunner\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\HACKERMAN\programing\libraries\jsoncpp-master\src\jsontestrunner\CMakeFiles\jsoncpp_check" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3CC15DC2-F039-3F77-87BD-E58F7514CA18}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

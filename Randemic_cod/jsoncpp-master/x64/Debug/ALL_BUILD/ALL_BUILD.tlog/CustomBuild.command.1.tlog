@@ -1,0 +1,10 @@
+^D:\HACKERMAN\PROGRAMING\LIBRARIES\JSONCPP-MASTER\JSONCPP-MASTER\CMAKELISTS.TXT
+setlocal
+D:\Program_files\bin\cmake.exe -SD:/HACKERMAN/programing/libraries/jsoncpp-master/jsoncpp-master -BD:/HACKERMAN/programing/libraries/jsoncpp-master --check-stamp-file D:/HACKERMAN/programing/libraries/jsoncpp-master/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

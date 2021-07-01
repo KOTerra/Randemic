@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+D:/HACKERMAN/programing/libraries/jsoncpp-master/jsoncpp-master/src/jsontestrunner/CMakeLists.txt
+D:/Program_files/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program_files/share/cmake-3.20/Modules/FindPackageMessage.cmake
+D:/Program_files/share/cmake-3.20/Modules/FindPython/Support.cmake
+D:/Program_files/share/cmake-3.20/Modules/FindPython3.cmake

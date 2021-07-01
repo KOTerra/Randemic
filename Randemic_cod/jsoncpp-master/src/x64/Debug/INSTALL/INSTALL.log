@@ -1,0 +1,18 @@
+﻿  -- Install configuration: "Debug"
+  CMake Error at lib_json/cmake_install.cmake:37 (file):
+    file cannot create directory: C:/Program Files (x86)/jsoncpp/lib.  Maybe
+    need administrative privileges.
+  Call Stack (most recent call first):
+    cmake_install.cmake:37 (include)
+  
+  
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: The command "setlocal
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: D:\Program_files\bin\cmake.exe -DBUILD_TYPE=Debug -P cmake_install.cmake
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: if %errorlevel% neq 0 goto :cmEnd
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: :cmEnd
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: :cmErrorLevel
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: exit /b %1
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: :cmDone
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: if %errorlevel% neq 0 goto :VCEnd
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: :VCEnd" exited with code 1.

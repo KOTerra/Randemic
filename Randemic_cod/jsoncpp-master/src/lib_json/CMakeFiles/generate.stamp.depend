@@ -1,0 +1,15 @@
+# CMake generation dependency list for this directory.
+D:/HACKERMAN/programing/libraries/jsoncpp-master/CMakeFiles/CheckTypeSize/LCONV_SIZE.cpp
+D:/HACKERMAN/programing/libraries/jsoncpp-master/jsoncpp-master/src/lib_json/CMakeLists.txt
+D:/Program_files/share/cmake-3.20/Modules/CMakeConfigurableFile.in
+D:/Program_files/share/cmake-3.20/Modules/CheckCSourceCompiles.cmake
+D:/Program_files/share/cmake-3.20/Modules/CheckCXXSourceCompiles.cmake
+D:/Program_files/share/cmake-3.20/Modules/CheckCXXSymbolExists.cmake
+D:/Program_files/share/cmake-3.20/Modules/CheckIncludeFile.cmake
+D:/Program_files/share/cmake-3.20/Modules/CheckIncludeFile.cxx.in
+D:/Program_files/share/cmake-3.20/Modules/CheckIncludeFileCXX.cmake
+D:/Program_files/share/cmake-3.20/Modules/CheckStructHasMember.cmake
+D:/Program_files/share/cmake-3.20/Modules/CheckSymbolExists.cmake
+D:/Program_files/share/cmake-3.20/Modules/CheckTypeSize.c.in
+D:/Program_files/share/cmake-3.20/Modules/CheckTypeSize.cmake
+D:/Program_files/share/cmake-3.20/Modules/Internal/CheckSourceCompiles.cmake

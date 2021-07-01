@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>mihai stoica</Author>
+  <LastAuthor>mihai stoica</LastAuthor>
+  <Created>2015-06-05T18:17:20Z</Created>
+  <LastSaved>2021-04-06T14:41:44Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>6525</WindowHeight>
+  <WindowWidth>19425</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>32767</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62" ss:Name="Style 1">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#7F7F7F"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior ss:Color="#BDD7EE" ss:Pattern="Solid"/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s65" ss:Parent="s62">
+   <Interior ss:Color="#F8CBAD" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s66" ss:Parent="s62">
+   <Interior ss:Color="#C6E0B4" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="14" ss:Color="#333333"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="15" ss:ExpandedRowCount="10" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="56.25"/>
+   <Column ss:Index="6" ss:AutoFitWidth="0" ss:Width="78"/>
+   <Column ss:AutoFitWidth="0" ss:Width="60"/>
+   <Column ss:AutoFitWidth="0" ss:Width="61.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="53.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="54"/>
+   <Column ss:AutoFitWidth="0" ss:Width="72"/>
+   <Column ss:AutoFitWidth="0" ss:Width="51"/>
+   <Column ss:AutoFitWidth="0" ss:Width="80.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">ID</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Sex</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Prename</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Name</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Age</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Relatives</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Home</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Job</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Behaviour</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Height</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Body type</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Hair</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Clothes</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Hp</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Stenght</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="24">
+    <Cell><Data ss:Type="String">c0x001</Data></Cell>
+    <Cell><Data ss:Type="String">M</Data></Cell>
+    <Cell><Data ss:Type="String">Harry</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Smith</Data></Cell>
+    <Cell><Data ss:Type="Number">38</Data></Cell>
+    <Cell ss:Formula="={&quot;c0x002&quot;,&quot;partner&quot;;&quot;c0x009&quot;,&quot;child&quot;}"><Data
+      ss:Type="String">c0x002</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">powerplant</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">167</Data></Cell>
+    <Cell><Data ss:Type="String">Mnormal</Data></Cell>
+    <Cell><Data ss:Type="String">M1black</Data></Cell>
+    <Cell ss:Formula="={&quot;topColor&quot;;&quot;pantsColour&quot;}"><Data
+      ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="27.75">
+    <Cell><Data ss:Type="String">c0x002</Data></Cell>
+    <Cell><Data ss:Type="String">F</Data></Cell>
+    <Cell><Data ss:Type="String">Marcela</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Smith</Data></Cell>
+    <Cell><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:Formula="={&quot;c0x001&quot;,&quot;partner&quot;;&quot;c0x009&quot;,&quot;child&quot;}"><Data
+      ss:Type="String">c0x001</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">powerplant</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">155</Data></Cell>
+    <Cell><Data ss:Type="String">Fnormal</Data></Cell>
+    <Cell><Data ss:Type="String">F1black</Data></Cell>
+    <Cell ss:Formula="=R[-1]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="26.25">
+    <Cell><Data ss:Type="String">c0x003</Data></Cell>
+    <Cell><Data ss:Type="String">F</Data></Cell>
+    <Cell><Data ss:Type="String">CJ</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Johnson</Data></Cell>
+    <Cell><Data ss:Type="Number">29</Data></Cell>
+    <Cell ss:Formula="={&quot;c0x006&quot;,&quot;partner&quot;}"><Data
+      ss:Type="String">c0x006</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">office</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">171</Data></Cell>
+    <Cell><Data ss:Type="String">Fnormal</Data></Cell>
+    <Cell><Data ss:Type="String">F2brown</Data></Cell>
+    <Cell ss:Formula="=R[-2]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">110</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="23.25">
+    <Cell><Data ss:Type="String">c0x004</Data></Cell>
+    <Cell><Data ss:Type="String">F</Data></Cell>
+    <Cell><Data ss:Type="String">Maricica</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Davis</Data></Cell>
+    <Cell><Data ss:Type="Number">36</Data></Cell>
+    <Cell><Data ss:Type="String">/</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">office</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">183</Data></Cell>
+    <Cell><Data ss:Type="String">Fnormal</Data></Cell>
+    <Cell><Data ss:Type="String">F2blonde</Data></Cell>
+    <Cell ss:Formula="=R[-3]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">110</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="25.5">
+    <Cell><Data ss:Type="String">c0x005</Data></Cell>
+    <Cell><Data ss:Type="String">M</Data></Cell>
+    <Cell><Data ss:Type="String">Ionut</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Thomas</Data></Cell>
+    <Cell><Data ss:Type="Number">56</Data></Cell>
+    <Cell><Data ss:Type="String">/</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">free</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">156</Data></Cell>
+    <Cell><Data ss:Type="String">Mold</Data></Cell>
+    <Cell><Data ss:Type="String">M2black</Data></Cell>
+    <Cell ss:Formula="=R[-4]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="21">
+    <Cell><Data ss:Type="String">c0x006</Data></Cell>
+    <Cell><Data ss:Type="String">M</Data></Cell>
+    <Cell><Data ss:Type="String">Michael</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Jackson</Data></Cell>
+    <Cell><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:Formula="={&quot;c0x003&quot;,&quot;partner&quot;}"><Data
+      ss:Type="String">c0x003</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">police</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">174</Data></Cell>
+    <Cell><Data ss:Type="String">Mnormal</Data></Cell>
+    <Cell><Data ss:Type="String">M1blonde</Data></Cell>
+    <Cell ss:Formula="=R[-5]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="21">
+    <Cell><Data ss:Type="String">c0x007</Data></Cell>
+    <Cell><Data ss:Type="String">F</Data></Cell>
+    <Cell><Data ss:Type="String">Samuela</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Martin</Data></Cell>
+    <Cell><Data ss:Type="Number">60</Data></Cell>
+    <Cell><Data ss:Type="String">/</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">police</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">169</Data></Cell>
+    <Cell><Data ss:Type="String">Fold</Data></Cell>
+    <Cell><Data ss:Type="String">F3brown</Data></Cell>
+    <Cell ss:Formula="=R[-6]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">120</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="23.25">
+    <Cell><Data ss:Type="String">c0x008</Data></Cell>
+    <Cell><Data ss:Type="String">F</Data></Cell>
+    <Cell><Data ss:Type="String">Sofia</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Lee</Data></Cell>
+    <Cell><Data ss:Type="Number">22</Data></Cell>
+    <Cell><Data ss:Type="String">/</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">free</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">177</Data></Cell>
+    <Cell><Data ss:Type="String">Fnormal</Data></Cell>
+    <Cell><Data ss:Type="String">F3black</Data></Cell>
+    <Cell ss:Formula="=R[-7]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="24.75">
+    <Cell><Data ss:Type="String">c0x009</Data></Cell>
+    <Cell><Data ss:Type="String">M</Data></Cell>
+    <Cell><Data ss:Type="String">Will</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Smith</Data></Cell>
+    <Cell><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:Formula="={&quot;c0x002&quot;,&quot;parent&quot;;&quot;c0x001&quot;,&quot;parent&quot;}"><Data
+      ss:Type="String">c0x002</Data></Cell>
+    <Cell><Data ss:Type="String">unde sta </Data></Cell>
+    <Cell><Data ss:Type="String">park</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="Number">120</Data></Cell>
+    <Cell><Data ss:Type="String">Mchild</Data></Cell>
+    <Cell><Data ss:Type="String">M1black</Data></Cell>
+    <Cell ss:Formula="=R[-8]C"><Data ss:Type="String">topColor</Data></Cell>
+    <Cell><Data ss:Type="Number">60</Data></Cell>
+    <Cell><Data ss:Type="String">Hp%10+3</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>1200</HorizontalResolution>
+    <VerticalResolution>1200</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>11</ActiveRow>
+     <ActiveCol>8</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

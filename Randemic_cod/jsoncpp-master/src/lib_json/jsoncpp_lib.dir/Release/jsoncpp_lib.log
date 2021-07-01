@@ -1,0 +1,7 @@
+﻿  Building Custom Rule D:/HACKERMAN/programing/libraries/jsoncpp-master/jsoncpp-master/src/lib_json/CMakeLists.txt
+  json_reader.cpp
+  json_value.cpp
+  json_writer.cpp
+  Generating Code...
+     Creating library D:/HACKERMAN/programing/libraries/jsoncpp-master/lib/Release/jsoncpp.lib and object D:/HACKERMAN/programing/libraries/jsoncpp-master/lib/Release/jsoncpp.exp
+  jsoncpp_lib.vcxproj -> D:\HACKERMAN\programing\libraries\jsoncpp-master\bin\Release\jsoncpp.dll

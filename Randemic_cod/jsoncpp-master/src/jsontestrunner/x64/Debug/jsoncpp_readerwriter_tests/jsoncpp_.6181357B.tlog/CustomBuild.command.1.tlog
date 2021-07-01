@@ -1,0 +1,20 @@
+^D:\HACKERMAN\PROGRAMING\LIBRARIES\JSONCPP-MASTER\CMAKEFILES\26B93BC5BFBC1D8903D82244310999A5\JSONCPP_READERWRITER_TESTS.RULE
+setlocal
+"C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0\python3.8.exe" -B D:/HACKERMAN/programing/libraries/jsoncpp-master/jsoncpp-master/src/jsontestrunner/../../test/runjsontests.py D:/HACKERMAN/programing/libraries/jsoncpp-master/bin/Debug/jsontestrunner_exe.exe D:/HACKERMAN/programing/libraries/jsoncpp-master/jsoncpp-master/src/jsontestrunner/../../test/data
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\HACKERMAN\PROGRAMING\LIBRARIES\JSONCPP-MASTER\JSONCPP-MASTER\SRC\JSONTESTRUNNER\CMAKELISTS.TXT
+setlocal
+D:\Program_files\bin\cmake.exe -SD:/HACKERMAN/programing/libraries/jsoncpp-master/jsoncpp-master -BD:/HACKERMAN/programing/libraries/jsoncpp-master --check-stamp-file D:/HACKERMAN/programing/libraries/jsoncpp-master/src/jsontestrunner/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

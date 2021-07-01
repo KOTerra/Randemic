@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="h">
+      <UniqueIdentifier>{f95fa62b-b1e6-43db-8aa7-36049022d603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h\SFML">
+      <UniqueIdentifier>{a750927f-6e92-45e8-b52c-a186366d357e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts">
+      <UniqueIdentifier>{a69672b5-f750-4ea9-a82b-4642ac6b1c32}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\jsoncpp.cpp">
+      <Filter>h</Filter>
+    </ClCompile>
+    <ClCompile Include="Generare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OmClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulareScenariu1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\dist\json\json-forwards.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\dist\json\json.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\Audio.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\Config.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\GpuPreference.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\Graphics.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\Main.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\Network.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\OpenGL.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\System.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML-2.5.1\include\SFML\Window.hpp">
+      <Filter>h\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderNpc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderVirus.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OmClass.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderSimulari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Date\data.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Date\nume.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Date\prenumeF.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Date\prenumeM.json">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\KarmaFuture.ttf">
+      <Filter>Fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>

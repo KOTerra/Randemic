@@ -1,0 +1,1 @@
+D:\HACKERMAN\programing\libraries\jsoncpp-master\src\lib_json\jsoncpp_object.dir\Debug\jsoncpp_object.lib
