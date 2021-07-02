@@ -159,6 +159,7 @@
     <ClCompile Include="SimulareScenariu1.cpp" />
     <ClCompile Include="Generare.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TextBox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\dist\json\json-forwards.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="HeaderVirus.h" />
     <ClInclude Include="HeaderNpc.h" />
     <ClInclude Include="OmClass.h" />
+    <ClInclude Include="TextBox.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Date\data.json" />

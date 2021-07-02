@@ -6,12 +6,16 @@ Buton::Buton(int tip, std::string Textura, float x, float y) {
 	this->butonImg.loadFromFile(Textura);
 	this->butonSprite.setTexture(this->butonImg);
 	this->butonSprite.setPosition(sf::Vector2f(x, y));
+	this->pozx = x;
+	this->pozy = y;
 }
 
 
 Buton::~Buton() {
 
 }
+
+
 
 void Buton::update(const sf::Vector2f mousePos) {
 	this->apasat = false;
@@ -56,8 +60,14 @@ void Buton::clic() {
 
 			break;
 		}
-		case(5): {
-
+		case(-5): {
+			//text input
+			
+					if (event.type == sf::Event::TextEntered)
+					{
+							textInput += event.text.unicode;
+					}
+			
 			break;
 		}
 

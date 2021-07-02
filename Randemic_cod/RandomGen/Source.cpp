@@ -13,6 +13,7 @@
 //header
 #include "HeaderSimulari.h"
 #include "Buton.h"
+#include "TextBox.h"
 
 //.
 
@@ -116,7 +117,9 @@ butoane:
 	Buton butonStart(0,"Sprites/butonStart.png",920,390);
 	Buton butonScenariuStanga(-1, "Sprites/selectStanga.png", 390, 200);
 	Buton butonScenariuDreapta(0, "Sprites/selectDreapta.png", 805, 200);
-	
+
+textBoxuri:
+	TextBox textBox1("Sprites/textBox.png",300,600,false);
 
 
 display:
@@ -145,7 +148,7 @@ display:
 				{
 					window.close();
 				}
-				else if (event.key.code == sf::Keyboard::R)
+				else if (event.key.code == sf::Keyboard::F1)
 				{
 					start::reset();
 					goto input;
@@ -186,21 +189,22 @@ display:
 		if (start::pauza == false) {
 			//ruleaza
 			window.clear();
-			
+
 			//fundalul
 			window.draw(backSprite);
 			start::dt = start::deltaTime();
 			//fundalul
 
 			//butoane
-			
+
 			window.draw(butonStart.butonSprite);
 			if (butonStart.apasat == true) {
 				window.close();
 			}
 			butonStart.clic();
-			butonStart.update( sf::Vector2f(sf::Mouse::getPosition(window)));
-				
+			butonStart.update(sf::Vector2f(sf::Mouse::getPosition(window)));
+
+
 			window.draw(butonScenariuStanga.butonSprite);
 			butonScenariuStanga.clic();
 			butonScenariuStanga.update(sf::Vector2f(sf::Mouse::getPosition(window)));
@@ -208,9 +212,9 @@ display:
 			window.draw(butonScenariuDreapta.butonSprite);
 			butonScenariuDreapta.clic();
 			butonScenariuDreapta.update(sf::Vector2f(sf::Mouse::getPosition(window)));
-			
+
 			int localScenariuCount = butonScenariuDreapta.counter + butonScenariuStanga.counter;
-			
+
 			if (localScenariuCount < 1) {
 				localScenariuCount = 1;
 			}
@@ -219,13 +223,22 @@ display:
 			}
 
 			butonStart.tipButon = localScenariuCount;
-			
+
+
+
+			window.draw(textBox1.textBoxSprite);
+			window.draw(textBox1.textInBox);
+			//textBox1.drawIn(window);
+			textBox1.update(sf::Vector2f(sf::Mouse::getPosition(window)));
+
+
 			//butoane
+			window.display();
 
 
-				window.display();
 
 		}
+		
 
 
 	}
