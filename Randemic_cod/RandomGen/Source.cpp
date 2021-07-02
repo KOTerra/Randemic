@@ -120,7 +120,8 @@ butoane:
 
 textBoxuri:
 	TextBox textBox1("Sprites/textBox.png",300,600,false);
-
+	textBox1.setFont(font);
+	textBox1.setPosition({ 300,600 });
 
 display:
 	window.display();
@@ -129,6 +130,14 @@ display:
 	bool simOpen;
 	simOpen = false;
 	
+
+test:
+	sf::Text testText;
+	testText.setPosition(100, 100);
+	testText.setColor(sf::Color::Red);
+	testText.setFont(font);
+
+
 	start::deltaTime();
 	while (window.isOpen())
 	{
@@ -167,6 +176,10 @@ display:
 			}
 			case sf::Event::GainedFocus: {
 				start::resume();
+				break;
+			}
+			case sf::Event::TextEntered: {
+				textBox1.typedOn(event);
 				break;
 			}
 			/*default: {
@@ -226,11 +239,13 @@ display:
 
 
 
-			window.draw(textBox1.textBoxSprite);
-			window.draw(textBox1.textInBox);
-			//textBox1.drawIn(window);
-			textBox1.update(sf::Vector2f(sf::Mouse::getPosition(window)));
+			//window.draw(textBox1.textBoxSprite);
+			//window.draw(textBox1.textInBox);
+			textBox1.drawIn(window);
+			//textBox1.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
+			testText.setString(textBox1.getText());
+			window.draw(testText);
 
 			//butoane
 			window.display();

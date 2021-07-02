@@ -43,4 +43,7 @@ public:
 	void drawIn(sf::RenderWindow& window);
 	void typedOn(sf::Event input);
 	void update(const sf::Vector2f mousePos);
+
+	void setFont(sf::Font& font);
+	void setPosition(sf::Vector2f pos);
 };

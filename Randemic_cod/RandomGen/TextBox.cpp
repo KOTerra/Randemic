@@ -34,7 +34,10 @@ void TextBox::inputLogic(int charTyped) {
 
 	}
 	else if(charTyped==DELETE_KEY){
-		deleteLastChar();
+
+		if (text.str().length() > 0) {
+			deleteLastChar();
+		}
 	}
 	textInBox.setString(text.str() + "_");
 }
@@ -60,7 +63,7 @@ void TextBox::setSelected(bool sel) {
 	if (sel==false) {
 		std::string t = text.str();
 		std::string newT = "";
-		for (int i = 0; i < t.length() - 1; i++) {
+		for (int i = 0; i < t.length(); i++) {
 			newT += t[i];
 		}
 		textInBox.setString(newT);
@@ -96,9 +99,18 @@ void TextBox::update(const sf::Vector2f mousePos) {
 
 		}
 	}
-	if (!this->textBoxSprite.getGlobalBounds().contains(mousePos)) {
+	else{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 			this->selected = false;
 		}
 	}
+}
+
+
+void TextBox::setFont(sf::Font& font) {
+	textInBox.setFont(font);
+}
+
+void TextBox::setPosition(sf::Vector2f pos) {
+	textInBox.setPosition(pos);
 }
