@@ -1,7 +1,7 @@
 #include "OmClass.h"
 
-const int razaShape = 10;//raza omului
-const float speed = 25;//viteza cu care merge
+static const int razaShape = 10;//raza omului
+static const float speed = 25;//viteza cu care merge
 
 std::string getSex(bool sexbool);
 

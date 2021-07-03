@@ -42,6 +42,10 @@ si mortalitatea(in procente_default 20):
 	bool pauza;
 	void pause() { pauza = true; }
 	void resume() { pauza = false; }
+	int counterMorti = 0;
+	int counterVii;
+	int counterInfectati = 0;
+	int counterVindecati;
 	void reset() {
 		//chestii care se reseteaza
 		counterInfectati = 0;
@@ -54,6 +58,7 @@ si mortalitatea(in procente_default 20):
 }
 
 using namespace std;
+using namespace sim1;
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
 
@@ -64,6 +69,7 @@ sf::Text textNpc;//textul pt fiecare NPC
 sf::Text textCounter;//numarul text
 sf::Clock ceas;
 float dt;//delta time
+
 
 float deltaTime() {
 
@@ -123,7 +129,8 @@ void miscareNpc(std::map<string, OmClass>::iterator itr) {
 				int distance = sqrt(dx * dx + dy * dy);
 
 				int probInfectie = rand() % 100 + 1;
-				if (distance < raza1 + raza2 && probInfectie <= infectabilitate) {
+				
+				if (distance < raza1 + raza2 && probInfectie <= virus::infectabilitate ) {
 					// coliziune detectata!
 					col->second.shape.setFillColor(sf::Color(255, 0, 0));
 					col->second.stare = "infectat";
@@ -161,7 +168,7 @@ void miscareNpc(std::map<string, OmClass>::iterator itr) {
 				int distance = sqrt(dx * dx + dy * dy);
 
 				int probInfectie = rand() % 100 + 1;
-				if (distance < raza1 + raza2 && probInfectie <= infectabilitate) {
+				if (distance < raza1 + raza2 && probInfectie <= virus::infectabilitate) {
 					// coliziune detectata!
 					om.shape.setFillColor(sf::Color(255, 0, 0));
 					om.stare = "infectat";
@@ -201,9 +208,9 @@ input:
 	//logo();
 	//cin >> infectabilitate >> timpRecuperare >> mortalitate;
 	//cout << "Introdu numarul de persoane:";
-	infectabilitate = 8;
-	timpRecuperare = 1000;
-	mortalitate = 20;
+	virus::infectabilitate = 8;
+	virus::timpRecuperare = 1000;
+	virus::mortalitate = 20;
 	//cin>> nrNpcuri;
 	nrNpcuri = 100;
 	counterVii = nrNpcuri;
@@ -355,9 +362,9 @@ display:
 				//desenez npc-urile pe ecran si calculam valorile
 				if (itr->second.stare.compare("infectat") == 0) {
 					itr->second.timpInfectare++;
-					if (itr->second.timpInfectare == timpRecuperare) {
+					if (itr->second.timpInfectare == virus::timpRecuperare) {
 						int procSupravietuire = rand() % 100;
-						if (procSupravietuire <= mortalitate)
+						if (procSupravietuire <= virus::mortalitate)
 						{
 							//moare individul
 							itr->second.stare = "mort";

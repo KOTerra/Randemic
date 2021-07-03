@@ -41,6 +41,9 @@
     <ClCompile Include="TextBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Oras.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\dist\json\json-forwards.h">
@@ -92,6 +95,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="TextBox.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Oras.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

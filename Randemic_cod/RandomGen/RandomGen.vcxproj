@@ -156,6 +156,7 @@
     <ClCompile Include="..\jsoncpp.cpp" />
     <ClCompile Include="Buton.cpp" />
     <ClCompile Include="OmClass.cpp" />
+    <ClCompile Include="Oras.cpp" />
     <ClCompile Include="SimulareScenariu1.cpp" />
     <ClCompile Include="Generare.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="HeaderVirus.h" />
     <ClInclude Include="HeaderNpc.h" />
     <ClInclude Include="OmClass.h" />
+    <ClInclude Include="Oras.h" />
     <ClInclude Include="TextBox.h" />
   </ItemGroup>
   <ItemGroup>
