@@ -92,7 +92,7 @@ input:
 	counterVii = nrNpcuri;
 
 	bool amClick = false;*/
-	
+
 
 
 window:
@@ -114,14 +114,12 @@ font_text:
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
 butoane:
-	Buton butonStart(0,"Sprites/butonStart.png",920,390);
+	Buton butonStart(0, "Sprites/butonStart.png", 920, 390);
 	Buton butonScenariuStanga(-1, "Sprites/selectStanga.png", 390, 200);
 	Buton butonScenariuDreapta(0, "Sprites/selectDreapta.png", 805, 200);
 
 textBoxuri:
-	TextBox textBox1("Sprites/textBox.png",300,600,false);
-	textBox1.setFont(font);
-	textBox1.setPosition({ 300,600 });
+	Buton butonText1(-5, "Sprites/textBox.png", 100, 600);
 
 display:
 	window.display();
@@ -129,7 +127,7 @@ display:
 	//aici incepe nebunia, dar tot Strafer e mai misto #quierres?
 	bool simOpen;
 	simOpen = false;
-	
+
 
 test:
 	sf::Text testText;
@@ -141,7 +139,7 @@ test:
 	start::deltaTime();
 	while (window.isOpen())
 	{
-	
+
 		if (simOpen == true) {
 			window.close();
 		}
@@ -178,22 +176,19 @@ test:
 				start::resume();
 				break;
 			}
-			case sf::Event::TextEntered: {
-				textBox1.typedOn(event);
-				break;
-			}
-			/*default: {
-				//ca sa poti sa dai click pe oamenii astia simulati
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-				{
-					window.close();
-					simulare1();
-					return 0;
-				}
-				break;
+
+									   /*default: {
+										   //ca sa poti sa dai click pe oamenii astia simulati
+										   if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+										   {
+											   window.close();
+											   simulare1();
+											   return 0;
+										   }
+										   break;
 
 
-			}*/
+									   }*/
 
 
 			}
@@ -214,16 +209,16 @@ test:
 			if (butonStart.apasat == true) {
 				window.close();
 			}
-			butonStart.clic();
+			butonStart.clic(event);
 			butonStart.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
 
 			window.draw(butonScenariuStanga.butonSprite);
-			butonScenariuStanga.clic();
+			butonScenariuStanga.clic(event);
 			butonScenariuStanga.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
 			window.draw(butonScenariuDreapta.butonSprite);
-			butonScenariuDreapta.clic();
+			butonScenariuDreapta.clic(event);
 			butonScenariuDreapta.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
 			int localScenariuCount = butonScenariuDreapta.counter + butonScenariuStanga.counter;
@@ -238,13 +233,10 @@ test:
 			butonStart.tipButon = localScenariuCount;
 
 
+			butonText1.renderTextBox(window, event);
 
-			//window.draw(textBox1.textBoxSprite);
-			//window.draw(textBox1.textInBox);
-			textBox1.drawIn(window);
-			//textBox1.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
-			testText.setString(textBox1.getText());
+			testText.setString(butonText1.getText());
 			window.draw(testText);
 
 			//butoane
@@ -253,7 +245,7 @@ test:
 
 
 		}
-		
+
 
 
 	}
