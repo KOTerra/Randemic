@@ -1,6 +1,6 @@
 #pragma once
 
-const float FPS = 30;
+static const float FPS = 30;
 
 //simulari
 
