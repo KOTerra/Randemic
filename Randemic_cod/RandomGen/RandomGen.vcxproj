@@ -159,6 +159,7 @@
     <ClCompile Include="Oras.cpp" />
     <ClCompile Include="SimulareScenariu1.cpp" />
     <ClCompile Include="Generare.cpp" />
+    <ClCompile Include="SimulareScenariuOras.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TextBox.cpp" />
   </ItemGroup>

@@ -54,6 +54,16 @@ si mortalitatea(in procente_default 20):
 		counterVindecati = 0;
 
 	}
+	sf::Text textNpc;//textul pt fiecare NPC
+	sf::Text textCounter;//numarul text
+	sf::Clock ceas;
+	float dt;//delta time
+
+
+	float deltaTime() {
+
+		return ceas.restart().asSeconds();//pt miscare in functie de frameuri
+	}
 
 }
 
@@ -65,18 +75,9 @@ using namespace std::chrono; // nanoseconds, system_clock, seconds
 #pragma warning(suppress : 4996)
 
 std::map<string, OmClass> oameni;//oamenii creati in header
-sf::Text textNpc;//textul pt fiecare NPC
-sf::Text textCounter;//numarul text
-sf::Clock ceas;
-float dt;//delta time
 
 
-float deltaTime() {
-
-	return ceas.restart().asSeconds();//pt miscare in functie de frameuri
-
-}
-void miscareNpc(std::map<string, OmClass>::iterator itr) {
+void miscareNpc(std::map<std::string, OmClass>::iterator itr) {
 	//functie de miscare
 
 	OmClass om = itr->second;
@@ -88,8 +89,8 @@ void miscareNpc(std::map<string, OmClass>::iterator itr) {
 
 	//aicea ne miscam(putin dans)
 	sf::Vector2f vec1 = om.misc;
-	vec1.x = vec1.x*dt;
-	vec1.y = vec1.y*dt;
+	vec1.x = vec1.x*sim1::dt;
+	vec1.y = vec1.y*sim1::dt;
 
 	om.shape.move(vec1);
 
@@ -111,10 +112,10 @@ void miscareNpc(std::map<string, OmClass>::iterator itr) {
 
 	
 	//avem hit-detection diferit in functie de infectati
-	if (om.stare.compare("infectat") == 0 && counterInfectati < (counterVii - counterInfectati))//daca e infectat 
+	if (om.stare.compare("infectat") == 0 && sim1::counterInfectati < (sim1::counterVii - sim1::counterInfectati))//daca e infectat 
 	{
 
-		for (std::map<string, OmClass>::iterator col = oameni.begin(); col != oameni.end(); col++) {
+		for (std::map<std::string, OmClass>::iterator col = oameni.begin(); col != oameni.end(); col++) {
 
 			if (itr != col && col->second.stare == "sanatos") {
 

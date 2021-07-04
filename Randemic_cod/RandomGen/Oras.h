@@ -12,11 +12,12 @@ private:
 	long long int decedati;
 	long long int vindecati;
     float pX, pY;//pozitia orasului pe harta
-	mutable sf::CircleShape shape;//orasul
 	std::deque<long long int> cotaZilnic;
-	
+	std::string denumire;
 public:
-	Oras(long long int populatie, long long int infectati,float pozX,float pozY);
+	mutable sf::RectangleShape shape;//orasul
+
+	Oras(std::string denumire,long long int populatie, long long int infectati,float pozX,float pozY);
 	~Oras();
 
 	
@@ -36,6 +37,10 @@ public:
 	long long getVindecati()
 	{
 		return vindecati;
+	}
+	std::string getDenum()
+	{
+		return denumire;
 	}
 	std::deque<long long int> getNumVindZilnic()
 	{

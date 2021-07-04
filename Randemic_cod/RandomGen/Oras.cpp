@@ -9,7 +9,8 @@ namespace oras {
 
 }
 
-Oras::Oras(long long int populatie, long long int infectati, float pozX, float pozY) {
+Oras::Oras(std::string denumire,long long int populatie, long long int infectati, float pozX, float pozY) {
+	this->denumire = denumire;
 	this->populatie = populatie;
 	this->infectati = infectati;
 	this->pX = pozX;
