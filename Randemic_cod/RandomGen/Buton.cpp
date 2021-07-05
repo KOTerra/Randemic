@@ -3,8 +3,9 @@
 #include <fstream>
 
 
-Buton::Buton(int tip, std::string Textura, float x, float y) {
+Buton::Buton(int tip, sf::String label, std::string Textura, float x, float y) {
     this->tipButon = tip;
+    this->labelText.setString(label);
     this->butonImg.loadFromFile(Textura);
     this->butonSprite.setTexture(this->butonImg);
     this->butonSprite.setPosition(sf::Vector2f(x, y));
@@ -18,6 +19,8 @@ Buton::Buton(int tip, std::string Textura, float x, float y) {
     this->textInBox.setFont(font);
     this->textInBox.setColor(sf::Color::Black);
     this->textInBox.setPosition(this->pozx, this->pozy);
+
+    
 }
 
 

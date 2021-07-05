@@ -54,6 +54,9 @@ si mortalitatea(in procente_default 20):
 		counterVindecati = 0;
 
 	}
+
+	int nrNpcuri=simularea1::nrNpc;
+
 	sf::Text textNpc;//textul pt fiecare NPC
 	sf::Text textCounter;//numarul text
 	sf::Clock ceas;
@@ -205,19 +208,19 @@ input:
 	srand(time(0));
 	sim1::pauza= false;
 
-	int nrNpcuri;
+	
 	//logo();
 	//cin >> infectabilitate >> timpRecuperare >> mortalitate;
 	//cout << "Introdu numarul de persoane:";
-	virus::infectabilitate = 8;
-	virus::timpRecuperare = 1000;
-	virus::mortalitate = 20;
-	//cin>> nrNpcuri;
-	nrNpcuri = 100;
-	counterVii = nrNpcuri;
+	/*virus::infectabilitate;
+	virus::timpRecuperare;
+	virus::mortalitate;
+	sim1::nrNpcuri=simularea1::nrNpc;*/
+	counterVii = sim1::nrNpcuri;
 
 	oameni.clear();
-	oameni = simulare(nrNpcuri);
+	 
+	oameni = simulare(sim1::nrNpcuri);
 	bool amClick = false;
 	std::map<string, OmClass>::iterator lastClick;
 

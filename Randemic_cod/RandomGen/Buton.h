@@ -23,7 +23,7 @@ private:
 
 public:
 
-    Buton(int tip, std::string Textura, float x, float y);
+    Buton(int tip, sf::String label, std::string Textura, float x, float y);
     ~Buton();
 
     sf::Sprite butonSprite;
@@ -35,6 +35,7 @@ public:
     int counter = 1;
 
     sf::Text textInBox;
+    sf::Text labelText;
     std::ostringstream text;
 
     void typedOn(sf::Event input);

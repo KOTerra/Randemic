@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 
@@ -12,6 +13,7 @@
 
 //header
 #include "HeaderSimulari.h"
+#include "HeaderVirus.h"
 #include "Buton.h"
 #include "TextBox.h"
 
@@ -59,19 +61,16 @@ si mortalitatea(in procente_default 20):
 
 	}
 
+
+	int nrNpcSource;
+	int infectabilitateSource;
+	int mortalitateSource;
+	
 }
 
 using namespace std;
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
-
-#pragma warning(suppress : 4996)
-
-
-
-
-
-#pragma once
 
 
 int main() {
@@ -80,7 +79,7 @@ input:
 	srand(time(0));
 	start::pauza = false;
 
-	int nrNpcuri;
+	
 	//logo();
 	//cin >> infectabilitate >> timpRecuperare >> mortalitate;
 	//cout << "Introdu numarul de persoane:";
@@ -114,12 +113,27 @@ font_text:
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
 butoane:
-	Buton butonStart(0, "Sprites/butonStart.png", 920, 390);
-	Buton butonScenariuStanga(-1, "Sprites/selectStanga.png", 390, 200);
-	Buton butonScenariuDreapta(0, "Sprites/selectDreapta.png", 805, 200);
+	Buton butonStart(0,"", "Sprites/butonStart.png", 920, 390);
+	Buton butonScenariuStanga(-1, "", "Sprites/selectStanga.png", 390, 200);
+	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 805, 200);
 
 textBoxuri:
-	Buton butonText1(-5, "Sprites/textBox.png", 100, 600);
+	Buton butonText1(-5, "Numar Oameni",		"Sprites/textBox.png", 100, 480);
+	Buton butonText2(-5, "Infectabilitate %",	"Sprites/textBox.png", 300, 480);
+	Buton butonText3(-5, "Mortalitate %",		"Sprites/textBox.png", 500, 480);
+	Buton butonText4(-5, "Timp de recuperare",	"Sprites/textBox.png", 100, 600);
+
+	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
+	sf::Text textBox2;	textBox2.setPosition(320, 495);	textBox2.setColor(sf::Color::Black); textBox2.setFont(font);
+	sf::Text textBox3;	textBox3.setPosition(520, 495);	textBox3.setColor(sf::Color::Black); textBox3.setFont(font);
+	sf::Text textBox4;	textBox4.setPosition(120, 615);	textBox4.setColor(sf::Color::Black); textBox4.setFont(font);
+
+
+	butonText1.labelText.setCharacterSize(20);	butonText1.labelText.setFont(font);	butonText1.labelText.setColor(sf::Color::Black);	butonText1.labelText.setPosition(butonText1.pozx, butonText1.pozy - 25);
+	butonText2.labelText.setCharacterSize(20);	butonText2.labelText.setFont(font);	butonText2.labelText.setColor(sf::Color::Black);	butonText2.labelText.setPosition(butonText2.pozx, butonText2.pozy - 25);
+	butonText3.labelText.setCharacterSize(20);	butonText3.labelText.setFont(font);	butonText3.labelText.setColor(sf::Color::Black);	butonText3.labelText.setPosition(butonText3.pozx, butonText3.pozy - 25);
+	butonText4.labelText.setCharacterSize(20);	butonText4.labelText.setFont(font);	butonText4.labelText.setColor(sf::Color::Black);	butonText4.labelText.setPosition(butonText4.pozx, butonText4.pozy - 25);
+	
 
 display:
 	window.display();
@@ -130,10 +144,7 @@ display:
 
 
 test:
-	sf::Text testText;
-	testText.setPosition(100, 100);
-	testText.setColor(sf::Color::Red);
-	testText.setFont(font);
+	
 
 
 	start::deltaTime();
@@ -203,6 +214,8 @@ test:
 			start::dt = start::deltaTime();
 			//fundalul
 
+
+
 			//butoane
 
 			window.draw(butonStart.butonSprite);
@@ -226,20 +239,53 @@ test:
 			if (localScenariuCount < 1) {
 				localScenariuCount = 1;
 			}
-			if (localScenariuCount > 1) {
-				localScenariuCount = 1;
+			if (localScenariuCount > 2) {
+				localScenariuCount = 2;
 			}
 
 			butonStart.tipButon = localScenariuCount;
 
+			switch (localScenariuCount) {
+			case 1: {//niste convertiri super ciudatele ca nu mergea stoi()
+				std::string nN = butonText1.getText();
+				stringstream strnN(nN);
+				strnN>>simularea1::nrNpc;
 
-			butonText1.renderTextBox(window, event);
+				std::string inf = butonText2.getText();
+				stringstream strinf(inf);
+				strinf>>virus::infectabilitate;
+
+				std::string mrt = butonText3.getText();
+				stringstream strmrt(mrt);
+				strmrt>>virus::mortalitate;
+
+				std::string rec = butonText4.getText();
+				stringstream strrec(rec);
+				strrec >> virus::timpRecuperare;
+				
+				break;
+			}
+
+			case 2: {
+			//pt oras
+			}
+
+			}
+
+			
 
 
-			testText.setString(butonText1.getText());
-			window.draw(testText);
+			butonText1.renderTextBox(window, event);	window.draw(butonText1.labelText);
+			butonText2.renderTextBox(window, event);	window.draw(butonText2.labelText);
+			butonText3.renderTextBox(window, event);	window.draw(butonText3.labelText);
+			butonText4.renderTextBox(window, event);	window.draw(butonText4.labelText);
 
+			textBox1.setString(butonText1.getText());	window.draw(textBox1);
+			textBox2.setString(butonText2.getText());	window.draw(textBox2);
+			textBox3.setString(butonText3.getText());	window.draw(textBox3);
+			textBox4.setString(butonText4.getText());	window.draw(textBox4);
 			//butoane
+
 			window.display();
 
 
