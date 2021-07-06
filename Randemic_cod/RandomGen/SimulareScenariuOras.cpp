@@ -51,9 +51,9 @@ using namespace std::chrono; // nanoseconds, system_clock, seconds
 
 #pragma warning(suppress : 4996)
 
-std::vector<Oras> infect;
-std::vector<Oras> sigur;
-std::vector<Oras> vindec;
+std::map<string,Oras> infect;
+std::map<string,Oras> sigur;
+std::map<string,Oras> vindec;
 
 
 
@@ -74,7 +74,7 @@ input:
 
 	int tipOrasClick = 0;//0 infectat 1 neinfectat 2 vindecat
 	bool amClick = false;
-	std::vector<Oras>::iterator lastClick;
+	std::map<string,Oras>::iterator lastClick;
 
 
 window:
@@ -120,22 +120,22 @@ font_text:
 
 adaugOameni:
 	//desenam orasele
-	for (std::vector<Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+	for (std::map<string,Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 
-		Oras oras = *itr;
+		Oras oras = itr->second;
 		oras.shape.setFillColor(sf::Color(255, 0, 0));
 		window.draw(oras.shape);
 	}
 
-	for (std::vector<Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
+	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 
-		Oras oras = *itr;
+		Oras oras = itr->second;
 		oras.shape.setFillColor(sf::Color(0, 255, 0));
 		window.draw(oras.shape);
 	}
-	for (std::vector<Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
+	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 
-		Oras oras = *itr;
+		Oras oras = itr->second;
 		oras.shape.setFillColor(sf::Color(0, 0, 255));
 		window.draw(oras.shape);
 	}
@@ -179,11 +179,11 @@ display:
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 				{
 					bool amOras = false;
-					for (std::vector<Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+					for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 
 						auto mouse_pos = sf::Mouse::getPosition(window);
 						auto translated_pos = window.mapPixelToCoords(mouse_pos);
-						Oras oras = *itr;
+						Oras oras = itr->second;
 
 						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
 							amClick = true;
@@ -197,11 +197,11 @@ display:
 					{
 						break;
 					}
-					for (std::vector<Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
+					for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 
 						auto mouse_pos = sf::Mouse::getPosition(window);
 						auto translated_pos = window.mapPixelToCoords(mouse_pos);
-						Oras oras = *itr;
+						Oras oras = itr->second;
 
 						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
 							amClick = true;
@@ -215,11 +215,11 @@ display:
 					{
 						break;
 					}
-					for (std::vector<Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
+					for (std::map<string,Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 
 						auto mouse_pos = sf::Mouse::getPosition(window);
 						auto translated_pos = window.mapPixelToCoords(mouse_pos);
-						Oras oras = *itr;
+						Oras oras = itr->second;
 
 						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
 							amClick = true;
@@ -246,18 +246,18 @@ display:
 			simOras::dt = simOras::deltaTime();
 
             //merg in fiecare oras si ii dau update
-			for (std::vector<Oras>::iterator itr = infect.begin(); itr != vindec.end(); itr++) {
-				Oras oras=*itr;
+			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != vindec.end(); itr++) {
+				Oras oras=itr->second;
 				oras.update();
-				*itr = oras;
+				itr->second = oras;
 			}
 
 			if (amClick == true) {
 				//am dat click pe cineva
 				
-				simOras::textNpc.setString((*lastClick).getDenum() + "\n Populatie: " + to_string((*lastClick).getPopulatie())
-					+ "\n Infectati: " + to_string((*lastClick).getInfectati())
-					+ "\n Decedati: " + to_string((*lastClick).getDeced()));
+				simOras::textNpc.setString((lastClick->second).getDenum() + "\n Populatie: " + to_string((lastClick->second).getPopulatie())
+					+ "\n Infectati: " + to_string((lastClick->second).getInfectati())
+					+ "\n Decedati: " + to_string((lastClick->second).getDeced()));
 			}
 			window.draw(simOras::textNpc);
 			window.display();
