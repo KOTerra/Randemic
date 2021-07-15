@@ -53,6 +53,7 @@ void Buton::update(const sf::Vector2f mousePos) {
 
 }
 
+int simulare1();
 
 void Buton::clic(sf::Event event) {
     if (this->apasat == true) {

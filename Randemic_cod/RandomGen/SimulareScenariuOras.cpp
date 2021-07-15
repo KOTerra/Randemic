@@ -35,7 +35,7 @@ namespace simOras {
 	sf::Text textCounter;//numarul text
 	sf::Clock ceas;
 	float dt;//delta time
-
+	const float nrFPS = FPS;
 
 	float deltaTime() {
 
@@ -80,7 +80,7 @@ input:
 window:
 	//aici bagam window-ul
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "Randemic", sf::Style::Default);
-	window.setFramerateLimit(FPS);
+	window.setFramerateLimit(simOras::nrFPS);
 
 
 background:

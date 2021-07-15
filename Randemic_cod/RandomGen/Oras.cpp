@@ -1,13 +1,6 @@
 #include "Oras.h"
 #include "HeaderVirus.h"
 
-namespace oras {
-	int infectabilitate = virus::infectabilitate; //procent din 100%
-	int timpRecuperare = virus::timpRecuperare;//frameuri
-	const int timpIncubare = virus::timpIncubare;//timp incubare
-	int mortalitate = virus::mortalitate;//procent din 100%
-
-}
 
 Oras::Oras(std::string denumire,long long int populatie, long long int infectati, float pozX, float pozY) {
 	this->denumire = denumire;
@@ -25,7 +18,7 @@ Oras::~Oras() {
 void Oras::update()
 {
 	//aici updatez numerele pentru infectati, vindecati si decedati
-	long long int nouInfectati = Oras::getInfectati() * oras::infectabilitate;
+	long long int nouInfectati = Oras::getInfectati() * infectabilitate;
 	if (Oras::getPopulatie() - Oras::getInfectati() - Oras::getDeced() - Oras::getVindecati() < nouInfectati)
 	{
 		//nu mai am atata populatie cat sa se poata infecta atati oameni
@@ -40,7 +33,7 @@ void Oras::update()
 	long long int totalInfec = Oras::getInfectati() + nouInfectati;
 
 	//elimin oamenii care din pacate mor pana sa se vindece
-	long long int decedNoi = totalInfec * oras::mortalitate / 100;
+	long long int decedNoi = totalInfec * mortalitate / 100;
 	Oras::setDeced(Oras::getDeced() + decedNoi);
 	//pe ei trebuie sa ii scot din cota
 	while (decedNoi > 0)
@@ -58,7 +51,7 @@ void Oras::update()
 	}
 
 	//verific daca nu cumva se vor vindeca cativa dintre cei deja infectati
-	if (cota.size() >= virus::timpRecuperare)
+	if (cota.size() >= timpRecuperare)
 	{
 		//trebuie sa ii scot pe primii infectati
 		long long int infecVind = cota.at(0);

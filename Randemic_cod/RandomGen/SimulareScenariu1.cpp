@@ -54,8 +54,8 @@ si mortalitatea(in procente_default 20):
 		counterVindecati = 0;
 
 	}
-
-	int nrNpcuri=simularea1::nrNpc;
+	const float nrFPS = FPS;
+	int nrNpcuri=nrNpc;
 
 	sf::Text textNpc;//textul pt fiecare NPC
 	sf::Text textCounter;//numarul text
@@ -134,7 +134,7 @@ void miscareNpc(std::map<std::string, OmClass>::iterator itr) {
 
 				int probInfectie = rand() % 100 + 1;
 				
-				if (distance < raza1 + raza2 && probInfectie <= virus::infectabilitate ) {
+				if (distance < raza1 + raza2 && probInfectie <= infectabilitate ) {
 					// coliziune detectata!
 					col->second.shape.setFillColor(sf::Color(255, 0, 0));
 					col->second.stare = "infectat";
@@ -172,7 +172,7 @@ void miscareNpc(std::map<std::string, OmClass>::iterator itr) {
 				int distance = sqrt(dx * dx + dy * dy);
 
 				int probInfectie = rand() % 100 + 1;
-				if (distance < raza1 + raza2 && probInfectie <= virus::infectabilitate) {
+				if (distance < raza1 + raza2 && probInfectie <= infectabilitate) {
 					// coliziune detectata!
 					om.shape.setFillColor(sf::Color(255, 0, 0));
 					om.stare = "infectat";
@@ -228,7 +228,7 @@ input:
 window:
 	//aici bagam window-ul
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "Randemic", sf::Style::Default);
-	window.setFramerateLimit(FPS);
+	window.setFramerateLimit(nrFPS);
 
 
 background:
@@ -366,9 +366,9 @@ display:
 				//desenez npc-urile pe ecran si calculam valorile
 				if (itr->second.stare.compare("infectat") == 0) {
 					itr->second.timpInfectare++;
-					if (itr->second.timpInfectare == virus::timpRecuperare) {
+					if (itr->second.timpInfectare == timpRecuperare) {
 						int procSupravietuire = rand() % 100;
-						if (procSupravietuire <= virus::mortalitate)
+						if (procSupravietuire <= mortalitate)
 						{
 							//moare individul
 							itr->second.stare = "mort";

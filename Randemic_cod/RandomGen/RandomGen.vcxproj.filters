@@ -47,6 +47,12 @@
     <ClCompile Include="SimulareScenariuOras.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HeaderSimulari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HeaderVirus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\dist\json\json-forwards.h">
@@ -91,9 +97,6 @@
     <ClInclude Include="OmClass.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderSimulari.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Buton.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -103,6 +106,7 @@
     <ClInclude Include="Oras.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="HeaderSimulari.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Date\data.json">

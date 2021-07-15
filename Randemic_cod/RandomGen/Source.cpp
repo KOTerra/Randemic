@@ -61,7 +61,7 @@ si mortalitatea(in procente_default 20):
 
 	}
 
-
+	const float nrFPS = FPS;
 	int nrNpcSource;
 	int infectabilitateSource;
 	int mortalitateSource;
@@ -78,7 +78,6 @@ int main() {
 input:
 	srand(time(0));
 	start::pauza = false;
-
 	
 	//logo();
 	//cin >> infectabilitate >> timpRecuperare >> mortalitate;
@@ -97,7 +96,7 @@ input:
 window:
 	//aici bagam window-ul
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "Randemic", sf::Style::Default);
-	window.setFramerateLimit(FPS);
+	window.setFramerateLimit(start::nrFPS);
 
 
 background:
@@ -249,19 +248,20 @@ test:
 			case 1: {//niste convertiri super ciudatele ca nu mergea stoi()
 				std::string nN = butonText1.getText();
 				stringstream strnN(nN);
-				strnN>>simularea1::nrNpc;
+				nrNpc= std::stoi(nN);
+				//strnN>>nrNpc;
 
 				std::string inf = butonText2.getText();
 				stringstream strinf(inf);
-				strinf>>virus::infectabilitate;
+				strinf>>infectabilitate;
 
 				std::string mrt = butonText3.getText();
 				stringstream strmrt(mrt);
-				strmrt>>virus::mortalitate;
+				strmrt>>mortalitate;
 
 				std::string rec = butonText4.getText();
 				stringstream strrec(rec);
-				strrec >> virus::timpRecuperare;
+				strrec >>timpRecuperare;
 				
 				break;
 			}

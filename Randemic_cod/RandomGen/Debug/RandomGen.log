@@ -1,27 +1,3 @@
-﻿  Source.cpp
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(79,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(100,27): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(132,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(132,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(133,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(133,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(134,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(134,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(135,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(135,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(126,61): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(127,61): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(128,61): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(129,61): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(132,101): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(133,101): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(134,101): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(135,101): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(97,7): warning C4102: 'window': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(103,11): warning C4102: 'background': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(111,10): warning C4102: 'font_text': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(115,8): warning C4102: 'butoane': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(120,11): warning C4102: 'textBoxuri': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(138,8): warning C4102: 'display': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Source.cpp(146,5): warning C4102: 'test': unreferenced label
+﻿  Oras.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Oras.cpp(54,18): warning C4018: '>=': signed/unsigned mismatch
   RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe

@@ -155,6 +155,8 @@
   <ItemGroup>
     <ClCompile Include="..\jsoncpp.cpp" />
     <ClCompile Include="Buton.cpp" />
+    <ClCompile Include="HeaderSimulari.cpp" />
+    <ClCompile Include="HeaderVirus.cpp" />
     <ClCompile Include="OmClass.cpp" />
     <ClCompile Include="Oras.cpp" />
     <ClCompile Include="SimulareScenariu1.cpp" />
