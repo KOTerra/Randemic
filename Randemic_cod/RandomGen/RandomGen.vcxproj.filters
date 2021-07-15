@@ -18,40 +18,52 @@
     <Filter Include="Fonts">
       <UniqueIdentifier>{a69672b5-f750-4ea9-a82b-4642ac6b1c32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Virus">
+      <UniqueIdentifier>{85a77971-b80d-483c-9e68-3096cc0cebcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NPC">
+      <UniqueIdentifier>{20a42c3e-fa72-4c3d-bed0-a11814a72edd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Simulari">
+      <UniqueIdentifier>{29a4158f-14ef-4b46-b534-5c905ffd669c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilitare">
+      <UniqueIdentifier>{7ce99aa2-080e-40b9-908f-4d7d04bce57d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\jsoncpp.cpp">
       <Filter>h</Filter>
     </ClCompile>
-    <ClCompile Include="Generare.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="HeaderVirus.cpp">
+      <Filter>Source Files\Virus</Filter>
     </ClCompile>
     <ClCompile Include="OmClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SimulareScenariu1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Buton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextBox.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\NPC</Filter>
     </ClCompile>
     <ClCompile Include="Oras.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\NPC</Filter>
     </ClCompile>
-    <ClCompile Include="SimulareScenariuOras.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Generare.cpp">
+      <Filter>Source Files\NPC</Filter>
     </ClCompile>
     <ClCompile Include="HeaderSimulari.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Simulari</Filter>
     </ClCompile>
-    <ClCompile Include="HeaderVirus.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="SimulareScenariu1.cpp">
+      <Filter>Source Files\Simulari</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulareScenariuOras.cpp">
+      <Filter>Source Files\Simulari</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files\Simulari</Filter>
+    </ClCompile>
+    <ClCompile Include="Buton.cpp">
+      <Filter>Source Files\Utilitare</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>Source Files\Utilitare</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,25 +100,27 @@
     <ClInclude Include="..\SFML-2.5.1\include\SFML\Window.hpp">
       <Filter>h\SFML</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderNpc.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="HeaderVirus.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Virus</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderNpc.h">
+      <Filter>Source Files\NPC</Filter>
     </ClInclude>
     <ClInclude Include="OmClass.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Buton.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextBox.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\NPC</Filter>
     </ClInclude>
     <ClInclude Include="Oras.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\NPC</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderSimulari.h" />
+    <ClInclude Include="HeaderSimulari.h">
+      <Filter>Source Files\Simulari</Filter>
+    </ClInclude>
+    <ClInclude Include="Buton.h">
+      <Filter>Source Files\Utilitare</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBox.h">
+      <Filter>Source Files\Utilitare</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Date\data.json">
