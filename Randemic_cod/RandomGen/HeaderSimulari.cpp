@@ -1,3 +1,3 @@
 #include "HeaderSimulari.h"
-int nrNpc = 0;
+int nrNpc = 100;
 

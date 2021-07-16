@@ -248,8 +248,8 @@ test:
 			case 1: {//niste convertiri super ciudatele ca nu mergea stoi()
 				std::string nN = butonText1.getText();
 				stringstream strnN(nN);
-				nrNpc= std::stoi(nN);
-				//strnN>>nrNpc;
+				//nrNpc= std::stoi(nN);
+				strnN>>nrNpc;
 
 				std::string inf = butonText2.getText();
 				stringstream strinf(inf);

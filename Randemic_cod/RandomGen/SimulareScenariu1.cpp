@@ -18,30 +18,10 @@
 
 
 namespace sim1 {
-	/*void logo() {
-		//functie de logo ca sa fie frumos
-		cout << R"( 
- ____                             __                                         
-/\  _`\                          /\ \                          __            
-\ \ \L\ \       __       ___     \_\ \      __     ___ ___    /\_\     ___   
- \ \ ,  /     /'__`\   /' _ `\   /'_` \   /'__`\ /' __` __`\  \/\ \   /'___\ 
-  \ \ \\ \   /\ \L\.\_ /\ \/\ \ /\ \L\ \ /\  __/ /\ \/\ \/\ \  \ \ \ /\ \__/ 
-   \ \_\ \_\ \ \__/.\_\\ \_\ \_\\ \___,_\\ \____\\ \_\ \_\ \_\  \ \_\\ \____\
-    \/_/\/ /  \/__/\/_/ \/_/\/_/ \/__,_ / \/____/ \/_/\/_/\/_/   \/_/ \/____/
-_____________________________________________________________________________
-Pentru a vedea detalii despre o persoana da CLICK pe aceasta.
-Pentru a opri simularea apasa ESC.
-Pentru a reseta simularea apasa R.
 
-
-Introdu in ordine infectabilitatea bolii(default 8), timpul de recuperare al bolii(in frameuri_default 1000)
-si mortalitatea(in procente_default 20):                                                                           
-                                                                            
-)";
-	}*/
-	bool pauza;
-	void pause() { pauza = true; }
-	void resume() { pauza = false; }
+	bool isPaused;
+	void pause() { isPaused = true; }
+	void resume() { isPaused = false; }
 	int counterMorti = 0;
 	int counterVii;
 	int counterInfectati = 0;
@@ -55,7 +35,13 @@ si mortalitatea(in procente_default 20):
 
 	}
 	const float nrFPS = FPS;
-	int nrNpcuri=nrNpc;
+	int nrNpcuri = nrNpc;
+	bool amClick = false;
+	std::map<std::string, OmClass>::iterator lastClick;
+	int tip = 0;//0 sanatos 
+				//1 infectat
+				//2	vindecat
+				//3 mort
 
 	sf::Text textNpc;//textul pt fiecare NPC
 	sf::Text textCounter;//numarul text
@@ -77,152 +63,253 @@ using namespace std::chrono; // nanoseconds, system_clock, seconds
 
 #pragma warning(suppress : 4996)
 
-std::map<string, OmClass> oameni;//oamenii creati in header
+std::map<string, OmClass> oameniSanatosi;//oamenii creati in header
+std::map<string, OmClass> oameniInfectati;//oamenii creati in header
+std::map<string, OmClass> oameniDecedati;//oamenii creati in header
+std::map<string, OmClass> oameniVindecati;//oamenii creati in header
 
-
-void miscareNpc(std::map<std::string, OmClass>::iterator itr) {
-	//functie de miscare
-
-	OmClass om = itr->second;
-	if (om.stare.compare("mort") == 0) {
-		return;//daca e mort nu se misca
-	}
-
-	//float dt = deltaTime();
-
-	//aicea ne miscam(putin dans)
-	sf::Vector2f vec1 = om.misc;
-	vec1.x = vec1.x*sim1::dt;
-	vec1.y = vec1.y*sim1::dt;
-
-	om.shape.move(vec1);
-
-	auto pozitie = om.shape.getPosition();
-	om.pX = pozitie.x+razaShape;
-	om.pY = pozitie.y+razaShape;
-
-	if (om.pX >= 939.f || om.pX <= 37.f) {
-		
-		om.misc.x = om.misc.x * (-1);
-	}
-
-	if (om.pY >= 682.f || om.pY <= 37.f) {
-		
-		om.misc.y = om.misc.y* (-1);
-	}
-
-
-
-	
+bool isHitDetection(OmClass sanatos)
+{
 	//avem hit-detection diferit in functie de infectati
-	if (om.stare.compare("infectat") == 0 && sim1::counterInfectati < (sim1::counterVii - sim1::counterInfectati))//daca e infectat 
-	{
 
-		for (std::map<std::string, OmClass>::iterator col = oameni.begin(); col != oameni.end(); col++) {
+	for (std::map<std::string, OmClass>::iterator col = oameniInfectati.begin(); col != oameniInfectati.end(); col++) {
 
-			if (itr != col && col->second.stare == "sanatos") {
 
-				//cealalta coliziune
-				//
-				//folosim formula AABB pt hit detection
-				int raza1 = stoi(om.sociabilitate) + razaShape - 3, x1 = om.pX, y1 = om.pY;
-				int raza2 = stoi(col->second.sociabilitate) + razaShape - 3, x2 = col->second.pX, y2 = col->second.pY;
+		//folosim formula AABB pt hit detection
+		int raza1 = stoi(sanatos.sociabilitate) + razaShape - 3, x1 = sanatos.pX, y1 = sanatos.pY;
+		int raza2 = stoi(col->second.sociabilitate) + razaShape - 3, x2 = col->second.pX, y2 = col->second.pY;
 
-				int dx = x1 - x2;
-				int dy = y1 - y2;
-				int distance = sqrt(dx * dx + dy * dy);
+		int dx = x1 - x2;
+		int dy = y1 - y2;
+		int distance = sqrt(dx * dx + dy * dy);
 
-				int probInfectie = rand() % 100 + 1;
-				
-				if (distance < raza1 + raza2 && probInfectie <= infectabilitate ) {
-					// coliziune detectata!
-					col->second.shape.setFillColor(sf::Color(255, 0, 0));
-					col->second.stare = "infectat";
-					counterInfectati++;
+		int probInfectie = rand() % 100 + 1;
 
-					col->second.timpInfectare = 0;
-
-					textCounter.setString("In viata: " + to_string(counterVii) +
-						"\nInfectati: " + to_string(counterInfectati) +
-						"\nVindecati: " + to_string(counterVindecati) +
-						"\nMorti: " + to_string(counterMorti));
-				}
-
-			}
-
+		if (distance < raza1 + raza2 && probInfectie <= infectabilitate) {
+			return true;
 
 		}
-
 	}
-	else if (om.stare.compare("sanatos") == 0) {
-		//cautam de la neinfectati spre infectati
-
-		for (std::map<string, OmClass>::iterator col = oameni.begin(); col != oameni.end(); col++) {
-
-			if (itr != col && col->second.stare.compare("infectat") == 0) {
-
-				//cealalta coliziune
-
-				//
-				int raza1 = stoi(om.sociabilitate) + razaShape - 3, x1 = om.pX, y1 = om.pY;
-				int raza2 = stoi(col->second.sociabilitate) + razaShape - 3, x2 = col->second.pX, y2 = col->second.pY;
-
-				int dx = x1 - x2;
-				int dy = y1 - y2;
-				int distance = sqrt(dx * dx + dy * dy);
-
-				int probInfectie = rand() % 100 + 1;
-				if (distance < raza1 + raza2 && probInfectie <= infectabilitate) {
-					// coliziune detectata!
-					om.shape.setFillColor(sf::Color(255, 0, 0));
-					om.stare = "infectat";
-					counterInfectati++;
-
-					om.timpInfectare = 0;
-
-					textCounter.setString("In viata: " + to_string(counterVii) +
-						"\nInfectati: " + to_string(counterInfectati) +
-						"\nVindecati: " + to_string(counterVindecati) +
-						"\nMorti: " + to_string(counterMorti));
-
-					break;
-				}
-
-
-			}
-
-		}
-
-	}
-	oameni[itr->first] = om;
+	return false;
 
 }
 
+void miscareNpc() {
+	//functie de miscare
+	for (std::map<string, OmClass>::iterator itr = oameniInfectati.begin(); itr != oameniInfectati.end(); itr++) {
+		//aicea ne miscam(putin dans)
+		sf::Vector2f vec1 = itr->second.misc;
+		vec1.x = vec1.x * sim1::dt;
+		vec1.y = vec1.y * sim1::dt;
+
+		itr->second.shape.move(vec1);
+
+		auto pozitie = itr->second.shape.getPosition();
+		itr->second.pX = pozitie.x + razaShape;
+		itr->second.pY = pozitie.y + razaShape;
+
+		if (itr->second.pX >= 939.f || itr->second.pX <= 37.f) {
+
+			itr->second.misc.x = itr->second.misc.x * (-1);
+		}
+
+		if (itr->second.pY >= 682.f || itr->second.pY <= 37.f) {
+
+			itr->second.misc.y = itr->second.misc.y * (-1);
+		}
+	}
+
+	std::vector<std::map<std::string, OmClass>::iterator> nouInfect;
+	for (std::map<string, OmClass>::iterator itr = oameniSanatosi.begin(); itr != oameniSanatosi.end(); itr++) {
+		
+		sf::Vector2f vec1 = itr->second.misc;
+		vec1.x = vec1.x * sim1::dt;
+		vec1.y = vec1.y * sim1::dt;
+
+		itr->second.shape.move(vec1);
+
+		auto pozitie = itr->second.shape.getPosition();
+		itr->second.pX = pozitie.x + razaShape;
+		itr->second.pY = pozitie.y + razaShape;
+
+		if (itr->second.pX >= 939.f || itr->second.pX <= 37.f) {
+
+			itr->second.misc.x = itr->second.misc.x * (-1);
+		}
+
+		if (itr->second.pY >= 682.f || itr->second.pY <= 37.f) {
+
+			itr->second.misc.y = itr->second.misc.y * (-1);
+		}
+		if (isHitDetection(itr->second)) {
+			// coliziune detectata!
+			//se transforma in infectat
+			nouInfect.push_back(itr);
+		}
+	}
+
+	for (int i = 0; i < nouInfect.size(); i++)
+	{
+		std::map<std::string, OmClass>::iterator itr = nouInfect.at(i);
+		std::string key = itr->first;
+		OmClass om = itr->second;
+		om.shape.setFillColor(sf::Color(255, 0, 0));
+		om.stare = "infectat";
+		sim1::counterInfectati++;
+		om.timpInfectare = 0;
+		oameniInfectati.insert({ key,om });
+		sim1::amClick = false;
+		/*if (sim1::lastClick==itr)
+		{
+			
+		}*/
+		oameniSanatosi.erase(itr);
+
+		textCounter.setString("In viata: " + to_string(sim1::counterVii) +
+			"\nInfectati: " + to_string(sim1::counterInfectati) +
+			"\nVindecati: " + to_string(sim1::counterVindecati) +
+			"\nMorti: " + to_string(sim1::counterMorti));
+		
+	}
+
+	for (std::map<string, OmClass>::iterator itr = oameniVindecati.begin(); itr != oameniVindecati.end(); itr++) {
+		sf::Vector2f vec1 = itr->second.misc;
+		vec1.x = vec1.x * sim1::dt;
+		vec1.y = vec1.y * sim1::dt;
+
+		itr->second.shape.move(vec1);
+
+		auto pozitie = itr->second.shape.getPosition();
+		itr->second.pX = pozitie.x + razaShape;
+		itr->second.pY = pozitie.y + razaShape;
+
+		if (itr->second.pX >= 939.f || itr->second.pX <= 37.f) {
+
+			itr->second.misc.x = itr->second.misc.x * (-1);
+		}
+
+		if (itr->second.pY >= 682.f || itr->second.pY <= 37.f) {
+
+			itr->second.misc.y = itr->second.misc.y * (-1);
+		}
+	}
+}
+
+void updateInfectati()
+{
+	std::vector<std::map<std::string, OmClass>::iterator> nouVindec = {};
+	std::vector<std::map<std::string, OmClass>::iterator> nouDeced = {};
+	for (std::map<string, OmClass>::iterator itr = oameniInfectati.begin(); itr != oameniInfectati.end(); itr++) {
+		//desenez npc-urile pe ecran si calculam valorile
+
+		itr->second.timpInfectare++;
+		if (itr->second.timpInfectare >= timpRecuperare) {
+			int procSupravietuire = rand() % 100;
+			if (procSupravietuire <= mortalitate)
+			{
+				//moare individul
+				nouDeced.push_back(itr);
+				sim1::counterMorti++;
+				sim1::counterVii--;
+			}
+			else
+			{
+				nouVindec.push_back(itr);
+				sim1::counterVindecati++;
+			}
+			textCounter.setString("In viata: " + to_string(counterVii) +
+				"\nInfectati: " + to_string(sim1::counterInfectati) +
+				"\nVindecati: " + to_string(sim1::counterVindecati) +
+				"\nMorti: " + to_string(sim1::counterMorti));
+		}
+
+	}
+
+	for (int i = 0; i < nouDeced.size(); i++)
+		{   
+		std::map<std::string, OmClass>::iterator itr = nouDeced.at(i); 
+		OmClass om = itr->second;
+		std::string key = itr->first;
+
+		om.stare = "mort";
+		om.shape.setFillColor(sf::Color(0, 0, 0));
+		oameniDecedati.insert({ key,om });
+		sim1::amClick = false;
+		/*if (sim1::lastClick == itr )
+		{
+			
+		}*/
+		oameniInfectati.erase(key);
+		
+
+	}
+
+	for (int i = 0; i < nouVindec.size(); i++)
+	{
+		std::map<std::string, OmClass>::iterator itr = nouVindec.at(i);
+		std::string key = itr->first;
+		OmClass om = itr->second;
+		om.stare = "vindecat";
+		om.shape.setFillColor(sf::Color(0, 0, 255));
+		oameniVindecati.insert({ key,om });
+		sim1::amClick = false;
+		/*if (sim1::lastClick == itr)
+		{
+			
+		}*/
+		oameniInfectati.erase(key);
+		
+		
+	}
+}
+
+void drawOameni(sf::RenderWindow& window)
+{
+	for (std::map<string, OmClass>::iterator itr = oameniSanatosi.begin(); itr != oameniSanatosi.end(); itr++) {
+		OmClass om = itr->second;
+		window.draw(itr->second.shape);
+	}
+	for (std::map<string, OmClass>::iterator itr = oameniInfectati.begin(); itr != oameniInfectati.end(); itr++) {
+		OmClass om = itr->second;
+		window.draw(itr->second.shape);
+	}
+	for (std::map<string, OmClass>::iterator itr = oameniVindecati.begin(); itr != oameniVindecati.end(); itr++) {
+		OmClass om = itr->second;
+		window.draw(itr->second.shape);
+	}
+	for (std::map<string, OmClass>::iterator itr = oameniDecedati.begin(); itr != oameniDecedati.end(); itr++) {
+		OmClass om = itr->second;
+		window.draw(itr->second.shape);
+	}
+	window.draw(textCounter);
+}
 
 #pragma once
 
 
-int simulare1(){
+int simulare1() {
 
 input:
 	srand(time(0));
-	sim1::pauza= false;
+	sim1::isPaused = true;
 
-	
-	//logo();
-	//cin >> infectabilitate >> timpRecuperare >> mortalitate;
-	//cout << "Introdu numarul de persoane:";
-	/*virus::infectabilitate;
-	virus::timpRecuperare;
-	virus::mortalitate;
-	sim1::nrNpcuri=simularea1::nrNpc;*/
+
+
+	nrNpcuri = nrNpc;
 	counterVii = sim1::nrNpcuri;
 
-	oameni.clear();
-	 
-	oameni = simulare(sim1::nrNpcuri);
-	bool amClick = false;
-	std::map<string, OmClass>::iterator lastClick;
+	oameniSanatosi.clear();
+	oameniInfectati.clear();
+	oameniVindecati.clear();
+	oameniDecedati.clear();
+
+	oameniSanatosi = simulare(sim1::nrNpcuri);
+	sim1::amClick = false;
+	sim1::lastClick = oameniSanatosi.begin();
+	sim1::tip = 0;//0 sanatos 
+				//1 infectat
+				//2	vindecat
+				//3 mort
 
 
 window:
@@ -267,44 +354,31 @@ font_text:
 
 
 adaugOameni:
-	//desenam infectatii
-	for (std::map<string, OmClass>::iterator itr = oameni.begin(); itr != oameni.end(); itr++) {
+	//desenam oamenii
 
-		OmClass om = itr->second;
-
-
-		if (itr==oameni.begin()) {
-			//cout << itr->first;
-			om.shape.setFillColor(sf::Color(255, 0, 0));
-			om.stare = "infectat";
-			counterInfectati++;
-			om.shape.setRotation(rand() % 90);
-			textCounter.setString("In viata: " + to_string(counterVii) +
-				"\nInfectati: " + to_string(counterInfectati) +
-				"\nVindecati: " + to_string(counterVindecati) +
-				"\nMorti: " + to_string(counterMorti));
-			om.timpInfectare = 0;
-			oameni[itr->first] = om;
-			
-		}
-		
-		window.draw(om.shape);
-	}
+	textCounter.setString("In viata: " + to_string(sim1::counterVii) +
+		"\nInfectati: " + to_string(sim1::counterInfectati) +
+		"\nVindecati: " + to_string(sim1::counterVindecati) +
+		"\nMorti: " + to_string(sim1::counterMorti));
 
 
 
 display:
 	window.display();
-
+	drawOameni(window);
 	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
-	
-	
+
+
 
 
 	deltaTime();
 	while (window.isOpen())
 	{
 		sf::Event event;
+		window.clear();
+		window.draw(backSprite);//fundalul
+
+
 		while (window.pollEvent(event))
 		{
 			//eventuri
@@ -321,92 +395,149 @@ display:
 					goto input;
 
 				}
+				else if (event.key.code == sf::Keyboard::Enter)
+				{
+					sim1::isPaused = !sim1::isPaused;
 
+				}
 				break;
 			}
 			case sf::Event::Closed: {
 				window.close();
 				break;
 			}
-			
+
 			default: {
 				//ca sa poti sa dai click pe oamenii astia simulati
+
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 				{
-					
-					for (std::map<string, OmClass>::iterator itr = oameni.begin(); itr != oameni.end(); itr++) {
+					tip = -1;
+					for (std::map<string, OmClass>::iterator itr = oameniSanatosi.begin(); itr != oameniSanatosi.end(); itr++) {
 
-						auto mouse_pos = sf::Mouse::getPosition(window); 
-						auto translated_pos = window.mapPixelToCoords(mouse_pos); 
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
+						OmClass om = itr->second;
+
+						if (om.shape.getGlobalBounds().contains(translated_pos)) {
+							amClick = true;
+							sim1::lastClick = itr;
+							tip = 0;
+						}
+					}
+					for (std::map<string, OmClass>::iterator itr = oameniInfectati.begin(); itr != oameniInfectati.end(); itr++) {
+
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
 						OmClass om = itr->second;
 
 						if (om.shape.getGlobalBounds().contains(translated_pos)) {
 							amClick = true;
 							lastClick = itr;
+							tip = 1;
 						}
-
-
 					}
+					for (std::map<string, OmClass>::iterator itr = oameniVindecati.begin(); itr != oameniVindecati.end(); itr++) {
+
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
+						OmClass om = itr->second;
+
+						if (om.shape.getGlobalBounds().contains(translated_pos)) {
+							amClick = true;
+							lastClick = itr;
+							tip = 2;
+						}
+					}
+					for (std::map<string, OmClass>::iterator itr = oameniDecedati.begin(); itr != oameniDecedati.end(); itr++) {
+
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
+						OmClass om = itr->second;
+
+						if (om.shape.getGlobalBounds().contains(translated_pos)) {
+							amClick = true;
+							lastClick = itr;
+							tip = 3;
+						}
+					}
+
+					if (sim1::isPaused == true)
+					{
+						//pot sa le schimb si pozitia
+						if (tip == 0)
+						{
+							//e sanatos,il schimb in infectat
+							std::string key = lastClick->first;
+							OmClass om = lastClick->second;
+							oameniSanatosi.erase(sim1::lastClick);
+
+							om.shape.setFillColor(sf::Color(255, 0, 0));
+							om.stare = "infectat";
+							counterInfectati++;
+							//om.shape.setRotation(rand() % 90);
+							textCounter.setString("In viata: " + to_string(counterVii) +
+								"\nInfectati: " + to_string(counterInfectati) +
+								"\nVindecati: " + to_string(counterVindecati) +
+								"\nMorti: " + to_string(counterMorti));
+							om.timpInfectare = 0;
+
+							oameniInfectati.insert({ key,om });
+							lastClick = oameniInfectati.find(key);
+						}
+						else if (tip == 1)
+						{
+							//il schimb inapoi in sanatos
+							std::string key = lastClick->first;
+							OmClass om = lastClick->second;
+							oameniInfectati.erase(key);
+
+							om.shape.setFillColor(sf::Color(0, 255, 0));
+							om.stare = "sanatos";
+							counterInfectati--;
+							//om.shape.setRotation(rand() % 90);
+							textCounter.setString("In viata: " + to_string(counterVii) +
+								"\nInfectati: " + to_string(counterInfectati) +
+								"\nVindecati: " + to_string(counterVindecati) +
+								"\nMorti: " + to_string(counterMorti));
+							om.timpInfectare = 0;
+
+							oameniSanatosi.insert({ key,om });
+							lastClick = oameniSanatosi.find(key);
+						}
+					}
+
+
 				}
 				break;
 
 
-			  }
+			}
 
 
 			}
 
 		}
-	    if (sim1::pauza == false) {
+		dt = deltaTime();
+		if (sim1::isPaused == false) {
 			//ruleaza
-			window.clear();
-			window.draw(backSprite);//fundalul
-			dt = deltaTime();
-			for (std::map<string, OmClass>::iterator itr = oameni.begin(); itr != oameni.end(); itr++) {
-				//desenez npc-urile pe ecran si calculam valorile
-				if (itr->second.stare.compare("infectat") == 0) {
-					itr->second.timpInfectare++;
-					if (itr->second.timpInfectare == timpRecuperare) {
-						int procSupravietuire = rand() % 100;
-						if (procSupravietuire <= mortalitate)
-						{
-							//moare individul
-							itr->second.stare = "mort";
-							itr->second.shape.setFillColor(sf::Color(0, 0, 0));
-							counterMorti++;
-							counterVii--;
-						}
-						else
-						{
-							itr->second.stare = "vindecat";
-							itr->second.shape.setFillColor(sf::Color(0, 0, 255));
-							counterVindecati++;
-							itr->second.shape.setRotation(rand() % 90);
-						}
-						textCounter.setString("In viata: " + to_string(counterVii) +
-							"\nInfectati: " + to_string(counterInfectati) +
-							"\nVindecati: " + to_string(counterVindecati) +
-							"\nMorti: " + to_string(counterMorti));
-					}
-
-				}
-				
-				miscareNpc(itr);
-				window.draw(itr->second.shape);
-				window.draw(textCounter);
-			}
-			if (amClick == true) {
-				//am dat click pe cineva
-				textNpc.setString(lastClick->second.prenume + "\n Sex: " + lastClick->second.sex
-					+ "\n Varsta: " + lastClick->second.varsta
-					+ "\n Inaltime: " + lastClick->second.inaltime
-					+ "\n Stare: " + lastClick->second.stare);
-			}
-			window.draw(textNpc);
-			window.display();
+            
+			updateInfectati();
+			miscareNpc();
 			
 		}
+		
+		drawOameni(window);
+		if (amClick == true)
+		{
+			textNpc.setString(lastClick->second.prenume + "\n Sex: " + lastClick->second.sex
+				+ "\n Varsta: " + lastClick->second.varsta
+				+ "\n Inaltime: " + lastClick->second.inaltime
+				+ "\n Stare: " + lastClick->second.stare);
 
+		}
+		window.draw(textNpc);
+		window.display();
 
 	}
 	return 0;
