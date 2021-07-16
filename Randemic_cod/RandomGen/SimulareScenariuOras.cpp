@@ -56,7 +56,7 @@ std::map<string,Oras> sigur;
 std::map<string,Oras> vindec;
 
 
-
+int initEcranPrincipal();
 
 
 #pragma once
@@ -164,6 +164,12 @@ display:
 				{
 					simOras::reset();
 					goto input;
+
+				}
+				else if (event.key.code == sf::Keyboard::T)
+				{
+					window.close();
+					initEcranPrincipal();
 
 				}
 

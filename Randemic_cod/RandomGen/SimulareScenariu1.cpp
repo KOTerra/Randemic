@@ -303,7 +303,7 @@ void drawOameni(sf::RenderWindow& window)
 }
 
 #pragma once
-
+int initEcranPrincipal();
 
 int simulare1() {
 
@@ -411,6 +411,11 @@ display:
 				{
 					sim1::reset();
 					goto input;
+				}
+				else if (event.key.code == sf::Keyboard::T)
+				{
+					window.close();
+					initEcranPrincipal();
 
 				}
 				else if (event.key.code == sf::Keyboard::Enter)
