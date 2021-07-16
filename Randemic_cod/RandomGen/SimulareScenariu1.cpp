@@ -121,7 +121,7 @@ void miscareNpc() {
 
 	std::vector<std::map<std::string, OmClass>::iterator> nouInfect;
 	for (std::map<string, OmClass>::iterator itr = oameniSanatosi.begin(); itr != oameniSanatosi.end(); itr++) {
-		
+
 		sf::Vector2f vec1 = itr->second.misc;
 		vec1.x = vec1.x * sim1::dt;
 		vec1.y = vec1.y * sim1::dt;
@@ -158,18 +158,25 @@ void miscareNpc() {
 		sim1::counterInfectati++;
 		om.timpInfectare = 0;
 		oameniInfectati.insert({ key,om });
-		sim1::amClick = false;
-		/*if (sim1::lastClick==itr)
+
+		if (tip == 0)
 		{
-			
-		}*/
+			if (sim1::lastClick == itr)
+			{
+				sim1::lastClick = oameniVindecati.find(key);
+				tip = 1;
+			}
+
+
+		}
+		//sim1::amClick = false;
 		oameniSanatosi.erase(itr);
 
 		textCounter.setString("In viata: " + to_string(sim1::counterVii) +
 			"\nInfectati: " + to_string(sim1::counterInfectati) +
 			"\nVindecati: " + to_string(sim1::counterVindecati) +
-			"\nMorti: " + to_string(sim1::counterMorti));
-		
+			"\nDecedati: " + to_string(sim1::counterMorti));
+
 	}
 
 	for (std::map<string, OmClass>::iterator itr = oameniVindecati.begin(); itr != oameniVindecati.end(); itr++) {
@@ -220,27 +227,33 @@ void updateInfectati()
 			textCounter.setString("In viata: " + to_string(counterVii) +
 				"\nInfectati: " + to_string(sim1::counterInfectati) +
 				"\nVindecati: " + to_string(sim1::counterVindecati) +
-				"\nMorti: " + to_string(sim1::counterMorti));
+				"\nDecedati: " + to_string(sim1::counterMorti));
 		}
 
 	}
 
 	for (int i = 0; i < nouDeced.size(); i++)
-		{   
-		std::map<std::string, OmClass>::iterator itr = nouDeced.at(i); 
+	{
+		std::map<std::string, OmClass>::iterator itr = nouDeced.at(i);
 		OmClass om = itr->second;
 		std::string key = itr->first;
 
-		om.stare = "mort";
+		om.stare = "decedat";
 		om.shape.setFillColor(sf::Color(0, 0, 0));
 		oameniDecedati.insert({ key,om });
-		sim1::amClick = false;
-		/*if (sim1::lastClick == itr )
+
+		if (tip == 1)
 		{
-			
-		}*/
+			if (sim1::lastClick == itr)
+			{
+				sim1::lastClick = oameniDecedati.find(key);
+				tip = 3;
+			}
+
+			//sim1::amClick = false;
+		}
 		oameniInfectati.erase(key);
-		
+
 
 	}
 
@@ -252,14 +265,19 @@ void updateInfectati()
 		om.stare = "vindecat";
 		om.shape.setFillColor(sf::Color(0, 0, 255));
 		oameniVindecati.insert({ key,om });
-		sim1::amClick = false;
-		/*if (sim1::lastClick == itr)
+
+		if (tip == 1)
 		{
-			
-		}*/
+			if (sim1::lastClick == itr)
+			{
+				sim1::lastClick = oameniVindecati.find(key);
+				tip = 2;
+			}
+		}
+		//sim1::amClick = false;
 		oameniInfectati.erase(key);
-		
-		
+
+
 	}
 }
 
@@ -484,6 +502,7 @@ display:
 
 							oameniInfectati.insert({ key,om });
 							lastClick = oameniInfectati.find(key);
+							tip = 1;
 						}
 						else if (tip == 1)
 						{
@@ -504,6 +523,7 @@ display:
 
 							oameniSanatosi.insert({ key,om });
 							lastClick = oameniSanatosi.find(key);
+							tip = 0;
 						}
 					}
 
@@ -521,12 +541,12 @@ display:
 		dt = deltaTime();
 		if (sim1::isPaused == false) {
 			//ruleaza
-            
+
 			updateInfectati();
 			miscareNpc();
-			
+
 		}
-		
+
 		drawOameni(window);
 		if (amClick == true)
 		{
@@ -535,6 +555,9 @@ display:
 				+ "\n Inaltime: " + lastClick->second.inaltime
 				+ "\n Stare: " + lastClick->second.stare);
 
+		}
+		else {
+			textNpc.setString(" ");
 		}
 		window.draw(textNpc);
 		window.display();

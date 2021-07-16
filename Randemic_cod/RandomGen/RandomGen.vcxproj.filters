@@ -56,14 +56,17 @@
     <ClCompile Include="SimulareScenariuOras.cpp">
       <Filter>Source Files\Simulari</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files\Simulari</Filter>
-    </ClCompile>
     <ClCompile Include="Buton.cpp">
       <Filter>Source Files\Utilitare</Filter>
     </ClCompile>
     <ClCompile Include="TextBox.cpp">
       <Filter>Source Files\Utilitare</Filter>
+    </ClCompile>
+    <ClCompile Include="EcranStart.cpp">
+      <Filter>Source Files\Simulari</Filter>
+    </ClCompile>
+    <ClCompile Include="EcranAlegeri.cpp">
+      <Filter>Source Files\Simulari</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

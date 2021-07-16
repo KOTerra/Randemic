@@ -54,6 +54,8 @@ void Buton::update(const sf::Vector2f mousePos) {
 }
 
 int simulare1();
+int simulareOras();
+int initEcranPrincipal();
 
 void Buton::clic(sf::Event event) {
     if (this->apasat == true) {
@@ -77,11 +79,11 @@ void Buton::clic(sf::Event event) {
             break;
         }
         case(2): {
-
+            simulareOras();
             break;
         }
         case(3): {
-
+            initEcranPrincipal();
             break;
         }
         case(4): {

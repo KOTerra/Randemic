@@ -1,6 +1,6 @@
 #pragma once
 
-	static const float FPS = 30;
+	static const float FPS = 60;
 	//simulari
 	extern int nrNpc;
 
