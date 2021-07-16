@@ -1,20 +1,31 @@
-﻿  HeaderVirus.cpp
-  SimulareScenariu1.cpp
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(79,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(79,80): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(80,67): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(80,88): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(84,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(151,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(235,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(260,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(322,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(351,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(376,27): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(373,7): warning C4102: 'window': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(379,11): warning C4102: 'background': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(388,10): warning C4102: 'font_text': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(414,12): warning C4102: 'adaugOameni': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(424,8): warning C4102: 'display': unreferenced label
-  Generating Code...
-  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe
+﻿  EcranAlegeri.cpp
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(56,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(76,38): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(110,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(110,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(111,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(111,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(112,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(112,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(113,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(113,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(114,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(114,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(103,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(104,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(105,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(106,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(107,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(110,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(111,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(112,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(113,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(114,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(73,7): warning C4102: 'window': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(79,11): warning C4102: 'background': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(87,10): warning C4102: 'font_text': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(91,8): warning C4102: 'butoane': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(96,11): warning C4102: 'textBoxuri': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(117,8): warning C4102: 'display': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(125,5): warning C4102: 'test': unreferenced label
+  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe

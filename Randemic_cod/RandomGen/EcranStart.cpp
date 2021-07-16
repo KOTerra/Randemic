@@ -22,28 +22,7 @@ int initEcranPrincipal();
 
 
 namespace ecranStart {
-	/*void logo() {
-		//functie de logo ca sa fie frumos
-		cout << R"(
- ____                             __
-/\  _`\                          /\ \                          __
-\ \ \L\ \       __       ___     \_\ \      __     ___ ___    /\_\     ___
- \ \ ,  /     /'__`\   /' _ `\   /'_` \   /'__`\ /' __` __`\  \/\ \   /'___\
-  \ \ \\ \   /\ \L\.\_ /\ \/\ \ /\ \L\ \ /\  __/ /\ \/\ \/\ \  \ \ \ /\ \__/
-   \ \_\ \_\ \ \__/.\_\\ \_\ \_\\ \___,_\\ \____\\ \_\ \_\ \_\  \ \_\\ \____\
-	\/_/\/ /  \/__/\/_/ \/_/\/_/ \/__,_ / \/____/ \/_/\/_/\/_/   \/_/ \/____/
-_____________________________________________________________________________
-Pentru a vedea detalii despre o persoana da CLICK pe aceasta.
-Pentru a opri simularea apasa ESC.
-Pentru a reseta simularea apasa R.
-
-
-Introdu in ordine infectabilitatea bolii(default 8), timpul de recuperare al bolii(in frameuri_default 1000)
-si mortalitatea(in procente_default 20):
-
-)";
-	}*/
-
+	
 	bool pauza;
 	void pause() { pauza = true; }
 	void resume() { pauza = false; }

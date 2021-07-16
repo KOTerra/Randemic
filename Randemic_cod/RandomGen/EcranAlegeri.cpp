@@ -20,27 +20,7 @@
 //.
 
 namespace ecranAleg {
-	/*void logo() {
-		//functie de logo ca sa fie frumos
-		cout << R"(
- ____                             __
-/\  _`\                          /\ \                          __
-\ \ \L\ \       __       ___     \_\ \      __     ___ ___    /\_\     ___
- \ \ ,  /     /'__`\   /' _ `\   /'_` \   /'__`\ /' __` __`\  \/\ \   /'___\
-  \ \ \\ \   /\ \L\.\_ /\ \/\ \ /\ \L\ \ /\  __/ /\ \/\ \/\ \  \ \ \ /\ \__/
-   \ \_\ \_\ \ \__/.\_\\ \_\ \_\\ \___,_\\ \____\\ \_\ \_\ \_\  \ \_\\ \____\
-	\/_/\/ /  \/__/\/_/ \/_/\/_/ \/__,_ / \/____/ \/_/\/_/\/_/   \/_/ \/____/
-_____________________________________________________________________________
-Pentru a vedea detalii despre o persoana da CLICK pe aceasta.
-Pentru a opri simularea apasa ESC.
-Pentru a reseta simularea apasa R.
-
-
-Introdu in ordine infectabilitatea bolii(default 8), timpul de recuperare al bolii(in frameuri_default 1000)
-si mortalitatea(in procente_default 20):
-
-)";
-	}*/
+	
 
 	bool pauza;
 	void pause() { pauza = true; }
@@ -114,17 +94,17 @@ butoane:
 	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 805, 200);
 
 textBoxuri:
-	Buton butonText1(-5, "Numar Oameni(default 100)",		"Sprites/textBox.png", 100, 480);
-	Buton butonText2(-5, "Infectabilitate %(default 8)",	"Sprites/textBox.png", 300, 480);
-	Buton butonText3(-5, "Mortalitate %(default 20)",		"Sprites/textBox.png", 500, 480);
-	Buton butonText4(-5, "Timp de recuperare(default 1000 frameuri)",	"Sprites/textBox.png", 100, 600);
-	Buton butonText5(-5, "Imunitate grup(doar pe scenariul 1,default 0%)", "Sprites/textBox.png", 300, 600);
+	Buton butonText1(-5, "Numar Oameni",		"Sprites/textBox.png", 100, 480);
+	Buton butonText2(-5, "Infectabilitate %",	"Sprites/textBox.png", 300, 480);
+	Buton butonText3(-5, "Mortalitate %",		"Sprites/textBox.png", 500, 480);
+	Buton butonText4(-5, "Timp de recuperare",	"Sprites/textBox.png", 100, 600);
+	Buton butonText5(-5, "Imunitate grup", "Sprites/textBox.png", 500, 600); //(doar pe scenariul 1,default 0%)
 
 	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
 	sf::Text textBox2;	textBox2.setPosition(320, 495);	textBox2.setColor(sf::Color::Black); textBox2.setFont(font);
 	sf::Text textBox3;	textBox3.setPosition(520, 495);	textBox3.setColor(sf::Color::Black); textBox3.setFont(font);
 	sf::Text textBox4;	textBox4.setPosition(120, 615);	textBox4.setColor(sf::Color::Black); textBox4.setFont(font);
-	sf::Text textBox5;	textBox5.setPosition(320, 615);	textBox5.setColor(sf::Color::Black); textBox5.setFont(font);
+	sf::Text textBox5;	textBox5.setPosition(520, 615);	textBox5.setColor(sf::Color::Black); textBox5.setFont(font);
 
 
 	butonText1.labelText.setCharacterSize(20);	butonText1.labelText.setFont(font);	butonText1.labelText.setColor(sf::Color::Black);	butonText1.labelText.setPosition(butonText1.pozx, butonText1.pozy - 25);
@@ -149,6 +129,7 @@ test:
 	ecranAleg::deltaTime();
 	while (window.isOpen())
 	{
+	
 
 		if (simOpen == true) {
 			window.close();
@@ -169,7 +150,6 @@ test:
 				{
 					ecranAleg::reset();
 					goto input;
-
 				}
 
 				break;
@@ -229,12 +209,13 @@ test:
 			}
 
 			butonStart.tipButon = localScenariuCount;
+			bool scenariu1este = false;
 
 			switch (localScenariuCount) {
 			case 1: {//niste convertiri super ciudatele ca nu mergea stoi()
+				scenariu1este = true;
 				std::string nN = butonText1.getText();
 				stringstream strnN(nN);
-				//nrNpc= std::stoi(nN);
 				strnN>>nrNpc;
 
 				std::string inf = butonText2.getText();
@@ -258,7 +239,9 @@ test:
 
 			case 2: {
 			//pt oras
+				scenariu1este = false;
 			}
+				  
 
 			}
 
@@ -274,6 +257,11 @@ test:
 			textBox2.setString(butonText2.getText());	window.draw(textBox2);
 			textBox3.setString(butonText3.getText());	window.draw(textBox3);
 			textBox4.setString(butonText4.getText());	window.draw(textBox4);
+
+			if (scenariu1este == true) {
+				butonText5.renderTextBox(window, event);	window.draw(butonText5.labelText);
+				textBox5.setString(butonText5.getText());	window.draw(textBox5);
+			}
 			//butoane
 
 			window.display();
