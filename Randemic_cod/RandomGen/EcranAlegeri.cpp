@@ -114,22 +114,25 @@ butoane:
 	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 805, 200);
 
 textBoxuri:
-	Buton butonText1(-5, "Numar Oameni",		"Sprites/textBox.png", 100, 480);
-	Buton butonText2(-5, "Infectabilitate %",	"Sprites/textBox.png", 300, 480);
-	Buton butonText3(-5, "Mortalitate %",		"Sprites/textBox.png", 500, 480);
-	Buton butonText4(-5, "Timp de recuperare",	"Sprites/textBox.png", 100, 600);
+	Buton butonText1(-5, "Numar Oameni(default 100)",		"Sprites/textBox.png", 100, 480);
+	Buton butonText2(-5, "Infectabilitate %(default 8)",	"Sprites/textBox.png", 300, 480);
+	Buton butonText3(-5, "Mortalitate %(default 20)",		"Sprites/textBox.png", 500, 480);
+	Buton butonText4(-5, "Timp de recuperare(default 1000 frameuri)",	"Sprites/textBox.png", 100, 600);
+	Buton butonText5(-5, "Imunitate grup(doar pe scenariul 1,default 0%)", "Sprites/textBox.png", 300, 600);
 
 	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
 	sf::Text textBox2;	textBox2.setPosition(320, 495);	textBox2.setColor(sf::Color::Black); textBox2.setFont(font);
 	sf::Text textBox3;	textBox3.setPosition(520, 495);	textBox3.setColor(sf::Color::Black); textBox3.setFont(font);
 	sf::Text textBox4;	textBox4.setPosition(120, 615);	textBox4.setColor(sf::Color::Black); textBox4.setFont(font);
+	sf::Text textBox5;	textBox5.setPosition(320, 615);	textBox5.setColor(sf::Color::Black); textBox5.setFont(font);
 
 
 	butonText1.labelText.setCharacterSize(20);	butonText1.labelText.setFont(font);	butonText1.labelText.setColor(sf::Color::Black);	butonText1.labelText.setPosition(butonText1.pozx, butonText1.pozy - 25);
 	butonText2.labelText.setCharacterSize(20);	butonText2.labelText.setFont(font);	butonText2.labelText.setColor(sf::Color::Black);	butonText2.labelText.setPosition(butonText2.pozx, butonText2.pozy - 25);
 	butonText3.labelText.setCharacterSize(20);	butonText3.labelText.setFont(font);	butonText3.labelText.setColor(sf::Color::Black);	butonText3.labelText.setPosition(butonText3.pozx, butonText3.pozy - 25);
 	butonText4.labelText.setCharacterSize(20);	butonText4.labelText.setFont(font);	butonText4.labelText.setColor(sf::Color::Black);	butonText4.labelText.setPosition(butonText4.pozx, butonText4.pozy - 25);
-	
+	butonText5.labelText.setCharacterSize(20);	butonText5.labelText.setFont(font);	butonText5.labelText.setColor(sf::Color::Black);	butonText5.labelText.setPosition(butonText5.pozx, butonText5.pozy - 25);
+
 
 display:
 	window.display();
@@ -183,20 +186,6 @@ test:
 				ecranAleg::resume();
 				break;
 			}
-
-									   /*default: {
-										   //ca sa poti sa dai click pe oamenii astia simulati
-										   if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-										   {
-											   window.close();
-											   simulare1();
-											   return 0;
-										   }
-										   break;
-
-
-									   }*/
-
 
 			}
 
@@ -259,6 +248,10 @@ test:
 				std::string rec = butonText4.getText();
 				stringstream strrec(rec);
 				strrec >>timpRecuperare;
+
+				std::string imn = butonText5.getText();
+				stringstream strimn(imn);
+				strimn >> imunitateGrup;
 				
 				break;
 			}
