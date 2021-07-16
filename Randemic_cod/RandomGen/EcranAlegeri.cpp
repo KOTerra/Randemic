@@ -207,14 +207,24 @@ test:
 			butonScenariuDreapta.clic(event);
 			butonScenariuDreapta.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
-			int localScenariuCount = butonScenariuDreapta.counter + butonScenariuStanga.counter;
+			int localScenariuCount=1;
 
-			if (localScenariuCount < 1) {
+			//if (localScenariuCount < 3 && localScenariuCount>0) {
+				localScenariuCount = butonScenariuDreapta.counter + butonScenariuStanga.counter;
+			//}
+			 if(localScenariuCount>2) {
+				localScenariuCount -= (localScenariuCount - 2);
+			 }
+			 else if (localScenariuCount < 1) {
+				 localScenariuCount = 1;
+			 }
+
+		/*	if (localScenariuCount < 1) {
 				localScenariuCount = 1;
 			}
 			if (localScenariuCount > 2) {
 				localScenariuCount = 2;
-			}
+			}*/
 
 			butonStart.tipButon = localScenariuCount;
 			bool scenariu1este = false;
