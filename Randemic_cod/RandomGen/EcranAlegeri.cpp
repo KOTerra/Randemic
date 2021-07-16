@@ -84,6 +84,14 @@ background:
 	window.clear();
 	window.draw(backSprite);
 
+previews:
+	sf::Texture preview1texture;	preview1texture.loadFromFile("Sprites/previewScenariu1.png");
+	sf::Texture preview2texture;	preview2texture.loadFromFile("Sprites/previewScenariu2.png");
+
+	sf::Sprite preview1;	preview1.setTexture(preview1texture);	preview1.setPosition(480, 160); 
+	sf::Sprite preview2;	preview2.setTexture(preview2texture);	preview2.setPosition(480, 160);
+
+
 font_text:
 	sf::Font font;
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
@@ -261,6 +269,11 @@ test:
 			if (scenariu1este == true) {
 				butonText5.renderTextBox(window, event);	window.draw(butonText5.labelText);
 				textBox5.setString(butonText5.getText());	window.draw(textBox5);
+			
+				window.draw(preview1);
+			}
+			else if (localScenariuCount == 2) {
+				window.draw(preview2);
 			}
 			//butoane
 
