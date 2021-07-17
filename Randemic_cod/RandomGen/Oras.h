@@ -59,7 +59,7 @@ public:
 	void setCota(std::deque<long long int> modif){
 		cotaZilnic = modif;
 	}
-	void setTexture();
+	void setTexture(long long populatieMaxima);
 	void sortarePopulatie(long long pop[101], int limita);
 
 
