@@ -239,7 +239,12 @@ test:
 
 				std::string rec = butonText4.getText();
 				stringstream strrec(rec);
-				strrec >> timpRecuperare; timpRecuperare *= 60;
+				strrec >> timpRecuperare; 
+				if (!rec._Equal(""))
+				{
+                   timpRecuperare *= 60;
+				}
+				
 
 				std::string imn = butonText5.getText();
 				stringstream strimn(imn);

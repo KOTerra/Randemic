@@ -153,7 +153,7 @@ void miscareNpc() {
 		std::map<std::string, OmClass>::iterator itr = nouInfect.at(i);
 		std::string key = itr->first;
 		OmClass om = itr->second;
-		om.shape.setFillColor(sf::Color(255, 125, 0));
+		om.shape.setFillColor(sf::Color(200, 125, 0));
 		om.stare = "infectat";
 		sim1::counterInfectati++;
 		om.timpInfectare = 0;
@@ -731,7 +731,7 @@ display:
 							OmClass om = lastClick->second;
 							oameniVindecati.erase(sim1::lastClick);
 
-							om.shape.setFillColor(sf::Color(255, 125, 0));
+							om.shape.setFillColor(sf::Color(200, 125, 0));
 							om.stare = "infectat";
 							counterInfectati++;;
 							counterVindecati--;
