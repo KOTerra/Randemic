@@ -77,7 +77,7 @@ void drawOras(sf::RenderWindow& window)
 		Oras om = itr->second;
 		window.draw(itr->second.shape);
 	}
-	
+
 }
 
 
@@ -85,10 +85,12 @@ int simulareOras() {
 
 input:
 	srand(time(0));
-	simOras::pauza = false;
+	simOras::pauza = true;
 
 
-
+	sigur.clear();
+	infect.clear();
+	vindec.clear();
 
 
 	int tipOrasClick = 0;//0 neinfectat 1 infectat  2 vindecat
@@ -145,20 +147,20 @@ adaugOmase:
 	for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 
 		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(255, 0, 0,110));
+		oras.shape.setFillColor(sf::Color(255, 0, 0, 110));
 		window.draw(oras.shape);
 	}
 
 	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 
 		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(0, 255, 0,110));
+		oras.shape.setFillColor(sf::Color(0, 255, 0, 110));
 		window.draw(oras.shape);
 	}
 	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 
 		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(0, 0, 255,110));
+		oras.shape.setFillColor(sf::Color(0, 0, 255, 110));
 		window.draw(oras.shape);
 	}
 
@@ -169,12 +171,13 @@ display:
 
 	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
 	simOras::deltaTime();
-	
-	Oras orastest("craiova",100,0,200,200);
+
+	Oras orastest("craiova", 100, 0, 200, 200);
 	orastest.shape.setSize(sf::Vector2f(60, 60));
-	orastest.shape.setFillColor(sf::Color(0,255,0,100));
+	orastest.shape.setFillColor(sf::Color(0, 255, 0, 100));
 	orastest.shape.setPosition(300, 300);
 	sigur.insert({ "1",orastest });
+	int frames = 0;
 	while (window.isOpen())
 	{
 
@@ -202,6 +205,11 @@ display:
 				{
 					window.close();
 					initEcranPrincipal();
+
+				}
+				else if (event.key.code == sf::Keyboard::Enter)
+				{
+					simOras::pauza = !simOras::pauza;
 
 				}
 
@@ -414,7 +422,11 @@ display:
 			//merg in fiecare oras si ii dau update
 			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 				Oras oras = itr->second;
-				oras.update();
+				if (frames == 0)
+				{
+					oras.update();
+				}
+
 				itr->second = oras;
 			}
 		}
@@ -425,11 +437,17 @@ display:
 
 			simOras::textNpc.setString((lastClick->second).getDenum() + "\n Populatie: " + to_string((lastClick->second).getPopulatie())
 				+ "\n Infectati: " + to_string((lastClick->second).getInfectati())
+				+ "\n Vindecati: " + to_string((lastClick->second).getVindecati())
 				+ "\n Decedati: " + to_string((lastClick->second).getDeced()));
 		}
 		window.draw(simOras::textNpc);
-		
+
 		window.display();
+		frames++;
+		if (frames >= FPS)
+		{
+			frames = 0;
+		}
 	}
 	return 0;
 }

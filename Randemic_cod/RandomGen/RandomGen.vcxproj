@@ -156,6 +156,7 @@
     <ClCompile Include="..\jsoncpp.cpp" />
     <ClCompile Include="Buton.cpp" />
     <ClCompile Include="EcranStart.cpp" />
+    <ClCompile Include="GenerareOras.cpp" />
     <ClCompile Include="HeaderSimulari.cpp" />
     <ClCompile Include="HeaderVirus.cpp" />
     <ClCompile Include="OmClass.cpp" />
@@ -191,6 +192,7 @@
     <None Include="Date\nume.json" />
     <None Include="Date\prenumeF.json" />
     <None Include="Date\prenumeM.json" />
+    <None Include="numeOrase.json" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\KarmaFuture.ttf" />
