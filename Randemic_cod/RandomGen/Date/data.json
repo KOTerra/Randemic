@@ -1,24 +1,204 @@
 {
 "listaNPC": [
 
-{"ID":"c0x000","inaltime":"183","prenume":"Iancu","sex":"M","sociabilitate":"10","varsta":"95"}
+{"ID":"c0x000","inaltime":"178","prenume":"Ilarie","sex":"M","sociabilitate":"7","varsta":"72"}
 ,
-{"ID":"c0x001","inaltime":"165","prenume":"Carol-Fausta","sex":"F","sociabilitate":"9","varsta":"23"}
+{"ID":"c0x001","inaltime":"181","prenume":"Emilian ","sex":"M","sociabilitate":"8","varsta":"19"}
 ,
-{"ID":"c0x002","inaltime":"165","prenume":"Monica","sex":"F","sociabilitate":"7","varsta":"18"}
+{"ID":"c0x002","inaltime":"173","prenume":"Beatrice-Semenica","sex":"F","sociabilitate":"8","varsta":"41"}
 ,
-{"ID":"c0x003","inaltime":"169","prenume":"Constantin","sex":"M","sociabilitate":"7","varsta":"34"}
+{"ID":"c0x003","inaltime":"90","prenume":"Ancuta -Mia","sex":"F","sociabilitate":"4","varsta":"2"}
 ,
-{"ID":"c0x004","inaltime":"176","prenume":"Viorel-Sandu-Banel ","sex":"M","sociabilitate":"4","varsta":"45"}
+{"ID":"c0x004","inaltime":"178","prenume":"Camden-Gabi ","sex":"M","sociabilitate":"4","varsta":"51"}
 ,
-{"ID":"c0x005","inaltime":"189","prenume":"Ethan","sex":"M","sociabilitate":"3","varsta":"22"}
+{"ID":"c0x005","inaltime":"189","prenume":"Achim-Elliott-Xander","sex":"M","sociabilitate":"10","varsta":"64"}
 ,
-{"ID":"c0x006","inaltime":"162","prenume":"Hazel-Dochia-Anamaria","sex":"F","sociabilitate":"2","varsta":"44"}
+{"ID":"c0x006","inaltime":"168","prenume":"Stelian ","sex":"M","sociabilitate":"3","varsta":"76"}
 ,
-{"ID":"c0x007","inaltime":"149","prenume":"Cristina-Mia -Filomela","sex":"F","sociabilitate":"9","varsta":"12"}
+{"ID":"c0x007","inaltime":"159","prenume":"Anuta","sex":"F","sociabilitate":"2","varsta":"93"}
 ,
-{"ID":"c0x008","inaltime":"169","prenume":"Kaylee","sex":"F","sociabilitate":"4","varsta":"82"}
+{"ID":"c0x008","inaltime":"182","prenume":"Angel ","sex":"M","sociabilitate":"10","varsta":"65"}
 ,
-{"ID":"c0x009","inaltime":"184","prenume":"Irinel-Jaxon","sex":"M","sociabilitate":"3","varsta":"38"}
+{"ID":"c0x009","inaltime":"165","prenume":"Salomea-Laura","sex":"F","sociabilitate":"8","varsta":"50"}
+,
+{"ID":"c0x010","inaltime":"50","prenume":"Iridenta","sex":"F","sociabilitate":"1","varsta":"0"}
+,
+{"ID":"c0x011","inaltime":"164","prenume":"Chloe-Andrea-Josie","sex":"F","sociabilitate":"1","varsta":"44"}
+,
+{"ID":"c0x012","inaltime":"170","prenume":"Eufrosina","sex":"F","sociabilitate":"2","varsta":"35"}
+,
+{"ID":"c0x013","inaltime":"162","prenume":"Paulina","sex":"F","sociabilitate":"6","varsta":"61"}
+,
+{"ID":"c0x014","inaltime":"182","prenume":"Alejandro","sex":"M","sociabilitate":"3","varsta":"81"}
+,
+{"ID":"c0x015","inaltime":"180","prenume":"Aiden","sex":"M","sociabilitate":"9","varsta":"38"}
+,
+{"ID":"c0x016","inaltime":"184","prenume":"King","sex":"M","sociabilitate":"9","varsta":"23"}
+,
+{"ID":"c0x017","inaltime":"178","prenume":"William","sex":"M","sociabilitate":"8","varsta":"50"}
+,
+{"ID":"c0x018","inaltime":"155","prenume":"Bianca","sex":"F","sociabilitate":"5","varsta":"49"}
+,
+{"ID":"c0x019","inaltime":"172","prenume":"Safina","sex":"F","sociabilitate":"8","varsta":"21"}
+,
+{"ID":"c0x020","inaltime":"183","prenume":"Benjamin","sex":"M","sociabilitate":"10","varsta":"76"}
+,
+{"ID":"c0x021","inaltime":"164","prenume":"Codrin","sex":"M","sociabilitate":"5","varsta":"16"}
+,
+{"ID":"c0x022","inaltime":"163","prenume":"Anca","sex":"F","sociabilitate":"6","varsta":"37"}
+,
+{"ID":"c0x023","inaltime":"98","prenume":"Theodore","sex":"M","sociabilitate":"2","varsta":"3"}
+,
+{"ID":"c0x024","inaltime":"156","prenume":"Rachel","sex":"F","sociabilitate":"7","varsta":"77"}
+,
+{"ID":"c0x025","inaltime":"178","prenume":"Silvian","sex":"M","sociabilitate":"6","varsta":"30"}
+,
+{"ID":"c0x026","inaltime":"156","prenume":"Henrieta-Amelia","sex":"F","sociabilitate":"4","varsta":"72"}
+,
+{"ID":"c0x027","inaltime":"185","prenume":"Bentley","sex":"M","sociabilitate":"4","varsta":"54"}
+,
+{"ID":"c0x028","inaltime":"171","prenume":"Catinca","sex":"F","sociabilitate":"8","varsta":"78"}
+,
+{"ID":"c0x029","inaltime":"172","prenume":"Brandusa-Cosmina","sex":"F","sociabilitate":"8","varsta":"98"}
+,
+{"ID":"c0x030","inaltime":"130","prenume":"Iustina","sex":"F","sociabilitate":"2","varsta":"9"}
+,
+{"ID":"c0x031","inaltime":"154","prenume":"Noemi-Mariuca-Geanina","sex":"F","sociabilitate":"8","varsta":"43"}
+,
+{"ID":"c0x032","inaltime":"160","prenume":"Sanda-Codruta-Sodica","sex":"F","sociabilitate":"2","varsta":"15"}
+,
+{"ID":"c0x033","inaltime":"164","prenume":"Aaliyah","sex":"F","sociabilitate":"3","varsta":"18"}
+,
+{"ID":"c0x034","inaltime":"156","prenume":"Iulia","sex":"F","sociabilitate":"3","varsta":"69"}
+,
+{"ID":"c0x035","inaltime":"163","prenume":"Artemisa","sex":"F","sociabilitate":"3","varsta":"62"}
+,
+{"ID":"c0x036","inaltime":"178","prenume":"Grigore","sex":"M","sociabilitate":"3","varsta":"31"}
+,
+{"ID":"c0x037","inaltime":"167","prenume":"Ica-Norica-Adnana","sex":"F","sociabilitate":"8","varsta":"88"}
+,
+{"ID":"c0x038","inaltime":"178","prenume":"Theodore-Robert","sex":"M","sociabilitate":"6","varsta":"59"}
+,
+{"ID":"c0x039","inaltime":"169","prenume":"Mona","sex":"F","sociabilitate":"4","varsta":"48"}
+,
+{"ID":"c0x040","inaltime":"172","prenume":"Iris","sex":"F","sociabilitate":"9","varsta":"58"}
+,
+{"ID":"c0x041","inaltime":"159","prenume":"Everleigh","sex":"F","sociabilitate":"3","varsta":"420"}
+,
+{"ID":"c0x042","inaltime":"156","prenume":"Marioara","sex":"F","sociabilitate":"3","varsta":"94"}
+,
+{"ID":"c0x043","inaltime":"187","prenume":"Ilie","sex":"M","sociabilitate":"8","varsta":"58"}
+,
+{"ID":"c0x044","inaltime":"137","prenume":"Lucas-Tudor","sex":"M","sociabilitate":"9","varsta":"10"}
+,
+{"ID":"c0x045","inaltime":"169","prenume":"Paula","sex":"F","sociabilitate":"9","varsta":"63"}
+,
+{"ID":"c0x046","inaltime":"188","prenume":"Mihail-Basarab -Octavian","sex":"M","sociabilitate":"8","varsta":"26"}
+,
+{"ID":"c0x047","inaltime":"168","prenume":"Izaura","sex":"F","sociabilitate":"5","varsta":"60"}
+,
+{"ID":"c0x048","inaltime":"180","prenume":"Manole","sex":"M","sociabilitate":"6","varsta":"420"}
+,
+{"ID":"c0x049","inaltime":"184","prenume":"Amza-Jonah","sex":"M","sociabilitate":"9","varsta":"50"}
+,
+{"ID":"c0x050","inaltime":"170","prenume":"Ruby","sex":"F","sociabilitate":"6","varsta":"34"}
+,
+{"ID":"c0x051","inaltime":"166","prenume":"Simona","sex":"F","sociabilitate":"9","varsta":"88"}
+,
+{"ID":"c0x052","inaltime":"156","prenume":"Sofia","sex":"F","sociabilitate":"8","varsta":"44"}
+,
+{"ID":"c0x053","inaltime":"171","prenume":"Dumitrana -Molly","sex":"F","sociabilitate":"2","varsta":"27"}
+,
+{"ID":"c0x054","inaltime":"164","prenume":"Anamaria-Zita-Natalia","sex":"F","sociabilitate":"9","varsta":"51"}
+,
+{"ID":"c0x055","inaltime":"178","prenume":"Georgel-King","sex":"M","sociabilitate":"1","varsta":"39"}
+,
+{"ID":"c0x056","inaltime":"172","prenume":"Mihaita","sex":"M","sociabilitate":"8","varsta":"30"}
+,
+{"ID":"c0x057","inaltime":"175","prenume":"Manole","sex":"M","sociabilitate":"7","varsta":"32"}
+,
+{"ID":"c0x058","inaltime":"146","prenume":"Angelica","sex":"F","sociabilitate":"6","varsta":"12"}
+,
+{"ID":"c0x059","inaltime":"169","prenume":"Harmony-Arina-Aglaia","sex":"F","sociabilitate":"6","varsta":"88"}
+,
+{"ID":"c0x060","inaltime":"158","prenume":"Camila","sex":"F","sociabilitate":"1","varsta":"45"}
+,
+{"ID":"c0x061","inaltime":"150","prenume":"Dalia-Eden","sex":"F","sociabilitate":"1","varsta":"30"}
+,
+{"ID":"c0x062","inaltime":"137","prenume":"Costin-Amedeu","sex":"M","sociabilitate":"6","varsta":"10"}
+,
+{"ID":"c0x063","inaltime":"168","prenume":"Jaxson","sex":"M","sociabilitate":"6","varsta":"76"}
+,
+{"ID":"c0x064","inaltime":"114","prenume":"Antonia","sex":"F","sociabilitate":"2","varsta":"5"}
+,
+{"ID":"c0x065","inaltime":"154","prenume":"Catrinel-Aurora","sex":"F","sociabilitate":"2","varsta":"34"}
+,
+{"ID":"c0x066","inaltime":"168","prenume":"Silvana","sex":"F","sociabilitate":"4","varsta":"77"}
+,
+{"ID":"c0x067","inaltime":"182","prenume":"Eftimie-Emilian ","sex":"M","sociabilitate":"5","varsta":"31"}
+,
+{"ID":"c0x068","inaltime":"156","prenume":"Dumbravita ","sex":"F","sociabilitate":"6","varsta":"21"}
+,
+{"ID":"c0x069","inaltime":"166","prenume":"Silvia","sex":"F","sociabilitate":"6","varsta":"77"}
+,
+{"ID":"c0x070","inaltime":"163","prenume":"Svetlana-Angela-Elisabeta ","sex":"F","sociabilitate":"8","varsta":"73"}
+,
+{"ID":"c0x071","inaltime":"166","prenume":"Gratiana-Autumn","sex":"F","sociabilitate":"9","varsta":"71"}
+,
+{"ID":"c0x072","inaltime":"157","prenume":"Geta","sex":"F","sociabilitate":"3","varsta":"83"}
+,
+{"ID":"c0x073","inaltime":"166","prenume":"Andreea ","sex":"F","sociabilitate":"2","varsta":"19"}
+,
+{"ID":"c0x074","inaltime":"166","prenume":"Mirela -Jasmine-Teea","sex":"F","sociabilitate":"9","varsta":"53"}
+,
+{"ID":"c0x075","inaltime":"175","prenume":"Mateo","sex":"M","sociabilitate":"8","varsta":"82"}
+,
+{"ID":"c0x076","inaltime":"162","prenume":"Abigail","sex":"F","sociabilitate":"3","varsta":"34"}
+,
+{"ID":"c0x077","inaltime":"177","prenume":"Gelu ","sex":"M","sociabilitate":"4","varsta":"27"}
+,
+{"ID":"c0x078","inaltime":"167","prenume":"Malvina-Robertina-Sadie","sex":"F","sociabilitate":"3","varsta":"33"}
+,
+{"ID":"c0x079","inaltime":"98","prenume":"Mirabela ","sex":"F","sociabilitate":"5","varsta":"4"}
+,
+{"ID":"c0x080","inaltime":"157","prenume":"Ana-Camelia","sex":"F","sociabilitate":"3","varsta":"48"}
+,
+{"ID":"c0x081","inaltime":"185","prenume":"Hunter-Aurelian","sex":"M","sociabilitate":"8","varsta":"30"}
+,
+{"ID":"c0x082","inaltime":"159","prenume":"Lenuta-Beatrice","sex":"F","sociabilitate":"8","varsta":"27"}
+,
+{"ID":"c0x083","inaltime":"173","prenume":"Ionica","sex":"M","sociabilitate":"9","varsta":"63"}
+,
+{"ID":"c0x084","inaltime":"164","prenume":"Ina-Bailey","sex":"F","sociabilitate":"1","varsta":"28"}
+,
+{"ID":"c0x085","inaltime":"169","prenume":"Susana","sex":"F","sociabilitate":"7","varsta":"27"}
+,
+{"ID":"c0x086","inaltime":"166","prenume":"Trinity-Elodia-Casiana","sex":"F","sociabilitate":"6","varsta":"95"}
+,
+{"ID":"c0x087","inaltime":"190","prenume":"Vincent","sex":"M","sociabilitate":"8","varsta":"48"}
+,
+{"ID":"c0x088","inaltime":"175","prenume":"Bartolomeu -Eli-Remus","sex":"M","sociabilitate":"7","varsta":"53"}
+,
+{"ID":"c0x089","inaltime":"157","prenume":"Ion","sex":"M","sociabilitate":"7","varsta":"13"}
+,
+{"ID":"c0x090","inaltime":"170","prenume":"Owen","sex":"M","sociabilitate":"5","varsta":"58"}
+,
+{"ID":"c0x091","inaltime":"132","prenume":"Safta","sex":"F","sociabilitate":"2","varsta":"7"}
+,
+{"ID":"c0x092","inaltime":"168","prenume":"Despina","sex":"F","sociabilitate":"5","varsta":"26"}
+,
+{"ID":"c0x093","inaltime":"142","prenume":"Tom Mac Bill Bob-Rares-Edward","sex":"M","sociabilitate":"3","varsta":"9"}
+,
+{"ID":"c0x094","inaltime":"177","prenume":"Zayden","sex":"M","sociabilitate":"8","varsta":"25"}
+,
+{"ID":"c0x095","inaltime":"175","prenume":"Tristan","sex":"M","sociabilitate":"3","varsta":"80"}
+,
+{"ID":"c0x096","inaltime":"184","prenume":"Giovanni","sex":"M","sociabilitate":"3","varsta":"46"}
+,
+{"ID":"c0x097","inaltime":"165","prenume":"Clementina-Matilda","sex":"F","sociabilitate":"6","varsta":"33"}
+,
+{"ID":"c0x098","inaltime":"186","prenume":"Achim","sex":"M","sociabilitate":"8","varsta":"62"}
+,
+{"ID":"c0x099","inaltime":"185","prenume":"Anton -Hunter-Simi ","sex":"M","sociabilitate":"3","varsta":"22"}
 ]
 }

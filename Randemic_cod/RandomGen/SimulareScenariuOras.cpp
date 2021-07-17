@@ -14,6 +14,7 @@
 #include "Oras.h"
 #include "HeaderSimulari.h"
 #include "CalatorOras.h"
+#include <msxml.h>
 
 
 namespace simOras {
@@ -62,6 +63,7 @@ std::map<string, CalatorOras>calatori;
 
 int initEcranPrincipal();
 std::map<std::string, Oras> generareOrase(int nrO, int nrN);
+const float PI = 3.14159265359f;
 
 #pragma once
 
@@ -82,15 +84,20 @@ void drawOras(sf::RenderWindow& window)
 
 }
 
+float computeAngle(float ax, float ay, float bx, float by) {
+	return atan2((by - ay), (bx - ax));
+};
+
 void trimitCalator(Oras oras)
 {
 	//aici calculez distanta dintre orase
 	std::map<string, Oras>::iterator item = sigur.begin();
-	std::advance(item, rand() / sigur.size());
+	int val = rand() % sigur.size();
+	std::advance(item, val);
 
 	//in item este orasul pe care vrem sa il cotropim
 	std::map<string, CalatorOras>::iterator itr = calatori.find(item->second.getDenum());
-	if (itr != calatori.end())
+	if (calatori.find(item->second.getDenum()) != calatori.end())
 	{
 		//nu mai este niciun calator spre orasul asta
 
@@ -99,7 +106,7 @@ void trimitCalator(Oras oras)
 		calatori.insert({ item->second.getDenum() ,calator });
 		return;
 	}
-	trimitCalator(oras);
+	//trimitCalator(oras);
 	return;
 }
 
@@ -171,16 +178,16 @@ input:
 	infect.clear();
 	vindec.clear();
 
-	Oras orastest("craiova", 100, 200, 200);
+	Oras orastest("craiova", 100, 300, 300);
 	orastest.shape.setSize(sf::Vector2f(60, 60));
 	orastest.shape.setFillColor(sf::Color(0, 255, 0, 100));
-	orastest.shape.setPosition(300, 300);
+	//orastest.shape.setPosition(300, 300);
 	sigur.insert({ "1",orastest });
 
-	Oras orastest2("galati", 100, 200, 200);
+	Oras orastest2("galati", 100, 600.0, 300.0);
 	orastest2.shape.setSize(sf::Vector2f(60, 60));
 	orastest2.shape.setFillColor(sf::Color(0, 255, 0, 100));
-	orastest2.shape.setPosition(600, 300);
+	//orastest2.shape.setPosition(600, 300);
 	sigur.insert({ "2",orastest2 });
 	//sigur = generareOrase(nrNpc, nrOrase);
 
@@ -515,9 +522,44 @@ display:
 				if (frames == 0)
 				{
 					oras.update();
+					//trimitCalator(oras);
+					
+					
+					std::map<string, Oras>::iterator item = sigur.begin();
+					sf::Vector2f origin = sf::Vector2f(oras.pX, oras.pY);
+
+					//Calculate the direction vector
+					sf::Vector2f dirVec = sf::Vector2f(item->second.pX - origin.x, item->second.pY - origin.y);
+
+					//Calculate the length^2
+					float magSquare = std::sqrt((dirVec.x * dirVec.x) + (dirVec.y * dirVec.y));
+
+					//Change the mag to 1 (you dont need the y for getting the angle
+					dirVec.x = (dirVec.x) / magSquare;
+
+					//Get the angle and change it to deg (SFML need deg)
+					float rotAngle = std::acos(dirVec.x) * (180 / PI);
+
+					//float angle = computeAngle(oras.pX, oras.pY, item->second.pX, item->second.pY);
+
+                    sf::Vector2f dir;
+					dir.y = sin( rotAngle) * 100;
+					dir.x = cos(rotAngle) * 100;
+					/*//normalize(dir);*/
+					
+					CalatorOras calator = CalatorOras(oras.pX, oras.pY, dir, item);
+					calatori.insert({ item->second.getDenum() ,calator });
+					if (calatori.find(item->second.getDenum()) != calatori.end())
+					{
+						//nu mai este niciun calator spre orasul asta
+					   
+						//return;
+					}
+					drawCalatori(window);
+
 					if (itr->second.trimit > 0)
 					{
-						trimitCalator(oras);
+						
 						itr->second.trimit = 0;
 					}
 
