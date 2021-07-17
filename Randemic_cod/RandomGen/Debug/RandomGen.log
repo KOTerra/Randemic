@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  SimulareScenariuOras.cpp
 D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(68,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(83,36): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
@@ -7,3 +8,7 @@ D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Simular
 D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(121,12): warning C4102: 'adaugOameni': unreferenced label
 D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(145,8): warning C4102: 'display': unreferenced label
   RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe
+=======
+﻿  HeaderVirus.cpp
+  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe
+>>>>>>> a3cf68843291e2fdd8ef395668083c3644dddd06

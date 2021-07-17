@@ -85,7 +85,7 @@ bool isHitDetection(OmClass sanatos)
 
 		int probInfectie = rand() % 100 + 1;
 
-		if (distance < raza1 + raza2 && probInfectie <= infectabilitate) {
+		if (distance < raza1 + raza2 && probInfectie <= infectabilitate && col->second.timpInfectare>=timpIncubare) {
 			return true;
 
 		}
@@ -153,7 +153,7 @@ void miscareNpc() {
 		std::map<std::string, OmClass>::iterator itr = nouInfect.at(i);
 		std::string key = itr->first;
 		OmClass om = itr->second;
-		om.shape.setFillColor(sf::Color(255, 0, 0));
+		om.shape.setFillColor(sf::Color(122, 122, 0));
 		om.stare = "infectat";
 		sim1::counterInfectati++;
 		om.timpInfectare = 0;
@@ -210,7 +210,7 @@ void updateInfectati()
 		//desenez npc-urile pe ecran si calculam valorile
 
 		itr->second.timpInfectare++;
-		if (itr->second.timpInfectare >= timpRecuperare) {
+		if (itr->second.timpInfectare >= timpRecuperare + timpIncubare) {
 			int procSupravietuire = rand() % 100;
 			if (procSupravietuire <= mortalitate)
 			{
@@ -228,6 +228,11 @@ void updateInfectati()
 				"\nInfectati: " + to_string(sim1::counterInfectati) +
 				"\nVindecati: " + to_string(sim1::counterVindecati) +
 				"\nDecedati: " + to_string(sim1::counterMorti));
+		}
+		else if (itr->second.timpInfectare >= timpIncubare && itr->second.shape.getFillColor()!=sf::Color(255,0,0))
+		{
+			//ii schimb culoarea
+			itr->second.shape.setFillColor(sf::Color(255, 0, 0));
 		}
 
 	}
@@ -535,7 +540,7 @@ display:
 							OmClass om = lastClick->second;
 							oameniSanatosi.erase(sim1::lastClick);
 
-							om.shape.setFillColor(sf::Color(255, 0, 0));
+							om.shape.setFillColor(sf::Color(122, 122, 0));
 							om.stare = "infectat";
 							counterInfectati++;
 							//om.shape.setRotation(rand() % 90);
@@ -726,7 +731,7 @@ display:
 							OmClass om = lastClick->second;
 							oameniVindecati.erase(sim1::lastClick);
 
-							om.shape.setFillColor(sf::Color(255, 0, 0));
+							om.shape.setFillColor(sf::Color(122, 122, 0));
 							om.stare = "infectat";
 							counterInfectati++;;
 							counterVindecati--;
