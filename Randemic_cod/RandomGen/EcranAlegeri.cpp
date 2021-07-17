@@ -107,14 +107,16 @@ textBoxuri:
 	Buton butonText1(-5, "Numar Oameni", "Sprites/textBox.png", 100, 480);
 	Buton butonText2(-5, "Infectabilitate %", "Sprites/textBox.png", 300, 480);
 	Buton butonText3(-5, "Mortalitate %", "Sprites/textBox.png", 500, 480);
-	Buton butonText4(-5, "Timp de recuperare", "Sprites/textBox.png", 100, 600);
-	Buton butonText5(-5, "Imunitate grup", "Sprites/textBox.png", 500, 600); //(doar pe scenariul 1,default 0%)
+	Buton butonText4(-5, "Timp recuperare", "Sprites/textBox.png", 100, 600);
+	Buton butonText5(-5, "Imunitate grup %", "Sprites/textBox.png", 500, 600); //(doar pe scenariul 1,default 0%)
+	Buton butonText6(-5, "Timp incubare", "Sprites/textBox.png", 300, 600);
 
 	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
 	sf::Text textBox2;	textBox2.setPosition(320, 495);	textBox2.setColor(sf::Color::Black); textBox2.setFont(font);
 	sf::Text textBox3;	textBox3.setPosition(520, 495);	textBox3.setColor(sf::Color::Black); textBox3.setFont(font);
 	sf::Text textBox4;	textBox4.setPosition(120, 615);	textBox4.setColor(sf::Color::Black); textBox4.setFont(font);
 	sf::Text textBox5;	textBox5.setPosition(520, 615);	textBox5.setColor(sf::Color::Black); textBox5.setFont(font);
+	sf::Text textBox6;	textBox6.setPosition(320, 615);	textBox6.setColor(sf::Color::Black); textBox6.setFont(font);
 
 
 	butonText1.labelText.setCharacterSize(20);	butonText1.labelText.setFont(font);	butonText1.labelText.setColor(sf::Color::Black);	butonText1.labelText.setPosition(butonText1.pozx, butonText1.pozy - 25);
@@ -122,6 +124,7 @@ textBoxuri:
 	butonText3.labelText.setCharacterSize(20);	butonText3.labelText.setFont(font);	butonText3.labelText.setColor(sf::Color::Black);	butonText3.labelText.setPosition(butonText3.pozx, butonText3.pozy - 25);
 	butonText4.labelText.setCharacterSize(20);	butonText4.labelText.setFont(font);	butonText4.labelText.setColor(sf::Color::Black);	butonText4.labelText.setPosition(butonText4.pozx, butonText4.pozy - 25);
 	butonText5.labelText.setCharacterSize(20);	butonText5.labelText.setFont(font);	butonText5.labelText.setColor(sf::Color::Black);	butonText5.labelText.setPosition(butonText5.pozx, butonText5.pozy - 25);
+	butonText6.labelText.setCharacterSize(20);	butonText6.labelText.setFont(font);	butonText6.labelText.setColor(sf::Color::Black);	butonText6.labelText.setPosition(butonText6.pozx, butonText6.pozy - 25);
 
 
 display:
@@ -239,16 +242,25 @@ test:
 
 				std::string rec = butonText4.getText();
 				stringstream strrec(rec);
-				strrec >> timpRecuperare; 
+				strrec >> timpRecuperare;
 				if (!rec._Equal(""))
 				{
-                   timpRecuperare *= 60;
+					timpRecuperare *= 60;
 				}
-				
+
+				std::string inc = butonText6.getText();
+				stringstream strinc(inc);
+				strinc >> timpIncubare;
+				if (!inc._Equal(""))
+				{
+					timpIncubare *= 60;
+				}
 
 				std::string imn = butonText5.getText();
 				stringstream strimn(imn);
 				strimn >> imunitateGrup;
+
+
 
 				break;
 			}
@@ -270,11 +282,13 @@ test:
 			butonText2.renderTextBox(window, event);	window.draw(butonText2.labelText);
 			butonText3.renderTextBox(window, event);	window.draw(butonText3.labelText);
 			butonText4.renderTextBox(window, event);	window.draw(butonText4.labelText);
+			butonText6.renderTextBox(window, event);	window.draw(butonText6.labelText);
 
 			textBox1.setString(butonText1.getText());	window.draw(textBox1);
 			textBox2.setString(butonText2.getText());	window.draw(textBox2);
 			textBox3.setString(butonText3.getText());	window.draw(textBox3);
 			textBox4.setString(butonText4.getText());	window.draw(textBox4);
+			textBox6.setString(butonText6.getText());	window.draw(textBox6);
 
 			if (scenariu1este == true) {
 				butonText5.renderTextBox(window, event);	window.draw(butonText5.labelText);
