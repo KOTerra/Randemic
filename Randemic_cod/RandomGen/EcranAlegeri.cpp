@@ -110,7 +110,7 @@ textBoxuri:
 	Buton butonText4(-5, "Timp recuperare", "Sprites/textBox.png", 500, 600);
 	Buton butonText5(-5, "Imunitate grup %", "Sprites/textBox.png", 700, 480); //(doar pe scenariul 1,default 0%)
 	Buton butonText6(-5, "Timp incubare", "Sprites/textBox.png", 300, 600);
-	Buton butonText7(-5, "Numar orase", "Sprites/textBox.png", 100, 600);
+	Buton butonText7(-5, "Numar orase", "Sprites/textBox.png", 300, 600);
 
 	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
 	sf::Text textBox2;	textBox2.setPosition(320, 495);	textBox2.setColor(sf::Color::Black); textBox2.setFont(font);
@@ -325,18 +325,18 @@ test:
 			butonText3.renderTextBox(window, event);	window.draw(butonText3.labelText);
 			butonText4.renderTextBox(window, event);	window.draw(butonText4.labelText);
 			butonText5.renderTextBox(window, event);	window.draw(butonText5.labelText);
-			butonText6.renderTextBox(window, event);	window.draw(butonText6.labelText);
+			
 
 			textBox1.setString(butonText1.getText());	window.draw(textBox1);
 			textBox2.setString(butonText2.getText());	window.draw(textBox2);
 			textBox3.setString(butonText3.getText());	window.draw(textBox3);
 			textBox4.setString(butonText4.getText());	window.draw(textBox4);
 			textBox5.setString(butonText5.getText());	window.draw(textBox5);
-			textBox6.setString(butonText6.getText());	window.draw(textBox6);
+			
 
 			if (scenariu1este == true) {
-				
-			
+				butonText6.renderTextBox(window, event);	window.draw(butonText6.labelText);
+				textBox6.setString(butonText6.getText());	window.draw(textBox6);
 				window.draw(preview1);
 			}
 			else if (scenariu2este==true) {

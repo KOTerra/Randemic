@@ -1,15 +1,24 @@
-﻿  SimulareScenariuOras.cpp
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(158,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(181,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(181,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(181,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(181,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(186,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(229,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(256,36): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(253,7): warning C4102: 'window': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(259,11): warning C4102: 'background': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(268,10): warning C4102: 'font_text': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(294,11): warning C4102: 'adaugOmase': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(321,8): warning C4102: 'display': unreferenced label
-  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe
+﻿  GenerareOras.cpp
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(20,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(20,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(22,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(125,64): warning C4244: 'argument': conversion from '_Ty2' to 'T', possible loss of data
+          with
+          [
+              _Ty2=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(125,54): warning C4244: 'argument': conversion from '_Ty1' to 'T', possible loss of data
+          with
+          [
+              _Ty1=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(82): warning C4715: 'pozitie': not all control paths return a value
+  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe

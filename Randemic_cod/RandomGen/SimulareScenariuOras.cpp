@@ -73,14 +73,17 @@ void drawOras(sf::RenderWindow& window)
 	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 		Oras om = itr->second;
 		window.draw(itr->second.shape);
+		window.draw(itr->second.orasSprite);
 	}
 	for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 		Oras om = itr->second;
 		window.draw(itr->second.shape);
+		window.draw(itr->second.orasSprite);
 	}
 	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 		Oras om = itr->second;
 		window.draw(itr->second.shape);
+		window.draw(itr->second.orasSprite);
 	}
 
 }
@@ -234,7 +237,7 @@ input:
 	infect.clear();
 	vindec.clear();
 
-	Oras orastest("craiova", 100, 300, 300);
+	/*Oras orastest("craiova", 100, 300, 300);
 	orastest.shape.setSize(sf::Vector2f(60, 60));
 	orastest.shape.setFillColor(sf::Color(0, 255, 0, 100));
 	//orastest.shape.setPosition(300, 300);
@@ -244,8 +247,8 @@ input:
 	orastest2.shape.setSize(sf::Vector2f(60, 60));
 	orastest2.shape.setFillColor(sf::Color(0, 255, 0, 100));
 	//orastest2.shape.setPosition(600, 300);
-	sigur.insert({ "2",orastest2 });
-	//sigur = generareOrase(nrNpc, nrOrase);
+	sigur.insert({ "2",orastest2 });*/
+	sigur = generareOrase(nrNpc, nrOrase);
 
 	
 

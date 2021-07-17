@@ -42,6 +42,45 @@ long long getPopulatia(int nrO, int nrN) {
 	return populatie;
 }
 
+
+/*
+				x,y mapa :941x684
+
+				dimensiune cel mai mare oras: 170x110
+
+				dimensiune casuta in matrice: 170x170
+
+				matrice: 5x4
+
+*/
+
+int mat[6][5];
+void initMatrice() {
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 4; j++) {
+			mat[i][j] = 0;
+		}
+	}
+}
+int matL=170;
+
+
+std::pair<int, int> pozitie() {
+	int pixelX, pixelY;
+	initMatrice();
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (mat[i][j] != 1) {
+				pixelX = matL * i;
+				pixelY = matL * j;
+				mat[i][j] = 1;
+
+				return std::pair<int, int>(pixelX, pixelY);
+			}
+		}
+	}
+}
+
 long long populatiile[101];
 
 std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
@@ -73,16 +112,18 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 		elemente.insert(std::pair<std::string, Oras>(id, oras));
 		if (i == nrO) {
 			oras.sortarePopulatie(populatiile, nrO);
-			populatieMaxima = populatiile[nrO];
+			populatieMaxima = populatiile[nrO-1];
 		}
 
 	}
 
 	for (std::map<std::string, Oras>::iterator itr = elemente.begin(); itr != elemente.end(); itr++) {
-		Oras oras = itr->second;
-		oras.setTexture(populatieMaxima);
-		oras.shape.setSize(sf::Vector2f(oras.orasSprite.getTexture()->getSize()));
-		oras.shape.setPosition(sf::Vector2f(oras.orasSprite.getPosition()));
+		
+		itr->second.setTexture(populatieMaxima);
+		itr->second.shape.setSize(sf::Vector2f(itr->second.orasSprite.getTexture()->getSize()));
+		std::pair<int, int> per=pozitie();
+		itr->second.orasSprite.setPosition(sf::Vector2f(per.first,per.second));
+		itr->second.shape.setPosition(sf::Vector2f(itr->second.orasSprite.getPosition()));
 
 	}
 
