@@ -222,11 +222,9 @@ void drawCalatori(sf::RenderWindow& window)
 	}
 }
 
-FILE* fin, * fout;
 
 int simulareOras() {
-	fin = fopen("test.in", "r");
-	fout = fopen("test.out", "w");
+
 input:
 	srand(time(0));
 	simOras::pauza = true;
