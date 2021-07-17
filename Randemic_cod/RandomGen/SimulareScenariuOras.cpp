@@ -58,9 +58,10 @@ std::map<string, Oras> infect;
 std::map<string, Oras> sigur;
 std::map<string, Oras> vindec;
 
+std::map<string, CalatorOras>calatori;
 
 int initEcranPrincipal();
-
+std::map<std::string, Oras> generareOrase(int nrO, int nrN);
 
 #pragma once
 
@@ -84,12 +85,71 @@ void drawOras(sf::RenderWindow& window)
 void trimitCalator(Oras oras)
 {
 	//aici calculez distanta dintre orase
-	std::map<string,Oras>::iterator item = sigur.begin();
-	std::advance(item, rand()/ sigur.size());
+	std::map<string, Oras>::iterator item = sigur.begin();
+	std::advance(item, rand() / sigur.size());
 
 	//in item este orasul pe care vrem sa il cotropim
-	
-	//CalatorOras calator=CalatorOras(oras.pX,oras.pY)
+	std::map<string, CalatorOras>::iterator itr = calatori.find(item->second.getDenum());
+	if (itr != calatori.end())
+	{
+		//nu mai este niciun calator spre orasul asta
+
+		sf::Vector2f dir = sf::Vector2f(item->second.pX, item->second.pY);
+		CalatorOras calator = CalatorOras(oras.pX, oras.pY, dir, item);
+		calatori.insert({ item->second.getDenum() ,calator });
+		return;
+	}
+	trimitCalator(oras);
+	return;
+}
+
+void miscareCalatori()
+{
+	/*for (std::map<string, CalatorOras>::iterator itr = calatori.begin(); itr != calatori.end(); itr++) {
+		itr->second.move(simOras::dt);
+ 
+		int X1, int Y1, int X2, int Y2;
+		sf::Transform matrix =itr->second.tinta->second.shape.getTransform();
+		for (int i = 0; i < itr->second.tinta->second.shape.getPointCount(); ++i) {
+			const auto pointInModelSpace = matrix.transformPoint(itr->second.tinta->second.shape.getPoint(i));
+			switch (i) {
+			case 0: {
+				X1 = pointInModelSpace.x;
+				break;
+			}
+			case 1: {
+				Y1 = pointInModelSpace.y;
+				break;
+
+			}
+			case 2: {
+				X2 = pointInModelSpace.x;
+				break;
+			}
+			case 3: {
+				Y2 = pointInModelSpace.y;
+				break;
+
+			}
+			}
+		}
+		if (itr->second.isTouchingOras(itr->second.razaShape, X1, Y1, X2, Y2))
+		{
+			std::string key = itr->second.tinta->first;
+			Oras oras = itr->second.tinta->second;
+			sigur.erase(key);
+
+			oras.shape.setFillColor(sf::Color(255, 122, 0));
+			oras.setInfectati(oras.getInfectati() + 1);
+
+			std::deque<long long> nouaCota;
+			nouaCota.push_back(1);
+			oras.setCota(nouaCota);
+
+			infect.insert({ key,oras });
+
+		}
+	}*/
 }
 
 int simulareOras() {
@@ -103,6 +163,12 @@ input:
 	infect.clear();
 	vindec.clear();
 
+	Oras orastest("craiova", 100, 200, 200);
+	orastest.shape.setSize(sf::Vector2f(60, 60));
+	orastest.shape.setFillColor(sf::Color(0, 255, 0, 100));
+	orastest.shape.setPosition(300, 300);
+	sigur.insert({ "1",orastest });
+	//sigur = generareOrase(nrNpc, nrOrase);
 
 	int tipOrasClick = 0;//0 neinfectat 1 infectat  2 vindecat
 	bool amClick = false;
@@ -183,11 +249,7 @@ display:
 	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
 	simOras::deltaTime();
 
-	Oras orastest("craiova", 100, 0, 200, 200);
-	orastest.shape.setSize(sf::Vector2f(60, 60));
-	orastest.shape.setFillColor(sf::Color(0, 255, 0, 100));
-	orastest.shape.setPosition(300, 300);
-	sigur.insert({ "1",orastest });
+	
 	int frames = 0;
 	while (window.isOpen())
 	{

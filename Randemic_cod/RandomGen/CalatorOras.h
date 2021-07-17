@@ -7,6 +7,7 @@
 class CalatorOras
 {
 public:
+	const int razaShape = 5;
 	float pX, pY;//pozitia omului
 	mutable sf::CircleShape shape;//reprezentarea vizuala a omului
 	//float speedY, speedX;//viteza individului pe cele 2 axe
@@ -19,7 +20,5 @@ public:
 
 	bool isTouchingOras(int R, int X1, int Y1, int X2, int Y2);
 	void move(float dt);
-private:
-	const int razaShape = 5;
 };
 

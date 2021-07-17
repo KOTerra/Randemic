@@ -11,18 +11,19 @@ private:
 	long long int infectati;
 	long long int decedati;
 	long long int vindecati;
-    float pX, pY;//pozitia orasului pe harta
+   
 	std::deque<long long int> cotaZilnic;
 	std::string denumire;
 	
 public:
+	float pX, pY;//pozitia orasului pe harta
 	int trimit;//nr de fps-uri in care se trimit calatori
 	sf::Sprite orasSprite;//orasul
 	mutable sf::RectangleShape shape;
 
 	static long long populatii[101];
 
-	Oras(std::string denumire,long long int populatie, long long int infectati,float pozX,float pozY);
+	Oras(std::string denumire,long long int populatie,float pozX,float pozY);
 	~Oras();
 
 	
@@ -67,7 +68,6 @@ public:
 	
 	void setTexture(long long populatieMaxima);
 	void sortarePopulatie(long long pop[101], int limita);
-    void trimitCalator();
 
 	void update();
 	void logicOras();

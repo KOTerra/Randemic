@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="..\jsoncpp.cpp" />
     <ClCompile Include="Buton.cpp" />
+    <ClCompile Include="CalatorOras.cpp" />
     <ClCompile Include="EcranStart.cpp" />
     <ClCompile Include="GenerareOras.cpp" />
     <ClCompile Include="HeaderSimulari.cpp" />
@@ -162,7 +163,7 @@
     <ClCompile Include="OmClass.cpp" />
     <ClCompile Include="Oras.cpp" />
     <ClCompile Include="SimulareScenariu1.cpp" />
-    <ClCompile Include="Generare.cpp" />
+    <ClCompile Include="GenerareOameni.cpp" />
     <ClCompile Include="SimulareScenariuOras.cpp" />
     <ClCompile Include="EcranAlegeri.cpp" />
     <ClCompile Include="TextBox.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="..\SFML-2.5.1\include\SFML\System.hpp" />
     <ClInclude Include="..\SFML-2.5.1\include\SFML\Window.hpp" />
     <ClInclude Include="Buton.h" />
+    <ClInclude Include="CalatorOras.h" />
     <ClInclude Include="HeaderSimulari.h" />
     <ClInclude Include="HeaderVirus.h" />
     <ClInclude Include="HeaderNpc.h" />

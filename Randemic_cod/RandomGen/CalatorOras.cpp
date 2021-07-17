@@ -14,7 +14,9 @@ CalatorOras::CalatorOras(float pX,float pY, sf::Vector2f directie, std::map<std:
 	this->shape.setOutlineThickness(1);
 	this->shape.setPosition(pX,pY);
 }
+CalatorOras::~CalatorOras() {
 
+}
 bool CalatorOras::isTouchingOras(int R, int X1, int Y1, int X2, int Y2) {
 
 	int Xc = this->pX;

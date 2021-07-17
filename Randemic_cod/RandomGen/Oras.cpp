@@ -2,10 +2,10 @@
 #include "HeaderVirus.h"
 
 
-Oras::Oras(std::string denumire, long long int populatie, long long int infectati, float pozX, float pozY) {
+Oras::Oras(std::string denumire, long long int populatie, float pozX, float pozY) {
     this->denumire = denumire;
     this->populatie = populatie;
-    this->infectati = infectati;
+    this->infectati = 0;
     this->decedati = 0;
     this->vindecati = 0;
     this->pX = pozX;

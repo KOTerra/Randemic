@@ -44,9 +44,6 @@
     <ClCompile Include="Oras.cpp">
       <Filter>Source Files\NPC</Filter>
     </ClCompile>
-    <ClCompile Include="Generare.cpp">
-      <Filter>Source Files\NPC</Filter>
-    </ClCompile>
     <ClCompile Include="HeaderSimulari.cpp">
       <Filter>Source Files\Simulari</Filter>
     </ClCompile>
@@ -69,6 +66,12 @@
       <Filter>Source Files\Simulari</Filter>
     </ClCompile>
     <ClCompile Include="GenerareOras.cpp">
+      <Filter>Source Files\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CalatorOras.cpp">
+      <Filter>Source Files\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerareOameni.cpp">
       <Filter>Source Files\NPC</Filter>
     </ClCompile>
   </ItemGroup>
@@ -126,6 +129,9 @@
     </ClInclude>
     <ClInclude Include="TextBox.h">
       <Filter>Source Files\Utilitare</Filter>
+    </ClInclude>
+    <ClInclude Include="CalatorOras.h">
+      <Filter>Source Files\NPC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
