@@ -1,0 +1,319 @@
+{
+  "Nume": [
+    {
+      "Orase": "London"
+    },
+    {
+      "Orase": "Bangalore"
+    },
+    {
+      "Orase": "New York"
+    },
+    {
+      "Orase": "Mumbai"
+    },
+    {
+      "Orase": "New Delhi"
+    },
+    {
+      "Orase": "Sydney"
+    },
+    {
+      "Orase": "Melbourne"
+    },
+    {
+      "Orase": "Chennai"
+    },
+    {
+      "Orase": "Singapore"
+    },
+    {
+      "Orase": "Hyderabad"
+    },
+    {
+      "Orase": "Toronto"
+    },
+    {
+      "Orase": "Houston"
+    },
+    {
+      "Orase": "Gurgaon"
+    },
+    {
+      "Orase": "Hong Kong"
+    },
+    {
+      "Orase": "Chicago"
+    },
+    {
+      "Orase": "Dubai"
+    },
+    {
+      "Orase": "Pimpri Chinchwad"
+    },
+    {
+      "Orase": "Brisbane"
+    },
+    {
+      "Orase": "Los Angeles"
+    },
+    {
+      "Orase": "San Francisco"
+    },
+    {
+      "Orase": "Noida"
+    },
+    {
+      "Orase": "Perth"
+    },
+    {
+      "Orase": "Boston"
+    },
+    {
+      "Orase": "Washington"
+    },
+    {
+      "Orase": "Kolkata"
+    },
+    {
+      "Orase": "Quezon City"
+    },
+    {
+      "Orase": "Dallas"
+    },
+    {
+      "Orase": "Kuala Lumpur"
+    },
+    {
+      "Orase": "Bangkok"
+    },
+    {
+      "Orase": "Auckland"
+    },
+    {
+      "Orase": "Karachi"
+    },
+    {
+      "Orase": "Dublin"
+    },
+    {
+      "Orase": "Moscow"
+    },
+    {
+      "Orase": "Seattle"
+    },
+    {
+      "Orase": "Sao Paulo"
+    },
+    {
+      "Orase": "Calgary"
+    },
+    {
+      "Orase": "Pune"
+    },
+    {
+      "Orase": "Austin"
+    },
+    {
+      "Orase": "Makati"
+    },
+    {
+      "Orase": "Montreal"
+    },
+    {
+      "Orase": "Jakarta"
+    },
+    {
+      "Orase": "San Diego"
+    },
+    {
+      "Orase": "Riyadh"
+    },
+    {
+      "Orase": "Charlotte"
+    },
+    {
+      "Orase": "Granada"
+    },
+    {
+      "Orase": "Istanbul"
+    },
+    {
+      "Orase": "Atlanta"
+    },
+    {
+      "Orase": "Sandton"
+    },
+    {
+      "Orase": "Stockholm"
+    },
+    {
+      "Orase": "Cape Town"
+    },
+    {
+      "Orase": "Philadelphia"
+    },
+    {
+      "Orase": "Navi Mumbai"
+    },
+    {
+      "Orase": "Ahmedabad"
+    },
+    {
+      "Orase": "Lahore"
+    },
+    {
+      "Orase": "Ottawa"
+    },
+    {
+      "Orase": "Canberra"
+    },
+    {
+      "Orase": "Tel Aviv"
+    },
+    {
+      "Orase": "Paris"
+    },
+    {
+      "Orase": "Abu Dhabi"
+    },
+    {
+      "Orase": "Petaling Jaya"
+    },
+    {
+      "Orase": "Denver"
+    },
+    {
+      "Orase": "Phoenix"
+    },
+    {
+      "Orase": "Lagos"
+    },
+    {
+      "Orase": "Copenhagen"
+    },
+    {
+      "Orase": "San Jose"
+    },
+    {
+      "Orase": "Mississauga"
+    },
+    {
+      "Orase": "Ho Chi Minh City"
+    },
+    {
+      "Orase": "Vancouver"
+    },
+    {
+      "Orase": "Minneapolis"
+    },
+    {
+      "Orase": "Bucharest"
+    },
+    {
+      "Orase": "Fort Worth"
+    },
+    {
+      "Orase": "Amsterdam"
+    },
+    {
+      "Orase": "Adelaide"
+    },
+    {
+      "Orase": "Pittsburgh"
+    },
+    {
+      "Orase": "San Antonio"
+    },
+    {
+      "Orase": "Zurich"
+    },
+    {
+      "Orase": "Mexico City"
+    },
+    {
+      "Orase": "Warsaw"
+    },
+    {
+      "Orase": "Indianapolis"
+    },
+    {
+      "Orase": "Brussels"
+    },
+    {
+      "Orase": "Edmonton"
+    },
+    {
+      "Orase": "Manchester"
+    },
+    {
+      "Orase": "Irvine"
+    },
+    {
+      "Orase": "Columbus"
+    },
+    {
+      "Orase": "Portland"
+    },
+    {
+      "Orase": "Hertfordshire"
+    },
+    {
+      "Orase": "Greece"
+    },
+    {
+      "Orase": "Madrid"
+    },
+    {
+      "Orase": "Jeddah"
+    },
+    {
+      "Orase": "Nashville"
+    },
+    {
+      "Orase": "Lisbon"
+    },
+    {
+      "Orase": "Oslo"
+    },
+    {
+      "Orase": "Manila"
+    },
+    {
+      "Orase": "Wellington"
+    },
+    {
+      "Orase": "Munich"
+    },
+    {
+      "Orase": "Frankfurt"
+    },
+    {
+      "Orase": "Cincinnati"
+    },
+    {
+      "Orase": "Berlin"
+    },
+    {
+      "Orase": "Boardman"
+    },
+    {
+      "Orase": "Arlington"
+    },
+    {
+      "Orase": "Galati"
+    },
+    {
+      "Orase": "Braila"
+    },
+    {
+      "Orase": "Iasi"
+    },
+    {
+      "Orase": "Craiova"
+    },
+    {
+      "Orase": "Bucuresti"
+    }
+  ]
+}

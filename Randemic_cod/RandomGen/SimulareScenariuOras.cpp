@@ -105,11 +105,11 @@ void trimitCalator(Oras oras)
 
 void miscareCalatori()
 {
-	/*for (std::map<string, CalatorOras>::iterator itr = calatori.begin(); itr != calatori.end(); itr++) {
+	for (std::map<string, CalatorOras>::iterator itr = calatori.begin(); itr != calatori.end(); itr++) {
 		itr->second.move(simOras::dt);
- 
-		int X1, int Y1, int X2, int Y2;
-		sf::Transform matrix =itr->second.tinta->second.shape.getTransform();
+
+		float X1, Y1, X2, Y2;
+		sf::Transform matrix = itr->second.tinta->second.shape.getTransform();
 		for (int i = 0; i < itr->second.tinta->second.shape.getPointCount(); ++i) {
 			const auto pointInModelSpace = matrix.transformPoint(itr->second.tinta->second.shape.getPoint(i));
 			switch (i) {
@@ -149,7 +149,15 @@ void miscareCalatori()
 			infect.insert({ key,oras });
 
 		}
-	}*/
+	}
+}
+
+void drawCalatori(sf::RenderWindow& window)
+{
+	for (std::map<string, CalatorOras>::iterator itr = calatori.begin(); itr != calatori.end(); itr++) {
+		CalatorOras om = itr->second;
+		window.draw(itr->second.shape);
+	}
 }
 
 int simulareOras() {
@@ -168,6 +176,12 @@ input:
 	orastest.shape.setFillColor(sf::Color(0, 255, 0, 100));
 	orastest.shape.setPosition(300, 300);
 	sigur.insert({ "1",orastest });
+
+	Oras orastest2("galati", 100, 200, 200);
+	orastest2.shape.setSize(sf::Vector2f(60, 60));
+	orastest2.shape.setFillColor(sf::Color(0, 255, 0, 100));
+	orastest2.shape.setPosition(600, 300);
+	sigur.insert({ "2",orastest2 });
 	//sigur = generareOrase(nrNpc, nrOrase);
 
 	int tipOrasClick = 0;//0 neinfectat 1 infectat  2 vindecat
@@ -249,7 +263,7 @@ display:
 	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
 	simOras::deltaTime();
 
-	
+
 	int frames = 0;
 	while (window.isOpen())
 	{
@@ -295,6 +309,7 @@ display:
 
 			default: {
 				//ca sa poti sa dai click pe orase
+
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 				{
 					bool amOras = false;
@@ -314,7 +329,7 @@ display:
 							break;
 						}
 					}
-					if (amOras == true)
+					if (amOras == true && simOras::pauza == true)
 					{
 						//adaug infectat
 						std::string key = lastClick->first;
@@ -348,7 +363,7 @@ display:
 							break;
 						}
 					}
-					if (amOras == true)
+					if (amOras == true && simOras::pauza == true)
 					{
 						//adaug infectat
 						lastClick->second.setInfectati(lastClick->second.getInfectati() + 1);
@@ -371,7 +386,7 @@ display:
 							break;
 						}
 					}
-					if (amOras == true)
+					if (amOras == true && simOras::pauza == true)
 					{
 						//adaug un infectat
 						lastClick->second.setInfectati(lastClick->second.getInfectati() + 1);
@@ -401,7 +416,7 @@ display:
 							break;
 						}
 					}
-					if (amOras == true)
+					if (amOras == true && simOras::pauza == true)
 					{
 						//nu fac nimic
 						break;
@@ -420,7 +435,7 @@ display:
 							break;
 						}
 					}
-					if (amOras == true)
+					if (amOras == true && simOras::pauza == true)
 					{
 						//sterg infectat
 						lastClick->second.setInfectati(lastClick->second.getInfectati() - 1);
@@ -470,7 +485,7 @@ display:
 							break;
 						}
 					}
-					if (amOras == true)
+					if (amOras == true && simOras::pauza == true)
 					{
 						//nu sterg nimic
 
@@ -480,11 +495,13 @@ display:
 				}
 				break;
 
-
 			}
 
 
 			}
+
+
+
 
 		}
 		if (simOras::pauza == false) {
@@ -503,13 +520,15 @@ display:
 						trimitCalator(oras);
 						itr->second.trimit = 0;
 					}
+
 					itr->second.trimit++;
 				}
 
 				itr->second = oras;
 			}
+			miscareCalatori();
 		}
-
+		drawCalatori(window);
 		drawOras(window);
 		if (amClick == true) {
 			//am dat click pe cineva
