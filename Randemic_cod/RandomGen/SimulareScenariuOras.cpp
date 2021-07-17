@@ -206,20 +206,22 @@ display:
 					}
 					if (amOras == true)
 					{
-						//il transform in infectat
+						//adaug infectat
 						std::string key = lastClick->first;
 						Oras oras = lastClick->second;
-						sigur.erase(lastClick);
+						sigur.erase(key);
 
+						oras.shape.setFillColor(sf::Color(255, 122, 0));
 						oras.setInfectati(oras.getInfectati() + 1);
-						oras.shape.setFillColor(sf::Color(255, 125, 0));
-						//om.shape.setRotation(rand() % 90);
 
+						std::deque<long long> nouaCota;
+						nouaCota.push_back(1);
+						oras.setCota(nouaCota);
 
 						infect.insert({ key,oras });
 						lastClick = infect.find(key);
 						tipOrasClick = 1;
-						break;
+
 						break;
 					}
 					for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
@@ -238,20 +240,11 @@ display:
 					}
 					if (amOras == true)
 					{
-						//il transform in vindecat
-						std::string key = lastClick->first;
-						Oras oras = lastClick->second;
-						infect.erase(lastClick);
-
-						oras.setInfectati(oras.getInfectati() - 1);
-						oras.setVindec(oras.getVindecati() +1);
-						oras.shape.setFillColor(sf::Color(0, 0, 255));
-						//om.shape.setRotation(rand() % 90);
-
-
-						vindec.insert({ key,oras });
-						lastClick = vindec.find(key);
-						tipOrasClick = 2;
+						//adaug infectat
+						lastClick->second.setInfectati(lastClick->second.getInfectati() + 1);
+						std::deque<long long> nouaCota = lastClick->second.getNumVindZilnic();
+						nouaCota.push_back(1);
+						lastClick->second.setCota(nouaCota);
 						break;
 					}
 					for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
@@ -270,21 +263,110 @@ display:
 					}
 					if (amOras == true)
 					{
-						//il transform in sigur
-						std::string key = lastClick->first;
-						Oras oras = lastClick->second;
-						vindec.erase(lastClick);
-
-						oras.setVindec(oras.getVindecati()-1);
-						oras.shape.setFillColor(sf::Color(0, 255, 0));
-						//om.shape.setRotation(rand() % 90);
-
-
-						sigur.insert({ key,oras });
-						lastClick = sigur.find(key);
-						tipOrasClick = 0;
+						//adaug un infectat
+						lastClick->second.setInfectati(lastClick->second.getInfectati() + 1);
+						std::deque<long long> nouaCota = lastClick->second.getNumVindZilnic();
+						nouaCota.push_back(1);
+						lastClick->second.setCota(nouaCota);
 						break;
 					}
+					break;
+				}
+				else if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+				{
+					bool amOras = false;
+					tipOrasClick = -1;
+
+					for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
+
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
+						Oras oras = itr->second;
+
+						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
+							amClick = true;
+							lastClick = itr;
+							tipOrasClick = 1;
+							amOras = true;
+							break;
+						}
+					}
+					if (amOras == true)
+					{
+						//nu fac nimic
+						break;
+					}
+					for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
+						Oras oras = itr->second;
+
+						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
+							amClick = true;
+							lastClick = itr;
+							tipOrasClick = 1;
+							amOras = true;
+							break;
+						}
+					}
+					if (amOras == true)
+					{
+						//sterg infectat
+						lastClick->second.setInfectati(lastClick->second.getInfectati() - 1);
+						std::deque<long long> nouaCota = lastClick->second.getNumVindZilnic();
+						long long val = nouaCota.at(nouaCota.size() - 1);
+						nouaCota.pop_back();
+						nouaCota.push_back(val);
+						lastClick->second.setCota(nouaCota);
+
+						if (lastClick->second.getInfectati() == 0) {
+							//trec in alta categorie
+							std::string key = lastClick->first;
+							Oras oras = lastClick->second;
+							infect.erase(lastClick);
+							if (oras.getPopulatie() / 2 < oras.getVindecati())
+							{
+								//am mai multi vindecati decat susceptibili
+								oras.shape.setFillColor(sf::Color(0, 0, 255));
+								vindec.insert({ key,oras });
+								lastClick = vindec.find(key);
+
+								tipOrasClick = 2;
+							}
+							else {
+								//inca e susceptibil
+								oras.shape.setFillColor(sf::Color(0, 255, 0));
+								sigur.insert({ key,oras });
+								lastClick = sigur.find(key);
+
+								tipOrasClick = 0;
+							}
+						}
+
+						break;
+					}
+					for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
+
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
+						Oras oras = itr->second;
+
+						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
+							amClick = true;
+							lastClick = itr;
+							tipOrasClick = 2;
+							amOras = true;
+							break;
+						}
+					}
+					if (amOras == true)
+					{
+						//nu sterg nimic
+
+						break;
+					}
+
 				}
 				break;
 
