@@ -43,6 +43,8 @@ namespace simOras {
 
 	}
 
+
+
 }
 
 using namespace std;
@@ -60,6 +62,23 @@ int initEcranPrincipal();
 
 
 #pragma once
+
+void drawOras(sf::RenderWindow& window)
+{
+	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
+		Oras om = itr->second;
+		window.draw(itr->second.shape);
+	}
+	for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+		Oras om = itr->second;
+		window.draw(itr->second.shape);
+	}
+	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
+		Oras om = itr->second;
+		window.draw(itr->second.shape);
+	}
+	
+}
 
 
 int simulareOras() {
@@ -119,24 +138,27 @@ font_text:
 
 
 adaugOmase:
+	//generam 
+
+
 	//desenam orasele
 	for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 
 		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(255, 0, 0));
+		oras.shape.setFillColor(sf::Color(255, 0, 0,110));
 		window.draw(oras.shape);
 	}
 
 	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 
 		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(0, 255, 0));
+		oras.shape.setFillColor(sf::Color(0, 255, 0,110));
 		window.draw(oras.shape);
 	}
 	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 
 		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(0, 0, 255));
+		oras.shape.setFillColor(sf::Color(0, 0, 255,110));
 		window.draw(oras.shape);
 	}
 
@@ -147,8 +169,15 @@ display:
 
 	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
 	simOras::deltaTime();
+	
+	Oras orastest("craiova",100,0,200,200);
+	orastest.shape.setSize(sf::Vector2f(60, 60));
+	orastest.shape.setFillColor(sf::Color(0,255,0,100));
+	orastest.shape.setPosition(300, 300);
+	sigur.insert({ "1",orastest });
 	while (window.isOpen())
 	{
+
 		sf::Event event;
 		window.clear();
 		window.draw(backSprite);//fundalul
@@ -390,7 +419,7 @@ display:
 			}
 		}
 
-		//drawOras();
+		drawOras(window);
 		if (amClick == true) {
 			//am dat click pe cineva
 
@@ -399,6 +428,7 @@ display:
 				+ "\n Decedati: " + to_string((lastClick->second).getDeced()));
 		}
 		window.draw(simOras::textNpc);
+		
 		window.display();
 	}
 	return 0;

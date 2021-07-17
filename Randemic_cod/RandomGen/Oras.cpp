@@ -6,8 +6,11 @@ Oras::Oras(std::string denumire,long long int populatie, long long int infectati
 	this->denumire = denumire;
 	this->populatie = populatie;
 	this->infectati = infectati;
+	this->decedati = 0;
 	this->pX = pozX;
 	this->pY = pozY;
+	this->shape.setPosition(pX, pY);
+	
 	this->cotaZilnic.push_back(infectati);
 }
 
@@ -91,3 +94,4 @@ void Oras::sortarePopulatie(long long pop[101], int limita) {
 		}
 	}
 }
+
