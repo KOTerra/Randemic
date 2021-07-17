@@ -15,6 +15,7 @@ Oras::~Oras() {
 
 }
 
+
 void Oras::update()
 {
 	//aici updatez numerele pentru infectati, vindecati si decedati

@@ -51,9 +51,9 @@ using namespace std::chrono; // nanoseconds, system_clock, seconds
 
 #pragma warning(suppress : 4996)
 
-std::map<string,Oras> infect;
-std::map<string,Oras> sigur;
-std::map<string,Oras> vindec;
+std::map<string, Oras> infect;
+std::map<string, Oras> sigur;
+std::map<string, Oras> vindec;
 
 
 int initEcranPrincipal();
@@ -68,13 +68,13 @@ input:
 	srand(time(0));
 	simOras::pauza = false;
 
-	
 
-	
 
-	int tipOrasClick = 0;//0 infectat 1 neinfectat 2 vindecat
+
+
+	int tipOrasClick = 0;//0 neinfectat 1 infectat  2 vindecat
 	bool amClick = false;
-	std::map<string,Oras>::iterator lastClick;
+	std::map<string, Oras>::iterator lastClick;
 
 
 window:
@@ -120,7 +120,7 @@ font_text:
 
 adaugOmase:
 	//desenam orasele
-	for (std::map<string,Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+	for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 
 		Oras oras = itr->second;
 		oras.shape.setFillColor(sf::Color(255, 0, 0));
@@ -150,6 +150,9 @@ display:
 	while (window.isOpen())
 	{
 		sf::Event event;
+		window.clear();
+		window.draw(backSprite);//fundalul
+
 		while (window.pollEvent(event))
 		{
 			//eventuri
@@ -185,24 +188,8 @@ display:
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 				{
 					bool amOras = false;
-					for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+					tipOrasClick = -1;
 
-						auto mouse_pos = sf::Mouse::getPosition(window);
-						auto translated_pos = window.mapPixelToCoords(mouse_pos);
-						Oras oras = itr->second;
-
-						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
-							amClick = true;
-							lastClick = itr;
-							tipOrasClick = 0;
-							amOras = true;
-							break;
-						}			   
-					}
-					if (amOras == true)
-					{
-						break;
-					}
 					for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 
 						auto mouse_pos = sf::Mouse::getPosition(window);
@@ -219,9 +206,55 @@ display:
 					}
 					if (amOras == true)
 					{
+						//il transform in infectat
+						std::string key = lastClick->first;
+						Oras oras = lastClick->second;
+						sigur.erase(lastClick);
+
+						oras.setInfectati(oras.getInfectati() + 1);
+						oras.shape.setFillColor(sf::Color(255, 125, 0));
+						//om.shape.setRotation(rand() % 90);
+
+
+						infect.insert({ key,oras });
+						lastClick = infect.find(key);
+						tipOrasClick = 1;
+						break;
 						break;
 					}
-					for (std::map<string,Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
+					for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+
+						auto mouse_pos = sf::Mouse::getPosition(window);
+						auto translated_pos = window.mapPixelToCoords(mouse_pos);
+						Oras oras = itr->second;
+
+						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
+							amClick = true;
+							lastClick = itr;
+							tipOrasClick = 1;
+							amOras = true;
+							break;
+						}
+					}
+					if (amOras == true)
+					{
+						//il transform in vindecat
+						std::string key = lastClick->first;
+						Oras oras = lastClick->second;
+						infect.erase(lastClick);
+
+						oras.setInfectati(oras.getInfectati() - 1);
+						oras.setVindec(oras.getVindecati() +1);
+						oras.shape.setFillColor(sf::Color(0, 0, 255));
+						//om.shape.setRotation(rand() % 90);
+
+
+						vindec.insert({ key,oras });
+						lastClick = vindec.find(key);
+						tipOrasClick = 2;
+						break;
+					}
+					for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 
 						auto mouse_pos = sf::Mouse::getPosition(window);
 						auto translated_pos = window.mapPixelToCoords(mouse_pos);
@@ -235,6 +268,23 @@ display:
 							break;
 						}
 					}
+					if (amOras == true)
+					{
+						//il transform in sigur
+						std::string key = lastClick->first;
+						Oras oras = lastClick->second;
+						vindec.erase(lastClick);
+
+						oras.setVindec(oras.getVindecati()-1);
+						oras.shape.setFillColor(sf::Color(0, 255, 0));
+						//om.shape.setRotation(rand() % 90);
+
+
+						sigur.insert({ key,oras });
+						lastClick = sigur.find(key);
+						tipOrasClick = 0;
+						break;
+					}
 				}
 				break;
 
@@ -247,30 +297,27 @@ display:
 		}
 		if (simOras::pauza == false) {
 			//ruleaza
-			window.clear();
-			window.draw(backSprite);//fundalul
+
 			simOras::dt = simOras::deltaTime();
 
-            //merg in fiecare oras si ii dau update
+			//merg in fiecare oras si ii dau update
 			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
-				Oras oras=itr->second;
+				Oras oras = itr->second;
 				oras.update();
 				itr->second = oras;
 			}
-
-			if (amClick == true) {
-				//am dat click pe cineva
-				
-				simOras::textNpc.setString((lastClick->second).getDenum() + "\n Populatie: " + to_string((lastClick->second).getPopulatie())
-					+ "\n Infectati: " + to_string((lastClick->second).getInfectati())
-					+ "\n Decedati: " + to_string((lastClick->second).getDeced()));
-			}
-			window.draw(simOras::textNpc);
-			window.display();
-
 		}
 
+		//drawOras();
+		if (amClick == true) {
+			//am dat click pe cineva
 
+			simOras::textNpc.setString((lastClick->second).getDenum() + "\n Populatie: " + to_string((lastClick->second).getPopulatie())
+				+ "\n Infectati: " + to_string((lastClick->second).getInfectati())
+				+ "\n Decedati: " + to_string((lastClick->second).getDeced()));
+		}
+		window.draw(simOras::textNpc);
+		window.display();
 	}
 	return 0;
 }
