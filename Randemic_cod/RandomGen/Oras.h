@@ -18,6 +18,8 @@ public:
 	sf::Sprite orasSprite;//orasul
 	mutable sf::RectangleShape shape;
 
+	static long long populatii[101];
+
 	Oras(std::string denumire,long long int populatie, long long int infectati,float pozX,float pozY);
 	~Oras();
 

@@ -240,7 +240,7 @@ test:
 
 				std::string rec = butonText4.getText();
 				stringstream strrec(rec);
-				strrec >>timpRecuperare;
+				strrec >> timpRecuperare; timpRecuperare *= 60;
 
 				std::string imn = butonText5.getText();
 				stringstream strimn(imn);

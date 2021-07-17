@@ -61,7 +61,7 @@ void Oras::logicOras(){
 
 void Oras::setTexture() {
 	sf::Texture texture;
-	if(getPopulatie())
+	//if (getPopulatie()) {}
 	this->orasSprite.setTexture(texture);
 }
 
