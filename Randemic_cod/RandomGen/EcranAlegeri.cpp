@@ -209,9 +209,8 @@ test:
 
 			int localScenariuCount=1;
 
-			//if (localScenariuCount < 3 && localScenariuCount>0) {
 				localScenariuCount = butonScenariuDreapta.counter + butonScenariuStanga.counter;
-			//}
+		
 			 if(localScenariuCount>2) {
 				localScenariuCount -= (localScenariuCount - 2);
 			 }
@@ -219,12 +218,7 @@ test:
 				 localScenariuCount = 1;
 			 }
 
-		/*	if (localScenariuCount < 1) {
-				localScenariuCount = 1;
-			}
-			if (localScenariuCount > 2) {
-				localScenariuCount = 2;
-			}*/
+		
 
 			butonStart.tipButon = localScenariuCount;
 			bool scenariu1este = false;
@@ -258,6 +252,8 @@ test:
 			case 2: {
 			//pt oras
 				scenariu1este = false;
+
+				break;
 			}
 				  
 

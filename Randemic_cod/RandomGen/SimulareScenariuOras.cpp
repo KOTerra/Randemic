@@ -118,7 +118,7 @@ font_text:
 	window.draw(simOras::textCounter);
 
 
-adaugOameni:
+adaugOmase:
 	//desenam orasele
 	for (std::map<string,Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 
@@ -252,7 +252,7 @@ display:
 			simOras::dt = simOras::deltaTime();
 
             //merg in fiecare oras si ii dau update
-			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != vindec.end(); itr++) {
+			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 				Oras oras=itr->second;
 				oras.update();
 				itr->second = oras;

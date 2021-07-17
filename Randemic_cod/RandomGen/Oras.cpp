@@ -19,8 +19,7 @@ void Oras::update()
 {
 	//aici updatez numerele pentru infectati, vindecati si decedati
 	long long int nouInfectati = Oras::getInfectati() * infectabilitate;
-	if (Oras::getPopulatie() - Oras::getInfectati() - Oras::getDeced() - Oras::getVindecati() < nouInfectati)
-	{
+	if (Oras::getPopulatie() - Oras::getInfectati() - Oras::getDeced() - Oras::getVindecati() < nouInfectati){
 		//nu mai am atata populatie cat sa se poata infecta atati oameni
 		nouInfectati = Oras::getPopulatie() - Oras::getInfectati() - Oras::getDeced() - Oras::getVindecati();
 	}
@@ -36,23 +35,19 @@ void Oras::update()
 	long long int decedNoi = totalInfec * mortalitate / 100;
 	Oras::setDeced(Oras::getDeced() + decedNoi);
 	//pe ei trebuie sa ii scot din cota
-	while (decedNoi > 0)
-	{
-		if (cota.at(0) <= decedNoi)
-		{
+	while (decedNoi > 0){
+		if (cota.at(0) <= decedNoi){
 			decedNoi -= cota.at(0);
 			cota.pop_front();
 		}
-		else
-		{
+		else{
 			cota.at(0) = cota.at(0) - decedNoi;
 			break;
 		}
 	}
 
 	//verific daca nu cumva se vor vindeca cativa dintre cei deja infectati
-	if (cota.size() >= timpRecuperare)
-	{
+	if (cota.size() >= timpRecuperare){
 		//trebuie sa ii scot pe primii infectati
 		long long int infecVind = cota.at(0);
 		Oras::setVindec(Oras::getVindecati() + infecVind);
@@ -60,7 +55,24 @@ void Oras::update()
 	}
 }
 
-void Oras::logicOras()
-{
+void Oras::logicOras(){
 	//extinderea la alte orase
+}
+
+void Oras::setTexture() {
+	sf::Texture texture;
+	if(getPopulatie())
+	this->orasSprite.setTexture(texture);
+}
+
+void Oras::sortarePopulatie(long long pop[101], int limita) {
+	for (int i = 1; i < limita ; i++) {
+		for (int j = i + 1; j < limita+1; j++) {
+			if (pop[i] > pop[j]) {
+				long long aux = pop[j];
+				pop[j] = pop[i];
+				pop[i] = aux;
+			}
+		}
+	}
 }
