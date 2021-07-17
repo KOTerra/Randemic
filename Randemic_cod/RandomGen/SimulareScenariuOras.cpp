@@ -13,6 +13,7 @@
 //header
 #include "Oras.h"
 #include "HeaderSimulari.h"
+#include "CalatorOras.h"
 
 
 namespace simOras {
@@ -80,6 +81,16 @@ void drawOras(sf::RenderWindow& window)
 
 }
 
+void trimitCalator(Oras oras)
+{
+	//aici calculez distanta dintre orase
+	std::map<string,Oras>::iterator item = sigur.begin();
+	std::advance(item, rand()/ sigur.size());
+
+	//in item este orasul pe care vrem sa il cotropim
+	
+	//CalatorOras calator=CalatorOras(oras.pX,oras.pY)
+}
 
 int simulareOras() {
 
@@ -425,6 +436,12 @@ display:
 				if (frames == 0)
 				{
 					oras.update();
+					if (itr->second.trimit > 0)
+					{
+						trimitCalator(oras);
+						itr->second.trimit = 0;
+					}
+					itr->second.trimit++;
 				}
 
 				itr->second = oras;

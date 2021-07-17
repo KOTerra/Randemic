@@ -11,7 +11,7 @@ Oras::Oras(std::string denumire, long long int populatie, long long int infectat
     this->pX = pozX;
     this->pY = pozY;
     this->shape.setPosition(pX, pY);
-
+    this->trimit = 0;
     this->cotaZilnic.push_back(infectati);
 }
 

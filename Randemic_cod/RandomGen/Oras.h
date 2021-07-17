@@ -14,7 +14,9 @@ private:
     float pX, pY;//pozitia orasului pe harta
 	std::deque<long long int> cotaZilnic;
 	std::string denumire;
+	
 public:
+	int trimit;//nr de fps-uri in care se trimit calatori
 	sf::Sprite orasSprite;//orasul
 	mutable sf::RectangleShape shape;
 
@@ -59,9 +61,13 @@ public:
 	void setCota(std::deque<long long int> modif){
 		cotaZilnic = modif;
 	}
+	long long setPopulatie(long long pop) {
+		this->populatie=pop;
+	}
+	
 	void setTexture(long long populatieMaxima);
 	void sortarePopulatie(long long pop[101], int limita);
-
+    void trimitCalator();
 
 	void update();
 	void logicOras();
