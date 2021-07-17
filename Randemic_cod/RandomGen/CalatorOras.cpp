@@ -10,7 +10,7 @@ CalatorOras::CalatorOras(float pX,float pY, sf::Vector2f directie, std::map<std:
 
 	this->shape.setRadius(razaShape);
 	this->shape.setOutlineColor(sf::Color(0, 0, 0));
-	this->shape.setFillColor(sf::Color(100, 255, 0));
+	this->shape.setFillColor(sf::Color(255, 122, 0));
 	this->shape.setOutlineThickness(1);
 	this->shape.setPosition(pX,pY);
 }
