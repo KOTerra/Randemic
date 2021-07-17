@@ -1,18 +1,100 @@
-﻿  SimulareScenariu1.cpp
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(79,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(79,80): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(80,67): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(80,88): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(84,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(151,20): warning C4018: '<': signed/unsigned mismatch
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(240,20): warning C4018: '<': signed/unsigned mismatch
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(265,20): warning C4018: '<': signed/unsigned mismatch
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(327,21): warning C4018: '<': signed/unsigned mismatch
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(356,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(381,27): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(378,7): warning C4102: 'window': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(384,11): warning C4102: 'background': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(393,10): warning C4102: 'font_text': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(419,12): warning C4102: 'adaugOameni': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(429,8): warning C4102: 'display': unreferenced label
-  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe
+﻿  jsoncpp.cpp
+  Buton.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Buton.cpp(12,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Buton.cpp(13,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Buton.cpp(21,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Buton.cpp(21,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Buton.cpp(20,20): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Buton.cpp(157,23): warning C4018: '<': signed/unsigned mismatch
+  EcranStart.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(55,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(61,39): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(58,7): warning C4102: 'window': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(64,11): warning C4102: 'background': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(72,10): warning C4102: 'font_text': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(76,8): warning C4102: 'butoane': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(80,8): warning C4102: 'display': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(88,5): warning C4102: 'test': unreferenced label
+  HeaderSimulari.cpp
+  HeaderVirus.cpp
+  OmClass.cpp
+  Oras.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Oras.cpp(50,18): warning C4018: '>=': signed/unsigned mismatch
+  SimulareScenariu1.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(79,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(79,80): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(80,67): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(80,88): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(84,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(151,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(240,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(265,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(327,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(356,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(381,27): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(378,7): warning C4102: 'window': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(384,11): warning C4102: 'background': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(393,10): warning C4102: 'font_text': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(419,12): warning C4102: 'adaugOameni': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariu1.cpp(429,8): warning C4102: 'display': unreferenced label
+  Generare.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(35,9): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(45,9): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(35,16): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(37,9): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(45,16): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(47,9): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(368,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(433,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(434,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(456,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(467,9): warning C4996: 'Json::FastWriter': Use StreamWriterBuilder instead
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(467,20): warning C4996: 'Json::FastWriter::FastWriter': Use StreamWriterBuilder instead
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(475,15): warning C4996: 'Json::FastWriter::write': Use StreamWriterBuilder instead
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(488): warning C4996: 'Json::Writer::~Writer': Use StreamWriter instead
+  SimulareScenariuOras.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(68,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(83,36): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(80,7): warning C4102: 'window': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(86,11): warning C4102: 'background': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(95,10): warning C4102: 'font_text': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(121,11): warning C4102: 'adaugOmase': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(145,8): warning C4102: 'display': unreferenced label
+  EcranAlegeri.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(56,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(76,38): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(120,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(120,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(121,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(121,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(122,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(122,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(123,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(123,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(124,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(124,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(113,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(114,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(115,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(116,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(117,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(120,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(121,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(122,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(123,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(124,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(73,7): warning C4102: 'window': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(79,11): warning C4102: 'background': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(87,9): warning C4102: 'previews': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(95,10): warning C4102: 'font_text': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(99,8): warning C4102: 'butoane': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(106,11): warning C4102: 'textBoxuri': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(127,8): warning C4102: 'display': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(135,5): warning C4102: 'test': unreferenced label
+  TextBox.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\TextBox.cpp(13,17): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\TextBox.cpp(49,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\TextBox.cpp(66,21): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Generare.cpp(110): warning C4715: 'getVarsta': not all control paths return a value
+  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe

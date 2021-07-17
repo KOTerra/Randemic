@@ -20,7 +20,7 @@
 //.
 
 namespace ecranAleg {
-	
+
 
 	bool pauza;
 	void pause() { pauza = true; }
@@ -42,7 +42,7 @@ namespace ecranAleg {
 	int nrNpcSource;
 	int infectabilitateSource;
 	int mortalitateSource;
-	
+
 }
 
 using namespace std;
@@ -55,7 +55,7 @@ int initEcranPrincipal() {
 input:
 	srand(time(0));
 	ecranAleg::pauza = false;
-	
+
 	//logo();
 	//cin >> infectabilitate >> timpRecuperare >> mortalitate;
 	//cout << "Introdu numarul de persoane:";
@@ -88,7 +88,7 @@ previews:
 	sf::Texture preview1texture;	preview1texture.loadFromFile("Sprites/previewScenariu1.png");
 	sf::Texture preview2texture;	preview2texture.loadFromFile("Sprites/previewScenariu2.png");
 
-	sf::Sprite preview1;	preview1.setTexture(preview1texture);	preview1.setPosition(480, 160); 
+	sf::Sprite preview1;	preview1.setTexture(preview1texture);	preview1.setPosition(480, 160);
 	sf::Sprite preview2;	preview2.setTexture(preview2texture);	preview2.setPosition(480, 160);
 
 
@@ -97,15 +97,17 @@ font_text:
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
 butoane:
-	Buton butonStart(0,"", "Sprites/butonStart.png", 920, 390);
+	Buton butonStart(0, "", "Sprites/butonStart.png", 920, 390);
 	Buton butonScenariuStanga(-1, "", "Sprites/selectStanga.png", 390, 200);
 	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 805, 200);
-
+	int localScenariuCount = 1;
+	butonScenariuDreapta.setCounter(&localScenariuCount);
+	butonScenariuStanga.setCounter(&localScenariuCount);
 textBoxuri:
-	Buton butonText1(-5, "Numar Oameni",		"Sprites/textBox.png", 100, 480);
-	Buton butonText2(-5, "Infectabilitate %",	"Sprites/textBox.png", 300, 480);
-	Buton butonText3(-5, "Mortalitate %",		"Sprites/textBox.png", 500, 480);
-	Buton butonText4(-5, "Timp de recuperare",	"Sprites/textBox.png", 100, 600);
+	Buton butonText1(-5, "Numar Oameni", "Sprites/textBox.png", 100, 480);
+	Buton butonText2(-5, "Infectabilitate %", "Sprites/textBox.png", 300, 480);
+	Buton butonText3(-5, "Mortalitate %", "Sprites/textBox.png", 500, 480);
+	Buton butonText4(-5, "Timp de recuperare", "Sprites/textBox.png", 100, 600);
 	Buton butonText5(-5, "Imunitate grup", "Sprites/textBox.png", 500, 600); //(doar pe scenariul 1,default 0%)
 
 	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
@@ -131,13 +133,13 @@ display:
 
 
 test:
-	
+
 
 
 	ecranAleg::deltaTime();
 	while (window.isOpen())
 	{
-	
+
 
 		if (simOpen == true) {
 			window.close();
@@ -207,18 +209,15 @@ test:
 			butonScenariuDreapta.clic(event);
 			butonScenariuDreapta.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
-			int localScenariuCount=1;
 
-				localScenariuCount = butonScenariuDreapta.counter + butonScenariuStanga.counter;
-		
-			 if(localScenariuCount>2) {
+			if (localScenariuCount > 2) {
 				localScenariuCount -= (localScenariuCount - 2);
-			 }
-			 else if (localScenariuCount < 1) {
-				 localScenariuCount = 1;
-			 }
+			}
+			else if (localScenariuCount < 1) {
+				localScenariuCount = 1;
+			}
 
-		
+
 
 			butonStart.tipButon = localScenariuCount;
 			bool scenariu1este = false;
@@ -228,15 +227,15 @@ test:
 				scenariu1este = true;
 				std::string nN = butonText1.getText();
 				stringstream strnN(nN);
-				strnN>>nrNpc;
+				strnN >> nrNpc;
 
 				std::string inf = butonText2.getText();
 				stringstream strinf(inf);
-				strinf>>infectabilitate;
+				strinf >> infectabilitate;
 
 				std::string mrt = butonText3.getText();
 				stringstream strmrt(mrt);
-				strmrt>>mortalitate;
+				strmrt >> mortalitate;
 
 				std::string rec = butonText4.getText();
 				stringstream strrec(rec);
@@ -245,21 +244,21 @@ test:
 				std::string imn = butonText5.getText();
 				stringstream strimn(imn);
 				strimn >> imunitateGrup;
-				
+
 				break;
 			}
 
 			case 2: {
-			//pt oras
+				//pt oras
 				scenariu1este = false;
 
 				break;
 			}
-				  
+
 
 			}
 
-			
+
 
 
 			butonText1.renderTextBox(window, event);	window.draw(butonText1.labelText);
@@ -275,7 +274,7 @@ test:
 			if (scenariu1este == true) {
 				butonText5.renderTextBox(window, event);	window.draw(butonText5.labelText);
 				textBox5.setString(butonText5.getText());	window.draw(textBox5);
-			
+
 				window.draw(preview1);
 			}
 			else if (localScenariuCount == 2) {

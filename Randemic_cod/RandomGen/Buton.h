@@ -32,7 +32,7 @@ public:
 
     int pozx, pozy;
     int tipButon;
-    int counter = 1;
+    int* counter;
 
     sf::Text textInBox;
     sf::Text labelText;
@@ -46,5 +46,5 @@ public:
     void render(sf::RenderTarget* target);
 
     void renderTextBox(sf::RenderWindow& window, sf::Event event);
-
+    void setCounter(int* counter);
 };

@@ -20,7 +20,7 @@ Buton::Buton(int tip, sf::String label, std::string Textura, float x, float y) {
     this->textInBox.setColor(sf::Color::Black);
     this->textInBox.setPosition(this->pozx, this->pozy);
 
-    
+
 }
 
 
@@ -30,6 +30,11 @@ Buton::~Buton() {
 
 
 //std::ofstream fout("text.txt");
+
+void Buton::setCounter(int* counter)
+{
+    this->counter = counter;
+}
 
 void Buton::update(const sf::Vector2f mousePos) {
 
@@ -63,13 +68,13 @@ void Buton::clic(sf::Event event) {
         case(-1): {
             //sageti stanga
 
-            counter -= 1;
+            (*counter) -= 1;
             break;
         }
         case(0): {
             //sageti dreapta
 
-            counter += 1;
+            (*counter) += 1;
             break;
         }
         case(1): {
@@ -134,7 +139,7 @@ void Buton::typedOn(sf::Event input) {
 }
 
 void Buton::inputLogic(int charTyped) {
-    if (charTyped != DELETE_KEY && charTyped != ESCAPE_KEY && charTyped != RESET_KEY) {
+    if (charTyped != DELETE_KEY && charTyped != ESCAPE_KEY && charTyped != RESET_KEY && charTyped>='0' && charTyped<='9') {
         text << static_cast<char>(charTyped);
     }
     else if (charTyped == DELETE_KEY) {
