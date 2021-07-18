@@ -355,7 +355,14 @@ display:
 			case sf::Event::KeyPressed: {
 				if (event.key.code == sf::Keyboard::Escape)
 				{
+					sigur.clear();
+					infect.clear();
+					vindec.clear();
+					std::map<std::string, Oras>::iterator iterator;
+					simOras::lastClick = iterator;
+					calatori.clear();
 					window.close();
+					return 0;
 				}
 				else if (event.key.code == sf::Keyboard::F1)
 				{
@@ -383,6 +390,7 @@ display:
 				vindec.clear();
 				std::map<std::string, Oras>::iterator iterator;
 				simOras::lastClick = iterator;
+				calatori.clear();
 				window.close();
 				return 0;
 			}
