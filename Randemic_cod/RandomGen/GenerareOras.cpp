@@ -92,14 +92,25 @@ const int matL=182;
 
 std::pair<int, int> pozitie() {
 	int pixelX, pixelY;
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 4; j++) {
-			if (mat[i][j] != 1) {
-				pixelX = matL * i;
-				pixelY = matL * j;
-				mat[i][j] = 1;
+	srand(time(0));
+	int ir = rand() % 5;
+	int jr = rand() % 4;
+	if (mat[ir][jr] != 1) {
+		pixelX = matL * ir;
+		pixelY = matL * jr;
+		mat[ir][jr] = 1;
+		return std::pair<int, int>(pixelX + 25, pixelY + 25);
+	}
+	else {
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (mat[i][j] != 1) {
+					pixelX = matL * i;
+					pixelY = matL * j;
+					mat[i][j] = 1;
 
-				return std::pair<int, int>(pixelX+18, pixelY+18);
+					return std::pair<int, int>(pixelX + 25, pixelY + 25);
+				}
 			}
 		}
 	}
@@ -166,6 +177,7 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 		int marimeY = itr->second.orasSprite.getTextureRect().height;
 		int marimeX = itr->second.orasSprite.getTextureRect().width;
 		itr->second.shape.setSize(sf::Vector2f(marimeX, marimeY));
+		itr->second.shape.setFillColor(sf::Color(0, 255, 0));
 		std::pair<int, int> per=pozitie();
 		itr->second.orasSprite.setPosition(sf::Vector2f(per.first,per.second));
 		itr->second.shape.setPosition(sf::Vector2f(itr->second.orasSprite.getPosition()));

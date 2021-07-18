@@ -118,7 +118,7 @@ textBoxuri:
 	sf::Text textBox4;	textBox4.setPosition(520, 615);	textBox4.setColor(sf::Color::Black); textBox4.setFont(font);
 	sf::Text textBox5;	textBox5.setPosition(720, 495);	textBox5.setColor(sf::Color::Black); textBox5.setFont(font);
 	sf::Text textBox6;	textBox6.setPosition(320, 615);	textBox6.setColor(sf::Color::Black); textBox6.setFont(font);
-	sf::Text textBox7;	textBox7.setPosition(120, 615);	textBox7.setColor(sf::Color::Black); textBox7.setFont(font);
+	sf::Text textBox7;	textBox7.setPosition(320, 615);	textBox7.setColor(sf::Color::Black); textBox7.setFont(font);
 
 
 	butonText1.labelText.setCharacterSize(20);	butonText1.labelText.setFont(font);	butonText1.labelText.setColor(sf::Color::Black);	butonText1.labelText.setPosition(butonText1.pozx, butonText1.pozy - 25);

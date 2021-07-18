@@ -452,12 +452,12 @@ display:
 				{
 					window.close();
 				}
-				else if (event.key.code == sf::Keyboard::R)
+				else if (event.key.code == sf::Keyboard::F1)
 				{
 					sim1::reset();
 					goto input;
 				}
-				else if (event.key.code == sf::Keyboard::T)
+				else if (event.key.code == sf::Keyboard::F2)
 				{
 					window.close();
 					initEcranPrincipal();

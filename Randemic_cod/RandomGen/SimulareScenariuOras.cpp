@@ -70,19 +70,24 @@ const float PI = 3.14159265359f;
 
 void drawOras(sf::RenderWindow& window)
 {
+
 	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 		Oras om = itr->second;
 		window.draw(itr->second.shape);
+		itr->second.orasSprite.setTexture(itr->second.textura);
 		window.draw(itr->second.orasSprite);
+
 	}
 	for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 		Oras om = itr->second;
 		window.draw(itr->second.shape);
+		itr->second.orasSprite.setTexture(itr->second.textura);
 		window.draw(itr->second.orasSprite);
 	}
 	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 		Oras om = itr->second;
 		window.draw(itr->second.shape);
+		itr->second.orasSprite.setTexture(itr->second.textura);
 		window.draw(itr->second.orasSprite);
 	}
 
@@ -110,12 +115,7 @@ void trimitCalator(Oras oras)
 	{
 		return;
 	}
-	int val = rand() % sigur.size();
-	val = rand() % (sigur.size() - 1);
-	for (int i = 0; i < val-1; i++)
-	{
-		item++;
-	}
+	std::advance(item, std::rand() % sigur.size());
 
 	//in item este orasul pe care vrem sa il cotropim
 	std::map<string, CalatorOras>::iterator itr = calatori.find(item->second.getDenum());
@@ -200,8 +200,10 @@ void miscareCalatori()
 		Oras oras = itr->second.tinta->second;
 		oras.shape.setFillColor(sf::Color(255, 122, 0));
 		oras.setInfectati(oras.getInfectati() + 1);
+		oras.setPopulatie(oras.getPopulatie()+1);
 
-		std::deque<long long> nouaCota;
+
+		std::deque<long long> nouaCota=oras.getNumVindZilnic();
 		nouaCota.push_back(1);
 		oras.setCota(nouaCota);
 
@@ -216,7 +218,9 @@ void miscareCalatori()
 				simOras::tipOrasClick = 1;
 			}
 		}
-		sigur.erase(key);
+		if (sigur.find(key) != sigur.end()) {
+			sigur.erase(key);
+		}
 		calatori.erase(itr);
 
 		
@@ -318,6 +322,7 @@ display:
 	int frames = 0;
 	while (window.isOpen())
 	{
+		simOras::dt = simOras::deltaTime();
 
 		sf::Event event;
 		window.clear();
@@ -380,15 +385,19 @@ display:
 							break;
 						}
 					}
-					if (amOras == true && simOras::pauza == true)
+					if (amOras == true && simOras::pauza == true&&	
+						simOras::lastClick->second.getPopulatie()-simOras::lastClick->second.getInfectati()-simOras::lastClick->second.getVindecati()-simOras::lastClick->second.getDeced()>0)
 					{
 						//adaug infectat
 						std::string key = simOras::lastClick->first;
 						Oras oras = simOras::lastClick->second;
 						sigur.erase(key);
 
+						
+
 						oras.shape.setFillColor(sf::Color(255, 122, 0));
 						oras.setInfectati(oras.getInfectati() + 1);
+
 
 						std::deque<long long> nouaCota;
 						nouaCota.push_back(1);
@@ -397,6 +406,14 @@ display:
 						infect.insert({ key,oras });
 						simOras::lastClick = infect.find(key);
 						simOras::tipOrasClick = 1;
+
+						if (calatori.find(simOras::lastClick->second.getDenum()) != calatori.end()) {
+							//avem un calator spre oras
+							//std::map<std::string, CalatorOras>::iterator calator = calatori.find(key);
+							//calator->second.CalatorOras::~CalatorOras();
+							//calatori.erase(key);
+							calatori.find(simOras::lastClick->second.getDenum())->second.tinta = simOras::lastClick;
+						}
 
 						break;
 					}
@@ -558,7 +575,7 @@ display:
 		if (simOras::pauza == false) {
 			//ruleaza
 
-			simOras::dt = simOras::deltaTime();
+			//simOras::dt = simOras::deltaTime();
 
 			//merg in fiecare oras si ii dau update
 			std::vector<std::map<string, Oras>::iterator> oraseVindec;
@@ -568,9 +585,10 @@ display:
 				if (frames == 0)
 				{
 					itr->second.trimit++;
-					if (itr->second.trimit > 0)
+					
+					if (itr->second.trimit > 1)
 					{
-                        trimitCalator(oras);
+						trimitCalator(oras);
 						itr->second.trimit = 0;
 					}
 					oras.update();
@@ -629,6 +647,11 @@ display:
 				infect.erase(key);
 			}
 			miscareCalatori();
+			frames++;
+			if (frames >= FPS)
+			{
+				frames = 0;
+			}
 		}
 		drawOras(window);
 		drawCalatori(window);
@@ -644,11 +667,7 @@ display:
 		window.draw(simOras::textNpc);
 
 		window.display();
-		frames++;
-		if (frames >= FPS)
-		{
-			frames = 0;
-		}
+		
 	}
 	return 0;
 }

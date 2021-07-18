@@ -64,7 +64,7 @@ window:
 background:
 	//fundalul
 	sf::Texture backTexture;
-	backTexture.loadFromFile("Sprites/fundalStart.png");
+	backTexture.loadFromFile("Sprites/fundalTutorial.png");
 	sf::Sprite backSprite(backTexture);
 	window.clear();
 	window.draw(backSprite);

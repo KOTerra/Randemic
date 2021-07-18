@@ -62,7 +62,7 @@ public:
 	void setCota(std::deque<long long int> modif){
 		cotaZilnic = modif;
 	}
-	long long setPopulatie(long long pop) {
+	void setPopulatie(long long pop) {
 		this->populatie=pop;
 	}
 	
