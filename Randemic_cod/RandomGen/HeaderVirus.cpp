@@ -8,3 +8,4 @@ long timpRecuperare = 1000;//frameuri virus
 long timpIncubare = 20;//timp incubare virus
 int mortalitate = 20;//procent din 100% virus
 int imunitateGrup = 0 ;
+int timpCalator = 3;

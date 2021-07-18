@@ -14,6 +14,7 @@
 #include "Oras.h"
 #include "HeaderSimulari.h"
 #include "CalatorOras.h"
+#include "HeaderVirus.h"
 
 
 namespace simOras {
@@ -64,6 +65,8 @@ std::map<string, CalatorOras>calatori;
 
 int initEcranPrincipal();
 std::map<std::string, Oras> generareOrase(int nrO, int nrN);
+
+
 const float PI = 3.14159265359f;
 
 #pragma once
@@ -93,6 +96,18 @@ void drawOras(sf::RenderWindow& window)
 
 }
 
+void setGroupOrasImunity()
+{
+	if (imunitateGrup != 0) {
+		for (std::map<std::string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++)
+		{
+			itr->second.setVindec(itr->second.getPopulatie() * imunitateGrup / 100);
+		}
+	}
+
+}
+
+
 float computeAngle(float ax, float ay, float bx, float by) {
 	return atan2((by - ay), (bx - ax));
 };
@@ -118,10 +133,10 @@ void trimitCalator(Oras oras)
 	std::advance(item, std::rand() % sigur.size());
 
 	//in item este orasul pe care vrem sa il cotropim
-	std::map<string, CalatorOras>::iterator itr = calatori.find(item->second.getDenum());
+	
 	if (calatori.find(item->second.getDenum()) == calatori.end())
 	{
-		std::map<string, Oras>::iterator item = sigur.begin();
+		
 		sf::Vector2f origin = sf::Vector2f(oras.pX, oras.pY);
 
 		//Calculate the direction vector
@@ -149,7 +164,7 @@ void trimitCalator(Oras oras)
 	}
 	else if (sigur.size() > calatori.size())
 	{
-		trimitCalator(oras);
+		//trimitCalator(oras);
 		return;
 	}
 	
@@ -259,6 +274,7 @@ input:
 	//orastest2.shape.setPosition(600, 300);
 	sigur.insert({ "2",orastest2 });*/
 	sigur = generareOrase(nrOrase,nrNpc);
+	setGroupOrasImunity();
 
 	
 
@@ -586,7 +602,7 @@ display:
 				{
 					itr->second.trimit++;
 					
-					if (itr->second.trimit > 1)
+					if (itr->second.trimit > timpCalator)
 					{
 						trimitCalator(oras);
 						itr->second.trimit = 0;

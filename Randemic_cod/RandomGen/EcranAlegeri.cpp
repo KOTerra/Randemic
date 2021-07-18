@@ -110,7 +110,8 @@ textBoxuri:
 	Buton butonText4(-5, "Timp recuperare", "Sprites/textBox.png", 500, 600);
 	Buton butonText5(-5, "Imunitate grup %", "Sprites/textBox.png", 700, 480); //(doar pe scenariul 1,default 0%)
 	Buton butonText6(-5, "Timp incubare", "Sprites/textBox.png", 300, 600);
-	Buton butonText7(-5, "Numar orase", "Sprites/textBox.png", 300, 600);
+	Buton butonText7(-5, "Numar orase", "Sprites/textBox.png", 100, 600);
+	Buton butonText8(-5, "Timp plecare", "Sprites/textBox.png", 300, 600);
 
 	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
 	sf::Text textBox2;	textBox2.setPosition(320, 495);	textBox2.setColor(sf::Color::Black); textBox2.setFont(font);
@@ -118,7 +119,8 @@ textBoxuri:
 	sf::Text textBox4;	textBox4.setPosition(520, 615);	textBox4.setColor(sf::Color::Black); textBox4.setFont(font);
 	sf::Text textBox5;	textBox5.setPosition(720, 495);	textBox5.setColor(sf::Color::Black); textBox5.setFont(font);
 	sf::Text textBox6;	textBox6.setPosition(320, 615);	textBox6.setColor(sf::Color::Black); textBox6.setFont(font);
-	sf::Text textBox7;	textBox7.setPosition(320, 615);	textBox7.setColor(sf::Color::Black); textBox7.setFont(font);
+	sf::Text textBox7;	textBox7.setPosition(120, 615);	textBox7.setColor(sf::Color::Black); textBox7.setFont(font);
+	sf::Text textBox8;	textBox8.setPosition(320, 615);	textBox8.setColor(sf::Color::Black); textBox8.setFont(font);
 
 
 	butonText1.labelText.setCharacterSize(20);	butonText1.labelText.setFont(font);	butonText1.labelText.setColor(sf::Color::Black);	butonText1.labelText.setPosition(butonText1.pozx, butonText1.pozy - 25);
@@ -128,6 +130,7 @@ textBoxuri:
 	butonText5.labelText.setCharacterSize(20);	butonText5.labelText.setFont(font);	butonText5.labelText.setColor(sf::Color::Black);	butonText5.labelText.setPosition(butonText5.pozx, butonText5.pozy - 25);
 	butonText6.labelText.setCharacterSize(20);	butonText6.labelText.setFont(font);	butonText6.labelText.setColor(sf::Color::Black);	butonText6.labelText.setPosition(butonText6.pozx, butonText6.pozy - 25);
 	butonText7.labelText.setCharacterSize(20);	butonText7.labelText.setFont(font);	butonText7.labelText.setColor(sf::Color::Black);	butonText7.labelText.setPosition(butonText7.pozx, butonText7.pozy - 25);
+	butonText8.labelText.setCharacterSize(20);	butonText8.labelText.setFont(font);	butonText8.labelText.setColor(sf::Color::Black);	butonText8.labelText.setPosition(butonText8.pozx, butonText8.pozy - 25);
 
 
 display:
@@ -310,6 +313,11 @@ test:
 				stringstream strimn(imn);
 				strimn >> imunitateGrup;
 
+				std::string cal = butonText8.getText();
+				stringstream strcal(cal);
+				strcal >> timpCalator;
+
+
 
 				break;
 			}
@@ -343,6 +351,9 @@ test:
 				
 				butonText7.renderTextBox(window, event);	window.draw(butonText7.labelText);
 				textBox7.setString(butonText7.getText());	window.draw(textBox7);
+
+				butonText8.renderTextBox(window, event);	window.draw(butonText8.labelText);
+				textBox8.setString(butonText8.getText());	window.draw(textBox8);
 
 				window.draw(preview2);
 			}
