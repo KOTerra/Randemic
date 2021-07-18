@@ -574,22 +574,71 @@ display:
 			simOras::dt = simOras::deltaTime();
 
 			//merg in fiecare oras si ii dau update
+			std::vector<std::map<string, Oras>::iterator> oraseVindec;
+			std::vector<std::map<string, Oras>::iterator> oraseSigure;
 			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 				Oras oras = itr->second;
 				if (frames == 0)
 				{
 					itr->second.trimit++;
-					oras.update();
 					if (itr->second.trimit > 0)
 					{
                         trimitCalator(oras);
 						itr->second.trimit = 0;
 					}
+					oras.update();
+					if (oras.getInfectati() == 0)
+					{
+						if (oras.getPopulatie() == oras.getVindecati())
+						{
+							//orasul e sigur
+							oraseVindec.push_back(itr);
+						}
+						else
+						{
+							oraseSigure.push_back(itr);
+						}
+					}
+					
 
 					
 				}
 
 				itr->second = oras;
+			}
+			for (int i = 0; i < oraseVindec.size(); i++)
+			{
+				//sterg din infectati
+				std::map<string, Oras>::iterator iteratorInfectat = oraseVindec.at(i);
+				Oras oras = iteratorInfectat->second;
+				std::string key = iteratorInfectat->first;
+
+				oras.shape.setFillColor(sf::Color(0, 0, 255));
+				vindec.insert({ key,oras });
+				if (simOras::tipOrasClick == 1 && iteratorInfectat == simOras::lastClick)
+				{
+					//modific lastClick si oras
+					simOras::tipOrasClick = 2;
+					simOras::lastClick = vindec.find(key);
+				}
+				infect.erase(key);
+			}
+			for (int i = 0; i < oraseSigure.size(); i++)
+			{
+				//sterg din infectati
+				std::map<string, Oras>::iterator iteratorInfectat = oraseVindec.at(i);
+				Oras oras = iteratorInfectat->second;
+				std::string key = iteratorInfectat->first;
+
+				oras.shape.setFillColor(sf::Color(0, 255, 0));
+				sigur.insert({ key,oras });
+				if (simOras::tipOrasClick == 1 && iteratorInfectat == simOras::lastClick)
+				{
+					//modific lastClick si oras
+					simOras::tipOrasClick = 0;
+					simOras::lastClick = sigur.find(key);
+				}
+				infect.erase(key);
 			}
 			miscareCalatori();
 		}

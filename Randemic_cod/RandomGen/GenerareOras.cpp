@@ -118,7 +118,7 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 
 	for (std::map<std::string, Oras>::iterator itr = elemente.begin(); itr != elemente.end(); itr++) {
 		
-		itr->second.setTexture(populatieMaxima);
+		itr->second.setTexture(nrN);
 		itr->second.shape.setSize(sf::Vector2f(itr->second.orasSprite.getTexture()->getSize()));
 		std::pair<int, int> per=pozitie();
 		itr->second.orasSprite.setPosition(sf::Vector2f(per.first,per.second));
