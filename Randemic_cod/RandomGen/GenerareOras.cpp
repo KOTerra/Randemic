@@ -129,8 +129,8 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 	long long suma = 0;
 	initMatrice(); 
 	
-	int i;
-	for ( i= 1; i < nrO * nrOcop; i++) {
+	int i=0;
+	while(i<nrO*nrOcop){
 		
 		populatiile[i] = getPopulatia(nrO,nrN);
 		Oras oras(getNumeOras() , populatiile[i], 0, 0);
@@ -156,7 +156,7 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 		//ID
 
 		elemente.insert(std::pair<std::string, Oras>(id, oras));
-		
+		i++;
 	}
 	i++;
 	long long ultima = nrNcop - suma;

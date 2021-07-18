@@ -1,10 +1,17 @@
-﻿  EcranStart.cpp
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(55,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(61,39): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(58,7): warning C4102: 'window': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(64,11): warning C4102: 'background': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(72,10): warning C4102: 'font_text': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(76,8): warning C4102: 'butoane': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(80,8): warning C4102: 'display': unreferenced label
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranStart.cpp(88,5): warning C4102: 'test': unreferenced label
-  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe
+﻿  SimulareScenariuOras.cpp
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(184,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(207,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(207,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(207,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(207,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(212,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(260,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(288,36): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(633,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(651,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(285,7): warning C4102: 'window': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(291,11): warning C4102: 'background': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(300,10): warning C4102: 'font_text': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(326,11): warning C4102: 'adaugOmase': unreferenced label
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(334,8): warning C4102: 'display': unreferenced label
+  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe

@@ -16,7 +16,7 @@ Oras::Oras(std::string denumire, long long int populatie, float pozX, float pozY
 }
 
 Oras::~Oras() {
-
+    
 }
 
 

@@ -378,8 +378,13 @@ display:
 				break;
 			}
 			case sf::Event::Closed: {
+				sigur.clear();
+				infect.clear();
+				vindec.clear();
+				std::map<std::string, Oras>::iterator iterator;
+				simOras::lastClick = iterator;
 				window.close();
-				break;
+				return 0;
 			}
 
 			default: {
