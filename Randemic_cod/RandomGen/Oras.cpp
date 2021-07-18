@@ -80,25 +80,7 @@ void Oras::logicOras() {
     //extinderea la alte orase
 }
 
-void Oras::setTexture(long long populatieMaxima) {
 
-    sf::Texture texture;
-
-    if (getPopulatie() <= populatieMaxima / 4) {
-        texture.loadFromFile("Sprites/oras1.png");
-    }
-    else if (getPopulatie() > populatieMaxima / 4 && getPopulatie() <= populatieMaxima / 2) {
-        texture.loadFromFile("Sprites/oras2.png");
-    }
-    else if (getPopulatie() > populatieMaxima / 2 && getPopulatie() <= ((3 * populatieMaxima) / 4)) {
-        texture.loadFromFile("Sprites/oras3.png");
-    }
-    else {
-        texture.loadFromFile("Sprites/oras4.png");
-    }
-
-    this->orasSprite.setTexture(texture);
-}
 
 void Oras::sortarePopulatie(long long pop[101], int limita) {
     for (int i = 1; i < limita; i++) {

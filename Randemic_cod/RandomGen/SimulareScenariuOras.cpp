@@ -103,6 +103,7 @@ sf::Vector2f normalize(const sf::Vector2f& source)
 
 void trimitCalator(Oras oras)
 {
+	
 	//aici calculez distanta dintre orase
 	std::map<string, Oras>::iterator item = sigur.begin();
 	if (sigur.size() == 0)
@@ -110,7 +111,11 @@ void trimitCalator(Oras oras)
 		return;
 	}
 	int val = rand() % sigur.size();
-	std::advance(item, val);
+	val = rand() % (sigur.size() - 1);
+	for (int i = 0; i < val-1; i++)
+	{
+		item++;
+	}
 
 	//in item este orasul pe care vrem sa il cotropim
 	std::map<string, CalatorOras>::iterator itr = calatori.find(item->second.getDenum());
@@ -200,6 +205,7 @@ void miscareCalatori()
 		nouaCota.push_back(1);
 		oras.setCota(nouaCota);
 
+		oras.trimit = 0;
 		infect.insert({ key,oras });
 		if (simOras::tipOrasClick == 0)
 		{
@@ -299,26 +305,7 @@ adaugOmase:
 
 
 	//desenam orasele
-	for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
-
-		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(255, 0, 0, 110));
-		window.draw(oras.shape);
-	}
-
-	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
-
-		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(0, 255, 0, 110));
-		window.draw(oras.shape);
-	}
-	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
-
-		Oras oras = itr->second;
-		oras.shape.setFillColor(sf::Color(0, 0, 255, 110));
-		window.draw(oras.shape);
-	}
-
+	drawOras(window);
 
 
 display:
@@ -388,7 +375,7 @@ display:
 						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
 							simOras::amClick = true;
 							simOras::lastClick = itr;
-							simOras::tipOrasClick = 1;
+							simOras::tipOrasClick = 0;
 							amOras = true;
 							break;
 						}
@@ -623,10 +610,11 @@ display:
 				}
 				infect.erase(key);
 			}
+
 			for (int i = 0; i < oraseSigure.size(); i++)
 			{
 				//sterg din infectati
-				std::map<string, Oras>::iterator iteratorInfectat = oraseVindec.at(i);
+				std::map<string, Oras>::iterator iteratorInfectat = oraseSigure.at(i);
 				Oras oras = iteratorInfectat->second;
 				std::string key = iteratorInfectat->first;
 
@@ -642,8 +630,9 @@ display:
 			}
 			miscareCalatori();
 		}
-		drawCalatori(window);
 		drawOras(window);
+		drawCalatori(window);
+		
 		if (simOras::amClick == true) {
 			//am dat click pe cineva
 

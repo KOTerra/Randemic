@@ -27,7 +27,7 @@ public:
 	~Oras();
 
 	
-
+	sf::Texture textura;
 	//gettere
 	long long getPopulatie() {
 		return populatie;
@@ -66,7 +66,7 @@ public:
 		this->populatie=pop;
 	}
 	
-	void setTexture(long long populatieMaxima);
+	
 	void sortarePopulatie(long long pop[101], int limita);
 
 	void update();

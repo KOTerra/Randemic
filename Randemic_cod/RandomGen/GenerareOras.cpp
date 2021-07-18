@@ -27,6 +27,30 @@ std::string getNumeOras() {
 	return nume;
 
 }
+std::string setTextura(Oras& oras, long long populatieMaxima) {
+
+	sf::Texture texture;
+	std::string texturaMia;
+
+	if (oras.getPopulatie() <= populatieMaxima / 4) {
+		texturaMia = "Sprites/oras1.png";
+	}
+	else if (oras.getPopulatie() > populatieMaxima / 4 && oras.getPopulatie() <= populatieMaxima / 2) {
+
+		texturaMia = "Sprites/oras2.png";
+	}
+	else if (oras.getPopulatie() > populatieMaxima / 2 && oras.getPopulatie() <= ((3 * populatieMaxima) / 4)) {
+
+		texturaMia = "Sprites/oras3.png";
+	}
+	else {
+
+		texturaMia = "Sprites/oras4.png";
+	}
+
+	return texturaMia;
+
+}
 
 long long getPopulatia(int nrO, int nrN) {
 
@@ -34,8 +58,8 @@ long long getPopulatia(int nrO, int nrN) {
 	long long populatie = 0;
 	long long limitaInf = nrO / 100;
 	int coef = rand() % 3 + 1;
-	int mod = rand() % 2000 - 1000;
-	populatie = populatieInitiala + (rand() % (coef * populatieInitiala+1) / 2 - (populatieInitiala / coef)) + mod;
+	int mod = 0;
+	populatie = populatieInitiala + (rand() % (coef * populatieInitiala+1) / 2 - (populatieInitiala / coef))+mod;
 	if (populatie < limitaInf) {
 		populatie = limitaInf;
 	}
@@ -63,7 +87,7 @@ void initMatrice() {
 		}
 	}
 }
-const int matL=170;
+const int matL=182;
 
 
 std::pair<int, int> pozitie() {
@@ -75,10 +99,14 @@ std::pair<int, int> pozitie() {
 				pixelY = matL * j;
 				mat[i][j] = 1;
 
-				return std::pair<int, int>(pixelX, pixelY);
+				return std::pair<int, int>(pixelX+18, pixelY+18);
 			}
 		}
 	}
+}
+int compare(const void* a, const void* b)
+{
+	return (*(int*)a - *(int*)b);
 }
 
 long long populatiile[101];
@@ -86,11 +114,19 @@ long long populatiile[101];
 std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 	std::map<std::string, Oras> elemente;
 	long long populatieMaxima=nrN;
-	initMatrice();
-	for (int i = 1; i <= nrO; i++) {
+	long long nrOcop = nrO, nrNcop = nrN;
+	long long suma = 0;
+	initMatrice(); 
+	
+	int i;
+	for ( i= 1; i < nrO * nrOcop; i++) {
 		
-		Oras oras(getNumeOras() , getPopulatia(nrO, nrN), 0, 0);
-		populatiile[i] = oras.getPopulatie();
+		populatiile[i] = getPopulatia(nrO,nrN);
+		Oras oras(getNumeOras() , populatiile[i], 0, 0);
+		long long pop = populatiile[i];
+		suma += pop;
+		nrN -= pop;
+		nrO--;
 
 		std::string id;
 		//ID
@@ -109,20 +145,32 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 		//ID
 
 		elemente.insert(std::pair<std::string, Oras>(id, oras));
-		if (i == nrO) {
-			oras.sortarePopulatie(populatiile, nrO);
-			populatieMaxima = populatiile[nrO-1];
-		}
-
+		
 	}
+	i++;
+	long long ultima = nrNcop - suma;
+	populatiile[i] = ultima;
+	qsort(populatiile, i, sizeof(int),compare);
+	populatieMaxima = populatiile[i];
+	Oras oras(getNumeOras(), populatiile[i], 0, 0);
+	std::string id="";
+	elemente.insert(std::pair<std::string, Oras>(id, oras));
+
+	
 
 	for (std::map<std::string, Oras>::iterator itr = elemente.begin(); itr != elemente.end(); itr++) {
 		
-		itr->second.setTexture(nrN);
-		itr->second.shape.setSize(sf::Vector2f(itr->second.orasSprite.getTexture()->getSize()));
+		
+		itr->second.textura.loadFromFile(setTextura(itr->second,populatieMaxima));
+		itr->second.orasSprite.setTexture(itr->second.textura);
+		int marimeY = itr->second.orasSprite.getTextureRect().height;
+		int marimeX = itr->second.orasSprite.getTextureRect().width;
+		itr->second.shape.setSize(sf::Vector2f(marimeX, marimeY));
 		std::pair<int, int> per=pozitie();
 		itr->second.orasSprite.setPosition(sf::Vector2f(per.first,per.second));
 		itr->second.shape.setPosition(sf::Vector2f(itr->second.orasSprite.getPosition()));
+		itr->second.pX = per.first;
+		itr->second.pY = per.second;
 		
 	}
 
