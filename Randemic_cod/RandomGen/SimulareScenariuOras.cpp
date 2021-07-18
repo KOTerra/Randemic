@@ -355,18 +355,36 @@ display:
 			case sf::Event::KeyPressed: {
 				if (event.key.code == sf::Keyboard::Escape)
 				{
+					sigur.clear();
+					infect.clear();
+					vindec.clear();
+					std::map<std::string, Oras>::iterator iterator;
+					simOras::lastClick = iterator;
 					window.close();
+					return 0;
 				}
 				else if (event.key.code == sf::Keyboard::F1)
 				{
+					sigur.clear();
+					infect.clear();
+					vindec.clear();
+					std::map<std::string, Oras>::iterator iterator;
+					simOras::lastClick = iterator;
 					simOras::reset();
 					goto input;
+					return 0;
 
 				}
 				else if (event.key.code == sf::Keyboard::F2)
 				{
+					sigur.clear();
+					infect.clear();
+					vindec.clear();
+					std::map<std::string, Oras>::iterator iterator;
+					simOras::lastClick = iterator;
 					window.close();
 					initEcranPrincipal();
+					return 0;
 
 				}
 				else if (event.key.code == sf::Keyboard::Enter)
@@ -607,16 +625,10 @@ display:
 			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
 				if (frames == 0)
 				{
-					itr->second.trimit++;
-					
-					if (itr->second.trimit > timpCalator)
-					{
-						trimitCalator(itr->second);
-						itr->second.trimit = 0;
-					}
 					itr->second.update();
-					if (itr->second.getInfectati() == 0)
+					if (itr->second.getInfectati() <= 0)
 					{
+						itr->second.setInfectati(0);
 						if (itr->second.getPopulatie() == itr->second.getVindecati())
 						{
 							//orasul e sigur
@@ -626,7 +638,15 @@ display:
 						{
 							oraseSigure.push_back(itr);
 						}
-					}	
+					}
+					itr->second.trimit++;
+					
+					if (itr->second.trimit > timpCalator && itr->second.getInfectati()>10)
+					{
+						trimitCalator(itr->second);
+						itr->second.trimit = 0;
+					}
+						
 				}
 
 			}

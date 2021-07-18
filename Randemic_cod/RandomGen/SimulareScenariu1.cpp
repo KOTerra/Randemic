@@ -451,17 +451,19 @@ display:
 				if (event.key.code == sf::Keyboard::Escape)
 				{
 					window.close();
+					return 0;
 				}
 				else if (event.key.code == sf::Keyboard::F1)
 				{
 					sim1::reset();
 					goto input;
+					return 0;
 				}
 				else if (event.key.code == sf::Keyboard::F2)
 				{
 					window.close();
 					initEcranPrincipal();
-
+					return 0;
 				}
 				else if (event.key.code == sf::Keyboard::Enter)
 				{
@@ -472,7 +474,7 @@ display:
 			}
 			case sf::Event::Closed: {
 				window.close();
-				break;
+				return 0;
 			}
 
 			default: {
