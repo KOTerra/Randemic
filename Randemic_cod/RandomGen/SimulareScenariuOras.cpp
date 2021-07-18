@@ -121,7 +121,7 @@ sf::Vector2f normalize(const sf::Vector2f& source)
 		return source;
 }
 
-void trimitCalator(Oras oras)
+void trimitCalator(Oras& oras)
 {
 	
 	//aici calculez distanta dintre orase
@@ -159,6 +159,8 @@ void trimitCalator(Oras oras)
 		//dir=normalize(dir);
 
 		CalatorOras calator = CalatorOras(oras.pX, oras.pY, dir, item);
+		oras.setInfectati(oras.getInfectati() - 1);
+
 		calatori.insert({ item->second.getDenum() ,calator });
 		return;
 	}
@@ -495,7 +497,7 @@ display:
 						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
 							simOras::amClick = true;
 							simOras::lastClick = itr;
-							simOras::tipOrasClick = 1;
+							simOras::tipOrasClick = 0;
 							amOras = true;
 							break;
 						}
@@ -534,7 +536,7 @@ display:
 							std::string key = simOras::lastClick->first;
 							Oras oras = simOras::lastClick->second;
 							infect.erase(simOras::lastClick);
-							if (oras.getPopulatie() / 2 < oras.getVindecati())
+							if (oras.getPopulatie() == oras.getVindecati())
 							{
 								//am mai multi vindecati decat susceptibili
 								oras.shape.setFillColor(sf::Color(0, 0, 255));
@@ -597,20 +599,19 @@ display:
 			std::vector<std::map<string, Oras>::iterator> oraseVindec;
 			std::vector<std::map<string, Oras>::iterator> oraseSigure;
 			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
-				Oras oras = itr->second;
 				if (frames == 0)
 				{
 					itr->second.trimit++;
 					
 					if (itr->second.trimit > timpCalator)
 					{
-						trimitCalator(oras);
+						trimitCalator(itr->second);
 						itr->second.trimit = 0;
 					}
-					oras.update();
-					if (oras.getInfectati() == 0)
+					itr->second.update();
+					if (itr->second.getInfectati() == 0)
 					{
-						if (oras.getPopulatie() == oras.getVindecati())
+						if (itr->second.getPopulatie() == itr->second.getVindecati())
 						{
 							//orasul e sigur
 							oraseVindec.push_back(itr);
@@ -619,13 +620,9 @@ display:
 						{
 							oraseSigure.push_back(itr);
 						}
-					}
-					
-
-					
+					}	
 				}
 
-				itr->second = oras;
 			}
 			for (int i = 0; i < oraseVindec.size(); i++)
 			{

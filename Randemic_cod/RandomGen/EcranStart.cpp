@@ -74,7 +74,7 @@ font_text:
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
 butoane:
-	Buton butonStart(3, "", "Sprites/butonStart.png", 920, 390);
+	Buton butonStart(3, "", "Sprites/butonStart.png", 640, 390);
 
 
 display:
