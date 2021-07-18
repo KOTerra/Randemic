@@ -25,13 +25,14 @@ namespace simOras {
 	int counterVii;
 	int counterInfectati = 0;
 	int counterVindecati;
+	bool amClick = false;
 	void reset() {
 		//chestii care se reseteaza
 		counterInfectati = 0;
 		counterMorti = 0;
 		counterVii = 0;
 		counterVindecati = 0;
-
+		amClick = false;
 	}
 	sf::Text textNpc;//textul pt fiecare NPC
 	sf::Text textCounter;//numarul text
@@ -39,7 +40,7 @@ namespace simOras {
 	float dt;//delta time
 	const float nrFPS = FPS;
 	int tipOrasClick = 0;//0 neinfectat 1 infectat  2 vindecat
-	bool amClick = false;
+	
 	std::map<std::string, Oras>::iterator lastClick;
 	float deltaTime() {
 
@@ -99,7 +100,7 @@ void drawOras(sf::RenderWindow& window)
 void setGroupOrasImunity()
 {
 	if (imunitateGrup != 0) {
-		for (std::map<std::string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++)
+		for (std::map<std::string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++)
 		{
 			itr->second.setVindec(itr->second.getPopulatie() * imunitateGrup / 100);
 		}
@@ -356,13 +357,13 @@ display:
 				{
 					window.close();
 				}
-				else if (event.key.code == sf::Keyboard::R)
+				else if (event.key.code == sf::Keyboard::F1)
 				{
 					simOras::reset();
 					goto input;
 
 				}
-				else if (event.key.code == sf::Keyboard::T)
+				else if (event.key.code == sf::Keyboard::F2)
 				{
 					window.close();
 					initEcranPrincipal();
