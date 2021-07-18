@@ -192,9 +192,9 @@
   <ItemGroup>
     <None Include="Date\data.json" />
     <None Include="Date\nume.json" />
+    <None Include="Date\numeOrase.json" />
     <None Include="Date\prenumeF.json" />
     <None Include="Date\prenumeM.json" />
-    <None Include="numeOrase.json" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\KarmaFuture.ttf" />

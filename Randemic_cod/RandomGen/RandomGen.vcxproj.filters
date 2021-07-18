@@ -147,7 +147,7 @@
     <None Include="Date\prenumeM.json">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="numeOrase.json">
+    <None Include="Date\numeOrase.json">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

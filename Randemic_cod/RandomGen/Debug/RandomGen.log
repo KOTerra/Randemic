@@ -1,8 +1,8 @@
 ﻿  GenerareOras.cpp
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(20,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(20,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(22,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(125,64): warning C4244: 'argument': conversion from '_Ty2' to 'T', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(20,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(20,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(22,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(124,64): warning C4244: 'argument': conversion from '_Ty2' to 'T', possible loss of data
           with
           [
               _Ty2=int
@@ -11,7 +11,7 @@ D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Generar
           [
               T=float
           ]
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(125,54): warning C4244: 'argument': conversion from '_Ty1' to 'T', possible loss of data
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(124,54): warning C4244: 'argument': conversion from '_Ty1' to 'T', possible loss of data
           with
           [
               _Ty1=int
@@ -20,5 +20,5 @@ D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\Generar
           [
               T=float
           ]
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(82): warning C4715: 'pozitie': not all control paths return a value
-  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe
+C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\GenerareOras.cpp(82): warning C4715: 'pozitie': not all control paths return a value
+  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe

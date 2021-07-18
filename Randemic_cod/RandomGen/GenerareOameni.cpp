@@ -363,6 +363,7 @@ string getSociabilitate(int inaltime, int varsta) {
 
 
 std::map<string, OmClass> simulare(int NrNpc) {
+	
 	//aici sunt efectiv simulati oamenii
 	std::map<string, OmClass> elemente;//un map cu keyurile oamenilor(la fel ca in data.json)
 	srand(time(0));

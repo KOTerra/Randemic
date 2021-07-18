@@ -20,9 +20,10 @@ std::string getNumeOras() {
 	Json::Reader reader;
 	Json::Value val;
 	reader.parse(fisierIn, val);
-	const Json::Value& listaNume = val["Orase"];
-	nume = listaNume[rand() % (listaNume.size())]["Nume"].asString();
+	const Json::Value& listaNume = val["Nume"];
+	nume = listaNume[rand() % (listaNume.size())]["Orase"].asString();
 
+	fisierIn.close();
 	return nume;
 
 }
@@ -62,12 +63,11 @@ void initMatrice() {
 		}
 	}
 }
-int matL=170;
+const int matL=170;
 
 
 std::pair<int, int> pozitie() {
 	int pixelX, pixelY;
-	initMatrice();
 	for (int i = 0; i < 5; i++) {
 		for (int j = 0; j < 4; j++) {
 			if (mat[i][j] != 1) {
@@ -85,11 +85,11 @@ long long populatiile[101];
 
 std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 	std::map<std::string, Oras> elemente;
-	long long populatieMaxima;
-
+	long long populatieMaxima=nrN;
+	initMatrice();
 	for (int i = 1; i <= nrO; i++) {
-
-		Oras oras(getNumeOras(), getPopulatia(nrO, nrN), 0, 0);
+		
+		Oras oras(getNumeOras() , getPopulatia(nrO, nrN), 0, 0);
 		populatiile[i] = oras.getPopulatie();
 
 		std::string id;
@@ -108,7 +108,6 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 		}
 		//ID
 
-
 		elemente.insert(std::pair<std::string, Oras>(id, oras));
 		if (i == nrO) {
 			oras.sortarePopulatie(populatiile, nrO);
@@ -124,7 +123,7 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 		std::pair<int, int> per=pozitie();
 		itr->second.orasSprite.setPosition(sf::Vector2f(per.first,per.second));
 		itr->second.shape.setPosition(sf::Vector2f(itr->second.orasSprite.getPosition()));
-
+		
 	}
 
 
