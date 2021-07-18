@@ -264,6 +264,7 @@ input:
 	sigur.clear();
 	infect.clear();
 	vindec.clear();
+	calatori.clear();
 
 	/*Oras orastest("craiova", 100, 300, 300);
 	orastest.shape.setSize(sf::Vector2f(60, 60));
@@ -360,6 +361,7 @@ display:
 					vindec.clear();
 					std::map<std::string, Oras>::iterator iterator;
 					simOras::lastClick = iterator;
+					calatori.clear();
 					window.close();
 					return 0;
 				}
@@ -370,6 +372,7 @@ display:
 					vindec.clear();
 					std::map<std::string, Oras>::iterator iterator;
 					simOras::lastClick = iterator;
+					calatori.clear();
 					simOras::reset();
 					goto input;
 					return 0;
@@ -382,7 +385,10 @@ display:
 					vindec.clear();
 					std::map<std::string, Oras>::iterator iterator;
 					simOras::lastClick = iterator;
+					calatori.clear();
 					window.close();
+					simOras::reset();
+					simOras::amClick = false;
 					initEcranPrincipal();
 					return 0;
 
@@ -401,6 +407,7 @@ display:
 				vindec.clear();
 				std::map<std::string, Oras>::iterator iterator;
 				simOras::lastClick = iterator;
+				calatori.clear();
 				window.close();
 				return 0;
 			}
