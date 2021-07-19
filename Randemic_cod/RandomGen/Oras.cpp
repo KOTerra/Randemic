@@ -74,6 +74,9 @@ void Oras::update()
     }
     cota.push_front(nouInfectati);
     Oras::setCota(cota);
+
+    //aici trebuie sa actualizezam procentajul
+    //din methodele getPoplatie(), getInfect(), getDeced(), getVindec()
 }
 
 void Oras::logicOras() {
