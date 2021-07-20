@@ -166,6 +166,7 @@
     <ClCompile Include="GenerareOameni.cpp" />
     <ClCompile Include="SimulareScenariuOras.cpp" />
     <ClCompile Include="EcranAlegeri.cpp" />
+    <ClCompile Include="SimulatorLoader.cpp" />
     <ClCompile Include="TextBox.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +188,7 @@
     <ClInclude Include="HeaderNpc.h" />
     <ClInclude Include="OmClass.h" />
     <ClInclude Include="Oras.h" />
+    <ClInclude Include="SimulatorLoader.h" />
     <ClInclude Include="TextBox.h" />
   </ItemGroup>
   <ItemGroup>

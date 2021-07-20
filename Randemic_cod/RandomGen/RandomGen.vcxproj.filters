@@ -74,6 +74,9 @@
     <ClCompile Include="GenerareOameni.cpp">
       <Filter>Source Files\NPC</Filter>
     </ClCompile>
+    <ClCompile Include="SimulatorLoader.cpp">
+      <Filter>Source Files\Utilitare</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\HACKERMAN\programing\libraries\jsoncpp-master\jsoncpp-master\dist\json\json-forwards.h">
@@ -132,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="CalatorOras.h">
       <Filter>Source Files\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLoader.h">
+      <Filter>Source Files\Utilitare</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -37,7 +37,7 @@ string getNextPrenume(bool sexbool, string prenPrec) {
 		reader.parse(fisierIn, val);
 		const Json::Value& listaPrenume = val["listaPrenumeM"];
 		prenume = listaPrenume[rand() % (listaPrenume.size())]["M"].asString();
-
+		fisierIn.close();
 	}
 	else {
 		//citim datele din baza de date a prenumelor si luam un prenume aleator
@@ -47,6 +47,7 @@ string getNextPrenume(bool sexbool, string prenPrec) {
 		reader.parse(fisierIn, val);
 		const Json::Value& listaPrenume = val["listaPrenumeF"];
 		prenume = listaPrenume[rand() % (listaPrenume.size())]["F"].asString();
+		fisierIn.close();
 
 	}
 	if (prenPrec.find(prenume) != std::string::npos) {
@@ -481,6 +482,7 @@ std::map<string, OmClass> simulare(int NrNpc) {
 
 	}
 	fileData << "]" << '\n' << "}";
+	fileData.close();
 	//
 	/////scrie in json 
 	//
