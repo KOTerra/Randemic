@@ -100,6 +100,9 @@ butoane:
 	Buton butonStart(0, "", "Sprites/butonStart.png", 920, 390);
 	Buton butonScenariuStanga(-1, "", "Sprites/selectStanga.png", 390, 200);
 	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 805, 200);
+
+	Buton butonUpload(4,"", "Sprites/textBox.png",45, 140);
+
 	int localScenariuCount = 1;
 	butonScenariuDreapta.setCounter(&localScenariuCount);
 	butonScenariuStanga.setCounter(&localScenariuCount);
@@ -209,6 +212,9 @@ test:
 			butonStart.clic(event);
 			butonStart.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
+			window.draw(butonUpload.butonSprite);
+			butonUpload.clic(event);
+			butonUpload.update(sf::Vector2f(sf::Mouse::getPosition(window)));
 
 			window.draw(butonScenariuStanga.butonSprite);
 			butonScenariuStanga.clic(event);

@@ -16,6 +16,7 @@
 #include "HeaderSimulari.h"
 #include "CalatorOras.h"
 #include "HeaderVirus.h"
+#include "SimulatorLoader.h"
 
 
 namespace simOras {
@@ -747,7 +748,7 @@ display:
 				+"\n Decedata: " + "%");
 		}
 		window.draw(simOras::textNpc);
-
+		 
 		window.display();
 		
 	}

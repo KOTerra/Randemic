@@ -1,5 +1,6 @@
 #include "Buton.h"
 #include "HeaderSimulari.h"
+#include "SimulatorLoader.h"
 #include <fstream>
 
 
@@ -62,9 +63,11 @@ int simulare1();
 int simulareOras();
 int initEcranPrincipal();
 
+
 void Buton::clic(sf::Event event) {
     if (this->apasat == true) {
         switch (this->tipButon) {
+        
         case(-1): {
             //sageti stanga
 
@@ -92,7 +95,8 @@ void Buton::clic(sf::Event event) {
             break;
         }
         case(4): {
-
+            SimulatorLoader incarcator;
+            incarcator.openFile();
             break;
         }
         case(-5): {

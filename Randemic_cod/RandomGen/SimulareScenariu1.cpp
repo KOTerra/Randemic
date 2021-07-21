@@ -15,6 +15,7 @@
 #include "HeaderVirus.h"
 #include "OmClass.h"
 #include "HeaderSimulari.h"
+#include "SimulatorLoader.h"
 
 
 namespace sim1 {

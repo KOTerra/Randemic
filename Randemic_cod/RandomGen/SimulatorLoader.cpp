@@ -2,9 +2,23 @@
 #include <json/json.h>
 #include <fstream>
 
-void loadToSimulare1()
-{
-	std::ifstream fisierIn("Database/oameni.json");
+
+#include <Windows.h>
+#include <commdlg.h>
+
+void loadToSimulare1(int caz){
+	switch (caz) {
+	case 1: {
+		loaderF::fisierFolosit = openFile();
+		break;
+	}
+	default: {
+		loaderF::fisierFolosit = "Database/oameni.json";
+		break;
+	}
+	}
+		std::ifstream fisierIn(loaderF::fisierFolosit);
+	
 	Json::Reader reader;
 	Json::Value val;
 	reader.parse(fisierIn, val);
@@ -30,6 +44,33 @@ void loadToSimulare1()
 	fisierIn.close();
 }
 
-void loadToSimulare2() {
+void loadToSimulare2(int caz) {
+
+
+}
+
+
+std::string openFile()
+{
+	OPENFILENAMEA ofn;
+	CHAR szFile[260] = { 0 };
+	CHAR currentDir[256] = { 0 };
+	ZeroMemory(&ofn, sizeof(OPENFILENAME));
+	ofn.lStructSize = sizeof(OPENFILENAME);
+	ofn.lpstrFile = szFile;
+	ofn.nMaxFile = sizeof(szFile);
+
+	if (GetCurrentDirectoryA(256, currentDir)) {
+		ofn.lpstrInitialDir = currentDir;
+	}
+
+	ofn.nFilterIndex = 1;
+	ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_NOCHANGEDIR;
+
+	if (GetOpenFileNameA(&ofn) == true) {
+		return ofn.lpstrFile;
+	}
+
+	return std::string();
 
 }
