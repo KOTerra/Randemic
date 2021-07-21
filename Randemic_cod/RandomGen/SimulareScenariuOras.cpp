@@ -8,6 +8,7 @@
 #include <chrono>
 #include <thread>
 #include <cmath>
+#include <math.h>
 #include <map>
 
 //header
@@ -23,8 +24,9 @@ namespace simOras {
 	void resume() { pauza = false; }
 	int counterMorti = 0;
 	int counterVii;
-	int counterInfectati = 0;
+	float counterInfectati = 0;
 	int counterVindecati;
+	long long sumaInfectati = 0;
 	bool amClick = false;
 	void reset() {
 		//chestii care se reseteaza
@@ -77,6 +79,7 @@ void drawOras(sf::RenderWindow& window)
 
 	for (std::map<string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++) {
 		Oras om = itr->second;
+		//simOras::sumaInfectati += itr->second.getInfectati();
 		window.draw(itr->second.shape);
 		itr->second.orasSprite.setTexture(itr->second.textura);
 		window.draw(itr->second.orasSprite);
@@ -90,6 +93,7 @@ void drawOras(sf::RenderWindow& window)
 	}
 	for (std::map<string, Oras>::iterator itr = vindec.begin(); itr != vindec.end(); itr++) {
 		Oras om = itr->second;
+		//simOras::sumaInfectati += itr->second.getInfectati();
 		window.draw(itr->second.shape);
 		itr->second.orasSprite.setTexture(itr->second.textura);
 		window.draw(itr->second.orasSprite);
@@ -227,6 +231,7 @@ void miscareCalatori()
 
 		oras.trimit = 0;
 		infect.insert({ key,oras });
+		simOras::sumaInfectati++;
 		if (simOras::tipOrasClick == 0)
 		{
 			if (simOras::lastClick == itr->second.tinta)
@@ -265,6 +270,11 @@ input:
 	infect.clear();
 	vindec.clear();
 	calatori.clear();
+
+	simOras::sumaInfectati = 0;
+	simOras::counterInfectati = 0;
+
+	
 
 	/*Oras orastest("craiova", 100, 300, 300);
 	orastest.shape.setSize(sf::Vector2f(60, 60));
@@ -343,6 +353,8 @@ display:
 	while (window.isOpen())
 	{
 		simOras::dt = simOras::deltaTime();
+		simOras::sumaInfectati = 0;
+		simOras::counterInfectati = 0;
 
 		sf::Event event;
 		window.clear();
@@ -438,6 +450,7 @@ display:
 						simOras::lastClick->second.getPopulatie()-simOras::lastClick->second.getInfectati()-simOras::lastClick->second.getVindecati()-simOras::lastClick->second.getDeced()>0)
 					{
 						//adaug infectat
+						
 						std::string key = simOras::lastClick->first;
 						Oras oras = simOras::lastClick->second;
 						sigur.erase(key);
@@ -446,7 +459,7 @@ display:
 
 						oras.shape.setFillColor(sf::Color(255, 122, 0));
 						oras.setInfectati(oras.getInfectati() + 1);
-
+						simOras::sumaInfectati++;
 
 						std::deque<long long> nouaCota;
 						nouaCota.push_back(1);
@@ -471,7 +484,7 @@ display:
 						auto mouse_pos = sf::Mouse::getPosition(window);
 						auto translated_pos = window.mapPixelToCoords(mouse_pos);
 						Oras oras = itr->second;
-
+						simOras::counterInfectati += itr->second.getInfectati();
 						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
 							simOras::amClick = true;
 							simOras::lastClick = itr;
@@ -483,6 +496,7 @@ display:
 					if (amOras == true && simOras::pauza == true)
 					{
 						//adaug infectat
+						simOras::sumaInfectati++;
 						simOras::lastClick->second.setInfectati(simOras::lastClick->second.getInfectati() + 1);
 						std::deque<long long> nouaCota = simOras::lastClick->second.getNumVindZilnic();
 						nouaCota.push_back(1);
@@ -506,10 +520,12 @@ display:
 					if (amOras == true && simOras::pauza == true)
 					{
 						//adaug un infectat
+						simOras::sumaInfectati++;
 						simOras::lastClick->second.setInfectati(simOras::lastClick->second.getInfectati() + 1);
 						std::deque<long long> nouaCota = simOras::lastClick->second.getNumVindZilnic();
 						nouaCota.push_back(1);
 						simOras::lastClick->second.setCota(nouaCota);
+						
 						break;
 					}
 					break;
@@ -543,7 +559,7 @@ display:
 						auto mouse_pos = sf::Mouse::getPosition(window);
 						auto translated_pos = window.mapPixelToCoords(mouse_pos);
 						Oras oras = itr->second;
-
+						simOras::counterInfectati += itr->second.getInfectati() ;
 						if (oras.shape.getGlobalBounds().contains(translated_pos)) {
 							simOras::amClick = true;
 							simOras::lastClick = itr;
@@ -556,6 +572,7 @@ display:
 					{
 						//sterg infectat
 						simOras::lastClick->second.setInfectati(simOras::lastClick->second.getInfectati() - 1);
+						simOras::sumaInfectati--;
 						std::deque<long long> nouaCota = simOras::lastClick->second.getNumVindZilnic();
 						long long val = nouaCota.at(nouaCota.size() - 1);
 						nouaCota.pop_back();
@@ -572,6 +589,7 @@ display:
 								//am mai multi vindecati decat susceptibili
 								oras.shape.setFillColor(sf::Color(0, 0, 255));
 								vindec.insert({ key,oras });
+								simOras::sumaInfectati--;
 								simOras::lastClick = vindec.find(key);
 
 								simOras::tipOrasClick = 2;
@@ -630,8 +648,10 @@ display:
 			std::vector<std::map<string, Oras>::iterator> oraseVindec;
 			std::vector<std::map<string, Oras>::iterator> oraseSigure;
 			for (std::map<string, Oras>::iterator itr = infect.begin(); itr != infect.end(); itr++) {
+				simOras::counterInfectati += itr->second.getInfectati() ;
 				if (frames == 0)
 				{
+
 					itr->second.update();
 					if (itr->second.getInfectati() <= 0)
 					{
@@ -657,9 +677,11 @@ display:
 				}
 
 			}
+		
 			for (int i = 0; i < oraseVindec.size(); i++)
 			{
 				//sterg din infectati
+				simOras::sumaInfectati--;
 				std::map<string, Oras>::iterator iteratorInfectat = oraseVindec.at(i);
 				Oras oras = iteratorInfectat->second;
 				std::string key = iteratorInfectat->first;
@@ -678,6 +700,7 @@ display:
 			for (int i = 0; i < oraseSigure.size(); i++)
 			{
 				//sterg din infectati
+				simOras::sumaInfectati--;
 				std::map<string, Oras>::iterator iteratorInfectat = oraseSigure.at(i);
 				Oras oras = iteratorInfectat->second;
 				std::string key = iteratorInfectat->first;
@@ -699,16 +722,29 @@ display:
 				frames = 0;
 			}
 		}
+
+		simOras::counterInfectati +=simOras::sumaInfectati;
+		
+		simOras::counterVii = sigur.size();
+		simOras::counterMorti;
+
 		drawOras(window);
 		drawCalatori(window);
 		
+		std::string infectatiProc = to_string(100 * float(simOras::counterInfectati / nrNpc));
+		infectatiProc.erase(infectatiProc.length() - 5);
+
 		if (simOras::amClick == true) {
 			//am dat click pe cineva
 
 			simOras::textNpc.setString((simOras::lastClick->second).getDenum() + "\n Populatie: " + to_string((simOras::lastClick->second).getPopulatie())
 				+ "\n Infectati: " + to_string((simOras::lastClick->second).getInfectati())
 				+ "\n Vindecati: " + to_string((simOras::lastClick->second).getVindecati())
-				+ "\n Decedati: " + to_string((simOras::lastClick->second).getDeced()));
+				+ "\n Decedati: " + to_string((simOras::lastClick->second).getDeced())
+				
+				+"\n \n \n \n \nProcente populatie:"
+				+"\n Infectata: "+ infectatiProc +"%"
+				+"\n Decedata: " + "%");
 		}
 		window.draw(simOras::textNpc);
 

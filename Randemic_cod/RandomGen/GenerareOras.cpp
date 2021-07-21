@@ -130,7 +130,7 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 	initMatrice(); 
 	
 	int i=0;
-	while(i<nrO*nrOcop){
+	while(i<nrO*nrOcop-1){
 		
 		populatiile[i] = getPopulatia(nrO,nrN);
 		Oras oras(getNumeOras() , populatiile[i], 0, 0);
