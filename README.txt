@@ -8,7 +8,7 @@ Formulele legate de transmiterea virusului au fost bazate pe aceste 2 articole :
 https://calculate.org.au/wp-content/uploads/sites/15/2018/10/spread-of-disease.pdf
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2359860/
 
-Link-uri download (recomandam Mega): 
+Link-uri download (nu mai sunt updatate): 
 
 https://mega.nz/folder/5O4jBQ5Q#yHpGt8fTidU9gSD-KaO7Xw
 https://github.com/Mars-Zero/Randemic
