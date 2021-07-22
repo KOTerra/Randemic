@@ -3,37 +3,25 @@
 #include "OmClass.h"
 #include <map>
 #include <string>
- 
+
 #include <Windows.h>
 #include <commdlg.h>
 
 
-namespace loaderF {
-	std::string fisierFolosit="";
-	bool fisierIncarcat = false;
+
+
+namespace fisier {
+	extern std::string fisierFolosit;
+	extern bool fisierIncarcat;
 }
 
-class SimulatorLoader
-{
-private:
-	
-	std::map<std::string, OmClass> oameni;
-	std::map<std::string, Oras> orase;
-public:
-
-	
-	void loadToSimulare1();
-	void loadToSimulare2();
-
-	std::map<std::string, OmClass> getOameni() {
-		return oameni;
-	};
-	std::map<std::string, Oras> getOrase() {
-		return orase;
-	};
+//std::string openFile();
+std::map<std::string, OmClass> loadToSimulare1();
+std::map<std::string, Oras> loadToSimulare2();
+std::string openFile();
 
 
-	std::string openFile();
 
-};
+
+
 

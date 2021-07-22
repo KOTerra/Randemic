@@ -94,9 +94,8 @@ void Buton::clic(sf::Event event) {
             initEcranPrincipal();
             break;
         }
-        case(4): {
-            SimulatorLoader incarcator;
-            incarcator.openFile();
+        case(4): {           
+            openFile();
             break;
         }
         case(-5): {
