@@ -1,1 +1,10 @@
-﻿  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe
+﻿  SimulatorLoader.cpp
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(33,32): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(60,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(60,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(62,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(109,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(130,9): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(109,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(111,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+  RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe

@@ -334,9 +334,9 @@ test:
 			}
 
 			if (fisier::fisierIncarcat == true) {
-				fisier::fisierIncarcat = false;
+				//fisier::fisierIncarcat = false;
 				std::string fis = fisier::fisierFolosit;
-				fout << fis;
+				fout << fis<<"\n";
 			}
 			
 			butonText1.renderTextBox(window, event);	window.draw(butonText1.labelText);

@@ -197,6 +197,7 @@
     <None Include="Date\numeOrase.json" />
     <None Include="Date\prenumeF.json" />
     <None Include="Date\prenumeM.json" />
+    <None Include="orasUP.json" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\KarmaFuture.ttf" />

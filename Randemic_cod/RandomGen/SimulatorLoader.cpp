@@ -5,6 +5,7 @@
 
 #include <Windows.h>
 #include <commdlg.h>
+#include <sstream>
 
 std::string fisier::fisierFolosit = "";
 bool fisier::fisierIncarcat = false;
@@ -59,7 +60,7 @@ std::map<std::string, OmClass> loadToSimulare1() {
 	Json::Reader reader;
 	Json::Value val;
 	reader.parse(fisierIn, val);
-	const Json::Value& listaOameni = val["Oameni"];
+	const Json::Value& listaOameni = val["listaNPC"];
 
 	std::map<std::string, OmClass> oameni;
 	for (int i = 0; listaOameni.size(); i++) {
@@ -74,8 +75,14 @@ std::map<std::string, OmClass> loadToSimulare1() {
 		om.shape.setFillColor(sf::Color(0, 255, 0));
 
 
-		om.pX = stoi(listaOameni[i]["pozX"].asString());
-		om.pY = stoi(listaOameni[i]["pozY"].asString());
+		std::string pix = listaOameni[i]["pozX"].asString();
+		std::stringstream strnN(pix);
+		strnN >> om.pX;
+
+		std::string piY = listaOameni[i]["pozY"].asString();
+		std::stringstream strnNY(piY);
+		strnNY >> om.pY;
+		//om.pY = stoi(listaOameni[i]["pozY"].asString());
 		om.shape.setPosition(om.pX, om.pY);
 		oameni.insert({ key,om });
 	}
@@ -106,8 +113,23 @@ std::map<std::string, Oras> loadToSimulare2() {
 
 	std::map<std::string, Oras> orase;
 	for (int i = 0; listaOrase.size(); i++) {
-		Oras oras = Oras(listaOrase[i]["denumire"].asString(), std::stoll(listaOrase[i]["populatie"].asString()),
-			std::stof(listaOrase[i]["pX"].asString()), std::stod(listaOrase[i]["pY"].asString()));
+		//
+		float peX;
+		double peY;
+		std::string pix = listaOrase[i]["pX"].asString();
+		std::stringstream strnN(pix);
+		strnN >> peX;
+
+		std::string piY = listaOrase[i]["pY"].asString();
+		std::stringstream strnNY(piY);
+		strnNY >> peY;
+		//
+
+		Oras oras = Oras(listaOrase[i]["denumire"].asString(),
+			std::stoll(listaOrase[i]["populatie"].asString()),
+			peX, peY);//std::stof(listaOrase[i]["pX"].asString()), std::stod(listaOrase[i]["pY"].asString()));
+		
+		
 		std::string key = listaOrase[i]["ID"].asString();
 
 

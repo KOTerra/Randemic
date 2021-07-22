@@ -476,6 +476,8 @@ std::map<string, OmClass> simulare(int NrNpc) {
 		element["varsta"] = varsta;
 		element["inaltime"] = inaltime;
 		element["sociabilitate"] = sociabilitate;
+		element["pozX"] = om.pX;
+		element["pozY"] = om.pY;
 		str = writer.write(element);
 		fileData << endl << str;
 		if (i != NrNpc - 1) {

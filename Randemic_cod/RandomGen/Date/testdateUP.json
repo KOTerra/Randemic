@@ -1,0 +1,26 @@
+﻿{
+  "listaNPC": [
+
+    {
+      "ID": "c0x000",
+      "inaltime": "164",
+      "prenume": "mihai-Catalina",
+      "sex": "F",
+      "sociabilitate": "8",
+      "varsta": "53"
+      "pozX": "100",
+      "pozY": "30"
+    },
+    {
+      "ID": "c0x001",
+      "inaltime": "176",
+      "prenume": "rozwe",
+      "sex": "M",
+      "sociabilitate": "6",
+      "varsta": "48"
+      "pozX": "130",
+      "pozY": "30"
+        
+}
+  ]
+}
