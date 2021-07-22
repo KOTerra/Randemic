@@ -162,4 +162,9 @@
       <Filter>Fonts</Filter>
     </Font>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt">
+      <Filter>Source Files\Utilitare</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

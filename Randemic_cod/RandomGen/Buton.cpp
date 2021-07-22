@@ -94,8 +94,9 @@ void Buton::clic(sf::Event event) {
             initEcranPrincipal();
             break;
         }
-        case(4): {           
-            openFile();
+        case(4): {        
+            fisier::fisierFolosit = openFile();
+            
             break;
         }
         case(-5): {

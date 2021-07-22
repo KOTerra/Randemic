@@ -27,11 +27,15 @@ std::string openFile()
 	ofn.nFilterIndex = 1;
 	ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_NOCHANGEDIR;
 
+	fisier::fisierIncarcat = true;
+
 	if (GetOpenFileNameA(&ofn) == true) {
 		return ofn.lpstrFile;
 	}
 
-	else { return std::string(); }
+	else { 
+		return std::string(); 
+	}
 }
 
 std::map<std::string, OmClass> loadToSimulare1(int caz) {
@@ -106,7 +110,7 @@ std::map<std::string, Oras> loadToSimulare2(int caz) {
 
 		orase.insert({ key,oras });
 	}
-	
+
 	fisierIn.close();
 	return orase;
 }

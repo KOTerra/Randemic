@@ -16,6 +16,7 @@
 #include "HeaderVirus.h"
 #include "Buton.h"
 #include "TextBox.h"
+#include "SimulatorLoader.h"
 
 //.
 
@@ -49,6 +50,7 @@ using namespace std;
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
 
+ofstream fout("test.txt");
 
 int initEcranPrincipal() {
 
@@ -331,9 +333,12 @@ test:
 
 			}
 
-
-
-
+			if (fisier::fisierIncarcat == true) {
+				fisier::fisierIncarcat = false;
+				std::string fis = fisier::fisierFolosit;
+				fout << fis;
+			}
+			
 			butonText1.renderTextBox(window, event);	window.draw(butonText1.labelText);
 			butonText2.renderTextBox(window, event);	window.draw(butonText2.labelText);
 			butonText3.renderTextBox(window, event);	window.draw(butonText3.labelText);
