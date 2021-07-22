@@ -288,7 +288,14 @@ input:
 	orastest2.shape.setFillColor(sf::Color(0, 255, 0, 100));
 	//orastest2.shape.setPosition(600, 300);
 	sigur.insert({ "2",orastest2 });*/
-	sigur = generareOrase(nrOrase,nrNpc);
+	if (fisier::fisierIncarcat == true)
+	{
+		sigur = loadToSimulare2();
+	}
+	else
+	{
+		sigur = generareOrase(nrOrase, nrNpc);
+	}
 	setGroupOrasImunity();
 
 	

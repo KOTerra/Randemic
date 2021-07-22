@@ -9,7 +9,7 @@
 std::string fisier::fisierFolosit = "";
 bool fisier::fisierIncarcat = false;
 
-std::string openFile()
+void openFile()
 {
 	
 	OPENFILENAMEA ofn;
@@ -27,19 +27,22 @@ std::string openFile()
 	ofn.nFilterIndex = 1;
 	ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_NOCHANGEDIR;
 
-	fisier::fisierIncarcat = true;
+	
 
 	if (GetOpenFileNameA(&ofn) == true) {
-		return ofn.lpstrFile;
+		fisier::fisierFolosit = ofn.lpstrFile;
+		fisier::fisierIncarcat = true;
+		return;
+		//return ofn.lpstrFile;
 	}
 
-	else { 
-		return std::string(); 
-	}
+	fisier::fisierIncarcat = false;
+	//return std::string(); 
+	
 }
 
-std::map<std::string, OmClass> loadToSimulare1(int caz) {
-	std::string fisierFolosit = "";
+std::map<std::string, OmClass> loadToSimulare1() {
+	/*std::string fisierFolosit = "";
 	switch (caz) {
 	case 1: {
 		fisierFolosit = openFile();
@@ -49,9 +52,9 @@ std::map<std::string, OmClass> loadToSimulare1(int caz) {
 		fisierFolosit = "Database/oameni.json";
 		break;
 	}
-	}
+	}*/
 
-	std::ifstream fisierIn(fisierFolosit);
+	std::ifstream fisierIn(fisier::fisierFolosit);
 
 	Json::Reader reader;
 	Json::Value val;
@@ -81,8 +84,8 @@ std::map<std::string, OmClass> loadToSimulare1(int caz) {
 	return oameni;
 }
 
-std::map<std::string, Oras> loadToSimulare2(int caz) {
-	std::string fisierFolosit = "";
+std::map<std::string, Oras> loadToSimulare2() {
+	/*std::string fisierFolosit = "";
 	switch (caz) {
 	case 1: {
 		fisierFolosit = openFile();
@@ -92,9 +95,9 @@ std::map<std::string, Oras> loadToSimulare2(int caz) {
 		fisierFolosit = "Database/orase.json";
 		break;
 	}
-	}
+	}*/
 
-	std::ifstream fisierIn(fisierFolosit);
+	std::ifstream fisierIn(fisier::fisierFolosit);
 
 	Json::Reader reader;
 	Json::Value val;

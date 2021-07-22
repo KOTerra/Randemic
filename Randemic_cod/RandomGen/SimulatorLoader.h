@@ -18,7 +18,7 @@ namespace fisier {
 //std::string openFile();
 std::map<std::string, OmClass> loadToSimulare1();
 std::map<std::string, Oras> loadToSimulare2();
-std::string openFile();
+void openFile();
 
 
 
