@@ -375,7 +375,7 @@ input:
 	{
 		oameniSanatosi = simulare(sim1::nrNpcuri);
 	}
-	sim1::reset();
+	
 	sim1::amClick = false;
 	sim1::lastClick = oameniSanatosi.begin();
 	sim1::tip = 0;//0 sanatos 

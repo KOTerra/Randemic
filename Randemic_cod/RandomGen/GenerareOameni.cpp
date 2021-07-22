@@ -26,39 +26,47 @@ string getSex(bool sexbool) {
 	return sex;
 }
 
-string getNextPrenume(bool sexbool, string prenPrec, const Json::Value& listaPrenumeM, const Json::Value& listaPrenumeF) {
+string getNextPrenume(bool sexbool, string prenPrec) {
 	//functie de prenume
 	string prenume;
 	if (sexbool == true) {
 		//citim datele din baza de date a prenumelor si luam un prenume aleator
-		
-		prenume = listaPrenumeM[rand() % (listaPrenumeM.size())]["M"].asString();
-		
+		ifstream fisierIn("Date/prenumeM.json");
+		Json::Reader reader;
+		Json::Value val;
+		reader.parse(fisierIn, val);
+		const Json::Value& listaPrenume = val["listaPrenumeM"];
+		prenume = listaPrenume[rand() % (listaPrenume.size())]["M"].asString();
+		fisierIn.close();
 	}
 	else {
 		//citim datele din baza de date a prenumelor si luam un prenume aleator
-		
-		prenume = listaPrenumeF[rand() % (listaPrenumeF.size())]["F"].asString();
-		
+		ifstream fisierIn("Date/prenumeF.json");
+		Json::Reader reader;
+		Json::Value val;
+		reader.parse(fisierIn, val);
+		const Json::Value& listaPrenume = val["listaPrenumeF"];
+		prenume = listaPrenume[rand() % (listaPrenume.size())]["F"].asString();
+		fisierIn.close();
 
 	}
 	if (prenPrec.find(prenume) != std::string::npos) {
-		return getNextPrenume(sexbool, prenPrec, listaPrenumeM, listaPrenumeF);
+		return getNextPrenume(sexbool, prenPrec);
 	}
 	return prenume;
 }
 
-string getPrenume(bool sexbool, const Json::Value& listaPrenumeM, const Json::Value& listaPrenumeF) {
+string getPrenume(bool sexbool) {
 	//formez prenumele 
 	string prenume;
-	prenume = getNextPrenume(sexbool, prenume, listaPrenumeM, listaPrenumeF);
+	prenume = getNextPrenume(sexbool, prenume);
 	int probabilitate = rand() % 100;
 	if (probabilitate < 40) {
 
-		prenume = prenume + "-" + getNextPrenume(sexbool, prenume, listaPrenumeM, listaPrenumeF);
+		prenume = prenume + "-" + getNextPrenume(sexbool, prenume);
 		if (probabilitate < 10) {
 
-			prenume = prenume + "-" + getNextPrenume(sexbool, prenume, listaPrenumeM, listaPrenumeF);
+			prenume = prenume + "-" + getNextPrenume(sexbool, prenume);
 
 		}
 
@@ -361,17 +369,7 @@ std::map<string, OmClass> simulare(int NrNpc) {
 	std::map<string, OmClass> elemente;//un map cu keyurile oamenilor(la fel ca in data.json)
 	srand(time(0));
 
-	ifstream fisierInM("Date/prenumeM.json");
-	Json::Reader readerM;
-	Json::Value valM;
-	readerM.parse(fisierInM, valM);
-	const Json::Value& listaPrenumeM = valM["listaPrenumeM"];
 
-	ifstream fisierInF("Date/prenumeF.json");
-	Json::Reader readerF;
-	Json::Value valF;
-	readerF.parse(fisierInF, valF);
-	const Json::Value& listaPrenumeF = valF["listaPrenumeF"];
 
 	fstream fileData;
 	fileData.open("Date/data.json", 'W');
@@ -406,7 +404,7 @@ std::map<string, OmClass> simulare(int NrNpc) {
 		//sex
 
 		//prenume
-		string prenume = getPrenume(sexbool, listaPrenumeM, listaPrenumeF);
+		string prenume = getPrenume(sexbool);
 		om.prenume = prenume;
 		//prenume
 
@@ -483,8 +481,6 @@ std::map<string, OmClass> simulare(int NrNpc) {
 		}
 
 	}
-	fisierInM.close();
-	fisierInF.close();
 	fileData << "]" << '\n' << "}";
 	fileData.close();
 	//

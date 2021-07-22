@@ -14,9 +14,17 @@
 #include "Oras.h"
 
 
-std::string getNumeOras(const Json::Value& listaNume) {
-	
-	return listaNume[rand() % (listaNume.size())]["Orase"].asString();
+std::string getNumeOras() {
+	std::string nume;
+	std::ifstream fisierIn("Date/numeOrase.json");
+	Json::Reader reader;
+	Json::Value val;
+	reader.parse(fisierIn, val);
+	const Json::Value& listaNume = val["Nume"];
+	nume = listaNume[rand() % (listaNume.size())]["Orase"].asString();
+
+	fisierIn.close();
+	return nume;
 
 }
 std::string setTextura(Oras& oras, long long populatieMaxima) {
@@ -121,17 +129,11 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 	long long suma = 0;
 	initMatrice(); 
 	
-	std::ifstream fisierInNume("Date/numeOrase.json");
-	Json::Reader readerNume;
-	Json::Value valNume;
-	readerNume.parse(fisierInNume, valNume);
-	const Json::Value& listaNume = valNume["Nume"];
-
 	int i=0;
 	while(i<nrO*nrOcop-1){
 		
 		populatiile[i] = getPopulatia(nrO,nrN);
-		Oras oras(getNumeOras(listaNume) , populatiile[i], 0, 0);
+		Oras oras(getNumeOras() , populatiile[i], 0, 0);
 		long long pop = populatiile[i];
 		suma += pop;
 		nrN -= pop;
@@ -161,12 +163,11 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN) {
 	populatiile[i] = ultima;
 	qsort(populatiile, i, sizeof(int),compare);
 	populatieMaxima = populatiile[i];
-	Oras oras(getNumeOras(listaNume), populatiile[i], 0, 0);
+	Oras oras(getNumeOras(), populatiile[i], 0, 0);
 	std::string id="";
 	elemente.insert(std::pair<std::string, Oras>(id, oras));
 
 	
-	fisierInNume.close();
 
 	for (std::map<std::string, Oras>::iterator itr = elemente.begin(); itr != elemente.end(); itr++) {
 		
