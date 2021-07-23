@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include <commdlg.h>
 #include <sstream>
+#include "HeaderNpc.h"
 
 std::string fisier::fisierFolosit = "";
 bool fisier::fisierIncarcat = false;
@@ -54,7 +55,7 @@ std::map<std::string, OmClass> loadToSimulare1() {
 		break;
 	}
 	}*/
-
+	srand(time(0));
 	std::ifstream fisierIn(fisier::fisierFolosit);
 
 	Json::Reader reader;
@@ -63,28 +64,44 @@ std::map<std::string, OmClass> loadToSimulare1() {
 	const Json::Value& listaOameni = val["listaNPC"];
 
 	std::map<std::string, OmClass> oameni;
-	for (int i = 0; listaOameni.size(); i++) {
+	for (int i = 0; i<listaOameni.size(); i++) {
 		OmClass om;
 		std::string key = listaOameni[i]["ID"].asString();
 		om.inaltime = listaOameni[i]["inaltime"].asString();
+
+		std::string pix = listaOameni[i]["pozX"].asString();
+		std::stringstream strnN(pix);
+		strnN >> om.pX;
+		
+		std::string piY = listaOameni[i]["pozY"].asString();
+		std::stringstream strnNY(piY);
+		strnNY >> om.pY;
+	
+		//om.pY = stoi(listaOameni[i]["pozY"].asString());
+		om.shape.setPosition(om.pX, om.pY);
+
 		om.prenume = listaOameni[i]["prenume"].asString();
 		om.sex = listaOameni[i]["sex"].asString();
 		om.sociabilitate = listaOameni[i]["sociabilitate"].asString();
 		om.varsta = listaOameni[i]["varsta"].asString();
 
 		om.shape.setFillColor(sf::Color(0, 255, 0));
+		om.shape.setRadius(razaShape);
+		om.misc.x = speed;
+		om.misc.y = speed;
+		int rand1 = rand() % 2;
+		if (rand1 == 0) {
+			om.misc.x = -om.misc.x;
+		}
+		int rand2 = rand() % 2;
+		if (rand2 == 0) {
+			om.misc.y = -om.misc.y;
+		}
+		om.shape.setRotation(rand() % 90);
 
+		om.stare = "sanatos";
 
-		std::string pix = listaOameni[i]["pozX"].asString();
-		std::stringstream strnN(pix);
-		strnN >> om.pX;
-
-		std::string piY = listaOameni[i]["pozY"].asString();
-		std::stringstream strnNY(piY);
-		strnNY >> om.pY;
-		//om.pY = stoi(listaOameni[i]["pozY"].asString());
-		om.shape.setPosition(om.pX, om.pY);
-		oameni.insert({ key,om });
+		oameni.insert({key, om});
 	}
 
 	fisierIn.close();

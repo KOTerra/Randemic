@@ -471,13 +471,16 @@ std::map<string, OmClass> simulare(int NrNpc) {
 		Json::FastWriter writer;
 		Json::Value element;
 		element["ID"] = id;
-		element["sex"] = sex;
-		element["prenume"] = prenume;
-		element["varsta"] = varsta;
 		element["inaltime"] = inaltime;
-		element["sociabilitate"] = sociabilitate;
 		element["pozX"] = om.pX;
 		element["pozY"] = om.pY;
+		element["prenume"] = prenume;
+		element["sex"] = sex;
+		element["sociabilitate"] = sociabilitate;
+		element["varsta"] = varsta;
+		
+		
+		
 		str = writer.write(element);
 		fileData << endl << str;
 		if (i != NrNpc - 1) {

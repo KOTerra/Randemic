@@ -184,7 +184,8 @@ void miscareCalatori()
 	for (std::map<string, CalatorOras>::iterator itr = calatori.begin(); itr != calatori.end(); itr++) {
 		itr->second.move(simOras::dt);
 
-		float X1, Y1, X2, Y2;
+		float 
+			X1, Y1, X2, Y2;
 		sf::Transform matrix = itr->second.tinta->second.shape.getTransform();
 		for (int i = 0; i < itr->second.tinta->second.shape.getPointCount(); ++i) {
 			const auto pointInModelSpace = matrix.transformPoint(itr->second.tinta->second.shape.getPoint(i));
