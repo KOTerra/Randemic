@@ -1,29 +1,44 @@
-﻿  SimulatorLoader.cpp
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(37,32): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(61,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(64,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(70,19): warning C4018: '<': signed/unsigned mismatch
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(103,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(64,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(66,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(129,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(136,19): warning C4018: '<': signed/unsigned mismatch
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(156,9): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(158,49): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(172,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(172,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(129,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
-D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(131,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+﻿  EcranAlegeri.cpp
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(58,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(78,38): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(131,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(131,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(132,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(132,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(133,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(133,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(134,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(134,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(135,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(135,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(136,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(136,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(137,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(137,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(138,196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(138,173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(121,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(122,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(123,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(124,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(125,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(126,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(127,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(128,61): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(131,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(132,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(133,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(134,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(135,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(136,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(137,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(138,101): warning C4996: 'sf::Text::setColor': was declared deprecated
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(75,7): warning C4102: 'window': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(81,11): warning C4102: 'background': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(89,9): warning C4102: 'previews': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(97,10): warning C4102: 'font_text': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(101,8): warning C4102: 'butoane': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(111,11): warning C4102: 'textBoxuri': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(141,8): warning C4102: 'display': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\EcranAlegeri.cpp(149,5): warning C4102: 'test': unreferenced label
   RandomGen.vcxproj -> D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\Debug\RandomGen.exe

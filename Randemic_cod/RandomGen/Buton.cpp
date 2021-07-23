@@ -72,30 +72,30 @@ void Buton::clic(sf::Event event) {
             //sageti stanga
 
             (*counter) -= 1;
-            this->apasat = false;
+          
             break;
         }
         case(0): {
             //sageti dreapta
 
             (*counter) += 1;
-            this->apasat = false;
+          
             break;
         }
         case(1): {
-            this->apasat = false;
+         
             simulare1();
 
 
             break;
         }
         case(2): {
-            this->apasat = false;
+           
             simulareOras();
             break;
         }
         case(3): {
-            this->apasat = false;
+           
             initEcranPrincipal();
             break;
         }
@@ -122,7 +122,7 @@ void Buton::clic(sf::Event event) {
             else {
                 this->peTasta = false;
             }
-            this->apasat = false;
+           
 
             break;
         }

@@ -99,11 +99,11 @@ font_text:
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
 butoane:
-	Buton butonStart(0, "", "Sprites/butonStart.png", 920, 390);
-	Buton butonScenariuStanga(-1, "", "Sprites/selectStanga.png", 390, 200);
-	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 805, 200);
+	Buton butonStart(0, "", "Sprites/butonStart.png", 909, 428);
+	Buton butonScenariuStanga(-1, "", "Sprites/selectStanga.png", 361, 168);
+	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 800, 168);
 
-	Buton butonUpload(4,"", "Sprites/textBox.png",45, 140);
+	Buton butonUpload(4,"", "Sprites/fileBox.png",30, 60);
 
 	int localScenariuCount = 1;
 	butonScenariuDreapta.setCounter(&localScenariuCount);
