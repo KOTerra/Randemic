@@ -78,7 +78,7 @@ bool isHitDetection(OmClass sanatos)
 
 		//folosim formula AABB pt hit detection
 
-		int sss;
+		/*int sss;
 		std::string soc1 =sanatos.sociabilitate;
 		std::stringstream str1(soc1);
 		str1 >> sss;
@@ -86,7 +86,9 @@ bool isHitDetection(OmClass sanatos)
 		int css;
 		std::string soc2 = col->second.sociabilitate;
 		std::stringstream str2(soc2);
-		str2 >> css;
+		str2 >> css;*/
+		int sss = std::stoi(sanatos.sociabilitate);
+		int css = std::stoi(col->second.sociabilitate);
 
 		int raza1 = sss + razaShape - 3, x1 = sanatos.pX, y1 = sanatos.pY;
 		int raza2 = css + razaShape - 3, x2 = col->second.pX, y2 = col->second.pY;
