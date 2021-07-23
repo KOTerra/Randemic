@@ -133,7 +133,7 @@ std::map<std::string, Oras> loadToSimulare2() {
 
 	std::map<std::string, Oras> orase;
 	long long populatieMaxima = 0;
-	for (int i = 0; listaOrase.size(); i++) {
+	for (int i = 0; i<listaOrase.size(); i++) {
 		//
 		float peX;
 		double peY;
@@ -149,7 +149,7 @@ std::map<std::string, Oras> loadToSimulare2() {
 
 		std::string piL = listaOrase[i]["populatie"].asString();
 		std::stringstream strnNL(piL);
-		strnNY >> peL;
+		strnNL >> peL;
 
 		Oras oras = Oras(listaOrase[i]["denumire"].asString(),
 			peL,
