@@ -14,6 +14,11 @@ bool fisier::fisierIncarcat = false;
 
 std::string setTextura(Oras& oras, long long populatieMaxima);
 
+std::map<std::string, OmClass> oameniSanatosiHead;
+std::map<std::string, OmClass> oameniInfectatiHead;
+std::map<std::string, OmClass> oameniVindecatiHead;
+std::map<std::string, OmClass> oameniDecedatiHead;
+
 void openFile()
 {
 	
@@ -24,7 +29,7 @@ void openFile()
 	ofn.lStructSize = sizeof(OPENFILENAME);
 	ofn.lpstrFile = szFile;
 	ofn.nMaxFile = sizeof(szFile);
-
+    
 	if (GetCurrentDirectoryA(256, currentDir)) {
 		ofn.lpstrInitialDir = currentDir;
 	}
@@ -34,7 +39,7 @@ void openFile()
 
 	
 
-	if (GetOpenFileNameA(&ofn) == true) {
+	if (GetOpenFileNameA(&ofn) == TRUE) {
 		fisier::fisierFolosit = ofn.lpstrFile;
 		fisier::fisierIncarcat = true;
 		return;
@@ -46,69 +51,115 @@ void openFile()
 	
 }
 
-std::map<std::string, OmClass> loadToSimulare1() {
-	/*std::string fisierFolosit = "";
-	switch (caz) {
-	case 1: {
-		fisierFolosit = openFile();
-		break;
-	}
-	default: {
-		fisierFolosit = "Database/oameni.json";
-		break;
-	}
-	}*/
-	srand(time(0));
-	std::ifstream fisierIn(fisier::fisierFolosit);
+void loadToSimulare1() {
+    /* std::string fisierFolosit = "";
+    switch (caz) {
+    case 1: {
+        fisierFolosit = openFile();
+        break;
+    }
+    default: {
+        fisierFolosit = "Database/oameni.json";
+        break;
+    }
+    } */
+        srand(time(0));
+    std::ifstream fisierIn(fisier::fisierFolosit);
 
-	Json::Reader reader;
-	Json::Value val;
-	reader.parse(fisierIn, val);
-	const Json::Value& listaOameni = val["listaNPC"];
+    Json::Reader reader;
+    Json::Value val;
+    reader.parse(fisierIn, val);
+    const Json::Value& listaOameni = val["listaNPC"];
 
-	std::map<std::string, OmClass> oameni;
-	for (int i = 0; i<listaOameni.size(); i++) {
-		OmClass om;
-		std::string key = listaOameni[i]["ID"].asString();
-		om.inaltime = listaOameni[i]["inaltime"].asString();
+    //std::map<std::string, OmClass> oameni;
+    nrNpc = listaOameni.size();
+    //counterVii = nrNpc;
+    for (int i = 0; i < listaOameni.size(); i++) {
+        OmClass om;
+        std::string key = listaOameni[i]["ID"].asString();
+        om.inaltime = listaOameni[i]["inaltime"].asString();
 
-		std::string pix = listaOameni[i]["pozX"].asString();
-		std::stringstream strnN(pix);
-		strnN >> om.pX;
-		
-		std::string piY = listaOameni[i]["pozY"].asString();
-		std::stringstream strnNY(piY);
-		strnNY >> om.pY;
-	
-		//om.pY = stoi(listaOameni[i]["pozY"].asString());
-		om.shape.setPosition(om.pX, om.pY);
+        std::string pix = listaOameni[i]["pozX"].asString();
+        std::stringstream strnN(pix);
+        strnN >> om.pX;
 
-		om.prenume = listaOameni[i]["prenume"].asString();
-		om.sex = listaOameni[i]["sex"].asString();
-		om.sociabilitate = listaOameni[i]["sociabilitate"].asString();
-		om.varsta = listaOameni[i]["varsta"].asString();
+        std::string piY = listaOameni[i]["pozY"].asString();
+        std::stringstream strnNY(piY);
+        strnNY >> om.pY;
 
-		om.shape.setFillColor(sf::Color(0, 255, 0));
-		om.shape.setRadius(razaShape);
-		om.misc.x = speed;
-		om.misc.y = speed;
-		int rand1 = rand() % 2;
-		if (rand1 == 0) {
-			om.misc.x = -om.misc.x;
-		}
-		int rand2 = rand() % 2;
-		if (rand2 == 0) {
-			om.misc.y = -om.misc.y;
-		}
-		om.shape.setRotation(rand() % 90);
+        //om.pY = stoi(listaOameni[i]["pozY"].asString());
+        om.shape.setPosition(om.pX, om.pY);
 
-		om.stare = "sanatos";
+        om.prenume = listaOameni[i]["prenume"].asString();
+        om.sex = listaOameni[i]["sex"].asString();
+        om.sociabilitate = listaOameni[i]["sociabilitate"].asString();
+        om.varsta = listaOameni[i]["varsta"].asString();
 
-		oameni.insert({key, om});
-	}
-	nrNpc = listaOameni.size();
-	fisierIn.close();
-	return oameni;
+
+        om.shape.setRadius(razaShape);
+        om.misc.x = speed;
+        om.misc.y = speed;
+        int rand1 = rand() % 2;
+        if (rand1 == 0) {
+            om.misc.x = -om.misc.x;
+        }
+        int rand2 = rand() % 2;
+        if (rand2 == 0) {
+            om.misc.y = -om.misc.y;
+        }
+        om.shape.setRotation(rand() % 90);
+        bool eGasit = listaOameni[i].isMember("stare");
+        if (eGasit) 
+        {
+            //nu ia bine stringul
+            std::string str=listaOameni[i]["stare"].asString();
+            if (listaOameni[i]["stare"].asString().compare("sanatos"))
+            {
+                om.stare = "sanatos";
+                om.shape.setFillColor(sf::Color(0, 255, 0));
+                oameniSanatosiHead.insert({ {key, om} });
+            }
+            else if (listaOameni[i]["stare"].asString().compare("infectat"))
+            {
+                om.stare = "infectat";
+                om.shape.setFillColor(sf::Color(255, 125, 0));
+                
+                bool isTimp = listaOameni[i].isMember("timpInfectare");
+                if (isTimp) { om.timpInfectare = std::stol(listaOameni[i]["timpInfectare"].asString()); }
+                else { om.timpInfectare = 0; }
+                oameniInfectatiHead.insert({ {key, om} });
+            }
+            else if (listaOameni[i]["stare"].asString().compare("vindecat"))
+            {
+                
+                om.stare = "vindecat";
+                om.timpInfectare = 0;
+                om.shape.setFillColor(sf::Color(0, 0, 255));
+                oameniVindecatiHead.insert({ {key, om} });
+            }
+            else if (listaOameni[i]["stare"].asString().compare("decedat"))
+            {
+                om.stare = "decedat";
+                om.timpInfectare = 0;
+                om.shape.setFillColor(sf::Color(0, 0, 0));
+                oameniDecedatiHead.insert({ {key, om} });
+
+            }
+        }
+        else
+        {
+            //e sanatos din default
+            om.stare = "sanatos";
+            om.shape.setFillColor(sf::Color(0, 255, 0));
+            oameniSanatosiHead.insert({ {key, om} });
+
+        }
+
+        //oameni.insert({key, om});
+    }
+
+    fisierIn.close();
+
 }
 
 std::map<std::string, Oras> loadToSimulare2() {
@@ -174,6 +225,19 @@ std::map<std::string, Oras> loadToSimulare2() {
 	}
 	fisierIn.close();
 	return orase;
+}
+
+std::map<std::string, OmClass> getOameniSiguri() {
+    return oameniSanatosiHead;
+}
+std::map<std::string, OmClass> getOameniInfect() {
+    return oameniInfectatiHead;
+}
+std::map<std::string, OmClass> getOameniVindec() {
+    return oameniVindecatiHead;
+}
+std::map<std::string, OmClass> getOameniDeced() {
+    return oameniDecedatiHead;
 }
 
 

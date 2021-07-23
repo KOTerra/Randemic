@@ -382,7 +382,16 @@ input:
 
 	if (fisier::fisierIncarcat == true)
 	{
-		oameniSanatosi = loadToSimulare1();
+		loadToSimulare1();
+		oameniSanatosi = getOameniSiguri();
+		oameniInfectati = getOameniInfect();
+		oameniVindecati = getOameniVindec();
+		oameniDecedati = getOameniDeced();
+
+		counterInfectati = oameniInfectati.size();
+		counterVindecati = oameniVindecati.size();
+		counterMorti = oameniDecedati.size();
+		counterVii = counterInfectati + counterVindecati + oameniSanatosi.size();
 	}
 	else
 	{
@@ -486,6 +495,7 @@ display:
 					sim1::reset();
 					window.close();
 					initEcranPrincipal();
+					fisier::fisierIncarcat = false;
 					return 0;
 				}
 				else if (event.key.code == sf::Keyboard::Enter)
