@@ -19,6 +19,9 @@ std::map<std::string, OmClass> oameniInfectatiHead;
 std::map<std::string, OmClass> oameniVindecatiHead;
 std::map<std::string, OmClass> oameniDecedatiHead;
 
+std::map<std::string, Oras> oraseSigure;
+std::map<std::string, Oras> oraseInfect;
+std::map<std::string, Oras> oraseVindec;
 void openFile()
 {
 	
@@ -64,6 +67,10 @@ void loadToSimulare1() {
     }
     } */
         srand(time(0));
+        oameniSanatosiHead.clear();
+        oameniInfectatiHead.clear();
+        oameniVindecatiHead.clear();
+        oameniDecedatiHead.clear();
     std::ifstream fisierIn(fisier::fisierFolosit);
 
     Json::Reader reader;
@@ -162,7 +169,7 @@ void loadToSimulare1() {
 
 }
 
-std::map<std::string, Oras> loadToSimulare2() {
+void loadToSimulare2() {
 	/*std::string fisierFolosit = "";
 	switch (caz) {
 	case 1: {
@@ -174,7 +181,9 @@ std::map<std::string, Oras> loadToSimulare2() {
 		break;
 	}
 	}*/
-
+    oraseInfect.clear();
+    oraseSigure.clear();
+    oraseVindec.clear();
 	std::ifstream fisierIn(fisier::fisierFolosit);
 
 	Json::Reader reader;
@@ -182,7 +191,7 @@ std::map<std::string, Oras> loadToSimulare2() {
 	reader.parse(fisierIn, val);
 	const Json::Value& listaOrase = val["Orase"];
 
-	std::map<std::string, Oras> orase;
+	
 	long long populatieMaxima = 0;
 	for (int i = 0; i<listaOrase.size(); i++) {
 		//
@@ -201,7 +210,7 @@ std::map<std::string, Oras> loadToSimulare2() {
 		std::string piL = listaOrase[i]["populatie"].asString();
 		std::stringstream strnNL(piL);
 		strnNL >> peL;
-
+        
 		Oras oras = Oras(listaOrase[i]["denumire"].asString(),
 			peL,
 			peX, peY);//std::stof(listaOrase[i]["pX"].asString()), std::stod(listaOrase[i]["pY"].asString()));
@@ -209,11 +218,26 @@ std::map<std::string, Oras> loadToSimulare2() {
 		oras.orasSprite.setPosition(sf::Vector2f(peX, peY));
 		oras.shape.setPosition(sf::Vector2f(oras.orasSprite.getPosition()));
 		std::string key = listaOrase[i]["ID"].asString();
-
+        if (listaOrase[i].isMember("infectati"))
+        {
+            std::string infect = listaOrase[i]["infectati"].asString();
+            std::stringstream strnINFECT(infect);
+            long long int infectari=0;
+            strnINFECT >> infect;
+            oras.setInfectati(infectari);
+            std::deque<long long int> nouaCota;
+            nouaCota.push_back(infectari);
+            oras.setCota(nouaCota);
+            oraseInfect.insert({ key,oras });
+        }
+        else
+        {
+           oraseSigure.insert({ key,oras });
+        }
 		populatieMaxima += peL;
-		orase.insert({ key,oras });
+		
 	}
-	for (std::map<std::string, Oras>::iterator itr = orase.begin(); itr != orase.end(); itr++) {
+	for (std::map<std::string, Oras>::iterator itr = oraseSigure.begin(); itr != oraseSigure.end(); itr++) {
 
 
 		itr->second.textura.loadFromFile(setTextura(itr->second, populatieMaxima));
@@ -223,8 +247,18 @@ std::map<std::string, Oras> loadToSimulare2() {
 		itr->second.shape.setSize(sf::Vector2f(marimeX, marimeY));
 		itr->second.shape.setFillColor(sf::Color(0, 255, 0));
 	}
+    for (std::map<std::string, Oras>::iterator itr = oraseInfect.begin(); itr != oraseInfect.end(); itr++) {
+
+
+        itr->second.textura.loadFromFile(setTextura(itr->second, populatieMaxima));
+        itr->second.orasSprite.setTexture(itr->second.textura);
+        int marimeY = itr->second.orasSprite.getTextureRect().height;
+        int marimeX = itr->second.orasSprite.getTextureRect().width;
+        itr->second.shape.setSize(sf::Vector2f(marimeX, marimeY));
+        itr->second.shape.setFillColor(sf::Color(255, 122, 0));
+    }
 	fisierIn.close();
-	return orase;
+	
 }
 
 std::map<std::string, OmClass> getOameniSiguri() {
@@ -240,4 +274,13 @@ std::map<std::string, OmClass> getOameniDeced() {
     return oameniDecedatiHead;
 }
 
-
+std::map<std::string, Oras> getOraseSigure() {
+    return oraseSigure;
+}
+std::map<std::string, Oras> getOraseInfect() {
+    return oraseInfect;
+}
+std::map<std::string, Oras> getOraseVindec()
+{
+    return oraseVindec;
+}

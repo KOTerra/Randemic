@@ -291,7 +291,9 @@ input:
 	sigur.insert({ "2",orastest2 });*/
 	if (fisier::fisierIncarcat == true)
 	{
-		sigur = loadToSimulare2();
+		loadToSimulare2();
+		sigur = getOraseSigure();
+		infect = getOraseInfect();
 	}
 	else
 	{
@@ -410,6 +412,7 @@ display:
 					window.close();
 					simOras::reset();
 					simOras::amClick = false;
+					fisier::fisierIncarcat = false;
 					initEcranPrincipal();
 					return 0;
 

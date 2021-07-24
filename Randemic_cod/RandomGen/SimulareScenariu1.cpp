@@ -453,7 +453,7 @@ adaugOameni:
 	textCounter.setString("In viata: " + to_string(sim1::counterVii) +
 		"\nInfectati: " + to_string(sim1::counterInfectati) +
 		"\nVindecati: " + to_string(sim1::counterVindecati) +
-		"\nMorti: " + to_string(sim1::counterMorti));
+		"\nDecedati: " + to_string(sim1::counterMorti));
 
 
 

@@ -17,12 +17,16 @@ namespace fisier {
 
 //std::string openFile();
 void loadToSimulare1();
-std::map<std::string, Oras> loadToSimulare2();
+void loadToSimulare2();
 
 std::map<std::string, OmClass> getOameniSiguri();
 std::map<std::string, OmClass> getOameniInfect();
 std::map<std::string, OmClass> getOameniVindec();
 std::map<std::string, OmClass> getOameniDeced();
+
+std::map<std::string, Oras> getOraseSigure();
+std::map<std::string, Oras> getOraseInfect();
+std::map<std::string, Oras> getOraseVindec();
 void openFile();
 
 
