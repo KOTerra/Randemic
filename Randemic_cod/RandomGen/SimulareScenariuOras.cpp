@@ -71,10 +71,10 @@ std::map<std::string, Oras> generareOrase(int nrO, int nrN);
 const float PI = 3.14159265359f;
 
 #pragma once
-float counterMorti=0;
-float counterVii=0;
-float counterInfectati=0;
-float counterVindecati=0;
+double counterMorti=0;
+double counterVii=0;
+double counterInfectati=0;
+double counterVindecati=0;
 
 void drawOras(sf::RenderWindow& window)
 {
@@ -740,13 +740,13 @@ display:
 		drawOras(window);
 		drawCalatori(window);
 		
-		std::string infectatiProc = to_string(100 * float(counterInfectati / nrNpc));
+		std::string infectatiProc = to_string(100 * double(counterInfectati / nrNpc));
 		infectatiProc.erase(infectatiProc.length() - 5);
 
-		std::string vindecProc = to_string(100 * float(counterVindecati / nrNpc));
+		std::string vindecProc = to_string(100 * double(counterVindecati / nrNpc));
 		vindecProc.erase(vindecProc.length() - 5);
 
-		std::string decedProc = to_string(100 * float(counterMorti / nrNpc));
+		std::string decedProc = to_string(100 * double(counterMorti / nrNpc));
 		decedProc.erase(decedProc.length() - 5);
 
 		if (simOras::amClick == true) {

@@ -8,6 +8,7 @@
 #include <sstream>
 #include "HeaderNpc.h"
 #include "HeaderSimulari.h"
+#include "procenteOras.h"
 
 std::string fisier::fisierFolosit = "";
 bool fisier::fisierIncarcat = false;
@@ -191,6 +192,11 @@ void loadToSimulare2() {
     oraseInfect.clear();
     oraseSigure.clear();
     oraseVindec.clear();
+
+    counterVii = 0;
+    counterMorti = 0;
+    counterInfectati = 0;
+    counterVindecati = 0;
 	std::ifstream fisierIn(fisier::fisierFolosit);
 
 	Json::Reader reader;
@@ -232,6 +238,7 @@ void loadToSimulare2() {
             long long int infectari=0;
             strnINFECT >> infectari;
             oras.setInfectati(infectari);
+            counterInfectati += infectari;
             std::deque<long long int> nouaCota;
             nouaCota.push_back(infectari);
             oras.setCota(nouaCota);

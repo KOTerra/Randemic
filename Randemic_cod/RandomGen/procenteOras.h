@@ -1,5 +1,5 @@
-extern float counterMorti ;
-extern float counterVii;
-extern float counterInfectati;
-extern float counterVindecati;
+extern double counterMorti ;
+extern double counterVii;
+extern double counterInfectati;
+extern double counterVindecati;
 
