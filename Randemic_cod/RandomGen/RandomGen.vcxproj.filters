@@ -139,6 +139,9 @@
     <ClInclude Include="SimulatorLoader.h">
       <Filter>Source Files\Utilitare</Filter>
     </ClInclude>
+    <ClInclude Include="procenteOras.h">
+      <Filter>Source Files\NPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Date\data.json">

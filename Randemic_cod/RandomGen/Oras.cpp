@@ -1,5 +1,6 @@
 #include "Oras.h"
 #include "HeaderVirus.h"
+#include "procenteOras.h"
 
 
 Oras::Oras(std::string denumire, long long int populatie, float pozX, float pozY) {
@@ -38,7 +39,7 @@ void Oras::update()
 
     long long int totalInfec = Oras::getInfectati() + nouInfectati;
     Oras::setInfectati(totalInfec);
-
+    counterInfectati += nouInfectati;
 
     //noii infectati
     //ii pun in cota zilnica
@@ -54,7 +55,8 @@ void Oras::update()
         Oras::setDeced(Oras::getDeced() + decedNoi);
         this->populatie -= decedNoi;
         this->infectati -= decedNoi;
-
+        counterMorti += decedNoi;
+        counterInfectati -= decedNoi;
         //pe ei trebuie sa ii scot din cota
         cota.at(cota.size() - 1) -= decedNoi;
         if (cota.at(cota.size() - 1) <= 0)
@@ -67,6 +69,8 @@ void Oras::update()
             //trebuie sa ii scot pe primii infectati
             long long int infecVind = cota.at(cota.size() - 1);
             this->infectati -= infecVind;
+            counterInfectati -= infecVind;
+            counterVindecati += infecVind;
             Oras::setVindec(Oras::getVindecati() + infecVind);
             cota.pop_back();
         }
@@ -77,6 +81,7 @@ void Oras::update()
 
     //aici trebuie sa actualizezam procentajul
     //din methodele getPoplatie(), getInfect(), getDeced(), getVindec()
+    
 }
 
 void Oras::logicOras() {

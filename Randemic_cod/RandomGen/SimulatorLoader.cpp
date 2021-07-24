@@ -114,29 +114,36 @@ void loadToSimulare1() {
         if (rand2 == 0) {
             om.misc.y = -om.misc.y;
         }
-        om.shape.setRotation(rand() % 90);
+        om.shape.setRotation(rand() % 90);      
+        
+        //0 sanatos
+        //1 infectat
+        //2 vindecat
+        //3 decedat
+
+
         bool eGasit = listaOameni[i].isMember("stare");
         if (eGasit) 
         {
             //nu ia bine stringul
-            std::string str=listaOameni[i]["stare"].asString();
-            if (listaOameni[i]["stare"].asString().compare("sanatos"))
+           int val = listaOameni[i]["stare"].asInt();
+            if (val==0)
             {
                 om.stare = "sanatos";
                 om.shape.setFillColor(sf::Color(0, 255, 0));
                 oameniSanatosiHead.insert({ {key, om} });
             }
-            else if (listaOameni[i]["stare"].asString().compare("infectat"))
+            else if (val==1)
             {
                 om.stare = "infectat";
                 om.shape.setFillColor(sf::Color(255, 125, 0));
                 
                 bool isTimp = listaOameni[i].isMember("timpInfectare");
-                if (isTimp) { om.timpInfectare = std::stol(listaOameni[i]["timpInfectare"].asString()); }
+                if (isTimp) { om.timpInfectare = listaOameni[i]["timpInfectare"].asInt(); }
                 else { om.timpInfectare = 0; }
                 oameniInfectatiHead.insert({ {key, om} });
             }
-            else if (listaOameni[i]["stare"].asString().compare("vindecat"))
+            else if (val==2)
             {
                 
                 om.stare = "vindecat";
@@ -144,7 +151,7 @@ void loadToSimulare1() {
                 om.shape.setFillColor(sf::Color(0, 0, 255));
                 oameniVindecatiHead.insert({ {key, om} });
             }
-            else if (listaOameni[i]["stare"].asString().compare("decedat"))
+            else if (val==3)
             {
                 om.stare = "decedat";
                 om.timpInfectare = 0;
@@ -157,7 +164,7 @@ void loadToSimulare1() {
         {
             //e sanatos din default
             om.stare = "sanatos";
-            om.shape.setFillColor(sf::Color(0, 255, 0));
+            om.shape.setFillColor(sf::Color( 0,255, 0));
             oameniSanatosiHead.insert({ {key, om} });
 
         }
@@ -223,7 +230,7 @@ void loadToSimulare2() {
             std::string infect = listaOrase[i]["infectati"].asString();
             std::stringstream strnINFECT(infect);
             long long int infectari=0;
-            strnINFECT >> infect;
+            strnINFECT >> infectari;
             oras.setInfectati(infectari);
             std::deque<long long int> nouaCota;
             nouaCota.push_back(infectari);

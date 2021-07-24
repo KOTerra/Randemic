@@ -188,6 +188,7 @@
     <ClInclude Include="HeaderNpc.h" />
     <ClInclude Include="OmClass.h" />
     <ClInclude Include="Oras.h" />
+    <ClInclude Include="procenteOras.h" />
     <ClInclude Include="SimulatorLoader.h" />
     <ClInclude Include="TextBox.h" />
   </ItemGroup>
