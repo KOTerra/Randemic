@@ -1,0 +1,13 @@
+{
+"listaNPC": [
+
+{"ID":"c0x000","inaltime":"167","pozX":854.0,"pozY":539.0,"prenume":"Anda -Ember","sex":"F","sociabilitate":"8","varsta":"45","stare":3}
+,
+{"ID":"c0x001","inaltime":"166","pozX":665.0,"pozY":203.0,"prenume":"Norah","sex":"F","sociabilitate":"6","varsta":"64","stare":3}
+,
+{"ID":"c0x002","inaltime":"167","pozX":501.0,"pozY":628.0,"prenume":"Edward-Jasper","sex":"M","sociabilitate":"8","varsta":"30","stare":2}
+,
+{"ID":"c0x003","inaltime":"174","pozX":136.0,"pozY":675.0,"prenume":"Diego-Jeremiah","sex":"M","sociabilitate":"5","varsta":"81","stare":0}
+
+]
+}
