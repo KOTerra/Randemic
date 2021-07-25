@@ -271,6 +271,7 @@ void loadToSimulare2() {
         itr->second.shape.setSize(sf::Vector2f(marimeX, marimeY));
         itr->second.shape.setFillColor(sf::Color(255, 122, 0));
     }
+    
 	fisierIn.close();
 	
 }

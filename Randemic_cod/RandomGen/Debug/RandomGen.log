@@ -1,58 +1,67 @@
-﻿  Oras.cpp
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Oras.cpp(52,21): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\Oras.cpp(67,25): warning C4018: '>=': signed/unsigned mismatch
-  SimulareScenariuOras.cpp
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(192,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(220,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(269,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(312,36): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(696,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(714,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(309,7): warning C4102: 'window': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(315,11): warning C4102: 'background': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(324,10): warning C4102: 'font_text': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(350,11): warning C4102: 'adaugOmase': unreferenced label
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(358,8): warning C4102: 'display': unreferenced label
+﻿  SimulareScenariuOras.cpp
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(192,21): warning C4018: '<': signed/unsigned mismatch
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(215,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(220,20): warning C4018: '<': signed/unsigned mismatch
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(269,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(312,36): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(699,22): warning C4018: '<': signed/unsigned mismatch
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(717,22): warning C4018: '<': signed/unsigned mismatch
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(309,7): warning C4102: 'window': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(315,11): warning C4102: 'background': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(324,10): warning C4102: 'font_text': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(350,11): warning C4102: 'adaugOmase': unreferenced label
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulareScenariuOras.cpp(358,8): warning C4102: 'display': unreferenced label
   SimulatorLoader.cpp
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(70,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(77,11): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(85,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(118,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(77,18): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(79,11): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(202,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(209,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(229,9): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(231,49): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(70,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(77,11): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(85,23): warning C4018: '<': signed/unsigned mismatch
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(118,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(77,18): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(79,11): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(202,8): warning C4996: 'Json::Reader': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(209,19): warning C4018: '<': signed/unsigned mismatch
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(229,9): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(231,49): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(261,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(261,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(261,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(261,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(271,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(271,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(271,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(271,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(202,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
-C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(204,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(202,15): warning C4996: 'Json::Reader::Reader': Use CharReader and CharReaderBuilder instead
+D:\Games\CV9 projekt red\Randemic\GitHub\Randemic\Randemic_cod\RandomGen\SimulatorLoader.cpp(204,8): warning C4996: 'Json::Reader::parse': Use CharReader and CharReaderBuilder instead.
   Generating Code...
-  RandomGen.vcxproj -> C:\Users\Dragos\Desktop\VisualStudio\Randemic\Randemic_cod\Debug\RandomGen.exe
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003: The specified task executable "CL.exe" could not be run. System.IO.IOException: The requested operation cannot be performed on a file with a user-mapped section open.
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003: 
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at Microsoft.Build.CPPTasks.TrackedVCToolTask.WriteSourcesToCommandLinesTable(IDictionary`2 sourcesToCommandLines)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at Microsoft.Build.CPPTasks.CL.ConstructCommandTLog(ITaskItem[] upToDateSources, DependencyFilter inputFilter)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at Microsoft.Build.CPPTasks.CL.PostExecuteTool(Int32 exitCode)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at Microsoft.Build.CPPTasks.TrackedVCToolTask.ExecuteTool(String pathToTool, String responseFileCommands, String commandLineCommands)
+D:\VISUAL STUDIO\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(636,5): error MSB6003:    at Microsoft.Build.Utilities.ToolTask.Execute()

@@ -99,24 +99,24 @@ font_text:
 	font.loadFromFile("Fonts/KarmaFuture.ttf");
 
 butoane:
-	Buton butonStart(0, "", "Sprites/butonStart.png", 909, 428);
-	Buton butonScenariuStanga(-1, "", "Sprites/selectStanga.png", 361, 168);
-	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", 800, 168);
+	Buton butonStart(0, "", "Sprites/butonStart.png", "Sprites/HbutonStart.png", 909, 428);
+	Buton butonScenariuStanga(-1, "", "Sprites/selectStanga.png", "Sprites/HselectStanga.png", 361, 168);
+	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", "Sprites/HselectDreapta.png", 800, 168);
 
-	Buton butonUpload(4,"", "Sprites/fileBox.png",30, 60);
+	Buton butonUpload(4,"", "Sprites/fileBox.png", "Sprites/HfileBox.png", 30, 60);
 
 	int localScenariuCount = 1;
 	butonScenariuDreapta.setCounter(&localScenariuCount);
 	butonScenariuStanga.setCounter(&localScenariuCount);
 textBoxuri:
-	Buton butonText1(-5, "Numar Oameni", "Sprites/textBox.png", 100, 480);
-	Buton butonText2(-5, "Infectabilitate %", "Sprites/textBox.png", 300, 480);
-	Buton butonText3(-5, "Mortalitate %", "Sprites/textBox.png", 500, 480);
-	Buton butonText4(-5, "Timp recuperare", "Sprites/textBox.png", 500, 600);
-	Buton butonText5(-5, "Imunitate grup %", "Sprites/textBox.png", 700, 480); //(doar pe scenariul 1,default 0%)
-	Buton butonText6(-5, "Timp incubare", "Sprites/textBox.png", 300, 600);
-	Buton butonText7(-5, "Numar orase", "Sprites/textBox.png", 100, 600);
-	Buton butonText8(-5, "Timp plecare", "Sprites/textBox.png", 300, 600);
+	Buton butonText1(-5, "Numar Oameni", "Sprites/textBox.png", "Sprites/HtextBox.png", 100, 480);
+	Buton butonText2(-5, "Infectabilitate %", "Sprites/textBox.png", "Sprites/HtextBox.png", 300, 480);
+	Buton butonText3(-5, "Mortalitate %", "Sprites/textBox.png", "Sprites/HtextBox.png", 500, 480);
+	Buton butonText4(-5, "Timp recuperare", "Sprites/textBox.png", "Sprites/HtextBox.png", 500, 600);
+	Buton butonText5(-5, "Imunitate grup %", "Sprites/textBox.png", "Sprites/HtextBox.png", 700, 480); //(doar pe scenariul 1,default 0%)
+	Buton butonText6(-5, "Timp incubare", "Sprites/textBox.png", "Sprites/HtextBox.png", 300, 600);
+	Buton butonText7(-5, "Numar orase", "Sprites/textBox.png", "Sprites/HtextBox.png", 100, 600);
+	Buton butonText8(-5, "Timp plecare", "Sprites/textBox.png", "Sprites/HtextBox.png", 300, 600);
 
 	sf::Text textBox1;	textBox1.setPosition(120, 495);	textBox1.setColor(sf::Color::Black); textBox1.setFont(font);
 	sf::Text textBox2;	textBox2.setPosition(320, 495);	textBox2.setColor(sf::Color::Black); textBox2.setFont(font);

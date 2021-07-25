@@ -4,10 +4,12 @@
 #include <fstream>
 
 
-Buton::Buton(int tip, sf::String label, std::string Textura, float x, float y) {
+Buton::Buton(int tip, sf::String label, std::string Textura, std::string TexturaHover, float x, float y) {
     this->tipButon = tip;
+    this->textura = Textura;
+    this->texturaHover = TexturaHover;
     this->labelText.setString(label);
-    this->butonImg.loadFromFile(Textura);
+    this->butonImg.loadFromFile(textura);
     this->butonSprite.setTexture(this->butonImg);
     this->butonSprite.setPosition(sf::Vector2f(x, y));
     this->pozx = x;
@@ -41,6 +43,8 @@ void Buton::update(const sf::Vector2f mousePos) {
 
     //
     if (this->butonSprite.getGlobalBounds().contains(mousePos)) {
+        this->butonImg.loadFromFile(this->texturaHover);
+        this->butonSprite.setTexture(this->butonImg);
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
             this->apasat = true;
 
@@ -52,6 +56,10 @@ void Buton::update(const sf::Vector2f mousePos) {
             this->apasat = false;
         }
 
+    }
+    else {
+        this->butonImg.loadFromFile(this->textura);
+        this->butonSprite.setTexture(this->butonImg);
     }
 
 

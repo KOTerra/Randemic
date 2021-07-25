@@ -427,14 +427,17 @@ display:
 				break;
 			}
 			case sf::Event::Closed: {
+				
 				sigur.clear();
 				infect.clear();
 				vindec.clear();
 				std::map<std::string, Oras>::iterator iterator;
 				simOras::lastClick = iterator;
+				simOras::amClick = false;
 				calatori.clear();
 				window.close();
 				return 0;
+				
 			}
 
 			default: {
