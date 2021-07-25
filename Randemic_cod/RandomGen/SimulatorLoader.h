@@ -3,6 +3,7 @@
 #include "OmClass.h"
 #include <map>
 #include <string>
+#include <cstddef> 
 
 #include <Windows.h>
 #include <commdlg.h>
@@ -12,6 +13,7 @@
 
 namespace fisier {
 	extern std::string fisierFolosit;
+	//extern std::string fisierNume;
 	extern bool fisierIncarcat;
 }
 
@@ -27,8 +29,10 @@ std::map<std::string, OmClass> getOameniDeced();
 std::map<std::string, Oras> getOraseSigure();
 std::map<std::string, Oras> getOraseInfect();
 std::map<std::string, Oras> getOraseVindec();
+
 void openFile();
 
+std::string getFisierNume(const std::string& fisierFolosit);
 
 
 

@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include <commdlg.h>
 #include <sstream>
+#include <cstddef> 
 #include "HeaderNpc.h"
 #include "HeaderSimulari.h"
 #include "procenteOras.h"
@@ -274,6 +275,20 @@ void loadToSimulare2() {
     
 	fisierIn.close();
 	
+}
+
+std::string getFisierNume(const std::string& fisierFolosit)
+{
+    if (fisier::fisierIncarcat == true) {
+        std::size_t foundFile = fisierFolosit.find_last_of("/\\");
+        std::size_t foundDrive = fisierFolosit.find_first_of("/\\");
+        std::string part = fisierFolosit.substr(3);
+        size_t foundFolder = part.find_first_of("/\\");
+        return fisierFolosit.substr(0,foundDrive)+R"(\\)"+part.substr(0,foundFolder)+R"(\...\)"+fisierFolosit.substr(foundFile + 1);
+    }
+    else { 
+        return " ";
+    }
 }
 
 std::map<std::string, OmClass> getOameniSiguri() {

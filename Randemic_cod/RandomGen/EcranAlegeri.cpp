@@ -104,6 +104,9 @@ butoane:
 	Buton butonScenariuDreapta(0, "", "Sprites/selectDreapta.png", "Sprites/HselectDreapta.png", 800, 168);
 
 	Buton butonUpload(4,"", "Sprites/fileBox.png", "Sprites/HfileBox.png", 30, 60);
+	sf::Text fileBoxText;
+	fileBoxText.setCharacterSize(20); fileBoxText.setFont(font);	fileBoxText.setColor(sf::Color::Black);	fileBoxText.setPosition(55,82);
+
 
 	int localScenariuCount = 1;
 	butonScenariuDreapta.setCounter(&localScenariuCount);
@@ -351,7 +354,7 @@ test:
 			textBox3.setString(butonText3.getText());	window.draw(textBox3);
 			textBox4.setString(butonText4.getText());	window.draw(textBox4);
 			textBox5.setString(butonText5.getText());	window.draw(textBox5);
-			
+			fileBoxText.setString(getFisierNume(fisier::fisierFolosit));  window.draw(fileBoxText);
 
 			if (scenariu1este == true) {
 				butonText6.renderTextBox(window, event);	window.draw(butonText6.labelText);

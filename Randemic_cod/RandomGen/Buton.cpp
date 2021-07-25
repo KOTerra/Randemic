@@ -110,7 +110,7 @@ void Buton::clic(sf::Event event) {
         case(4): {    
             this->apasat = false;
             openFile();
-            
+            getFisierNume(fisier::fisierFolosit);
             break;
         }
         case(-5): {
