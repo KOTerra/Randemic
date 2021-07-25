@@ -104,6 +104,7 @@ test:
 				if (event.key.code == sf::Keyboard::Escape)
 				{
 					window.close();
+					return 0;
 				}
 				else if (event.key.code == sf::Keyboard::F1)
 				{
@@ -116,7 +117,7 @@ test:
 			}
 			case sf::Event::Closed: {
 				window.close();
-				break;
+				return 0;
 			}
 			case sf::Event::LostFocus: {
 				ecranStart::pause();

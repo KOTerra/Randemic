@@ -293,9 +293,7 @@ input:
 	sigur.insert({ "2",orastest2 });*/
 	if (fisier::fisierIncarcat == true)
 	{
-		loadToSimulare2();
-		sigur = getOraseSigure();
-		infect = getOraseInfect();
+		loadToSimulare2(sigur,infect);
 	}
 	else
 	{

@@ -21,9 +21,6 @@ std::map<std::string, OmClass> oameniInfectatiHead;
 std::map<std::string, OmClass> oameniVindecatiHead;
 std::map<std::string, OmClass> oameniDecedatiHead;
 
-std::map<std::string, Oras> oraseSigure;
-std::map<std::string, Oras> oraseInfect;
-std::map<std::string, Oras> oraseVindec;
 void openFile()
 {
 	
@@ -178,7 +175,7 @@ void loadToSimulare1() {
 
 }
 
-void loadToSimulare2() {
+void loadToSimulare2(std::map<std::string, Oras>& oraseSigureHead, std::map<std::string, Oras>& oraseInfectHead) {
 	/*std::string fisierFolosit = "";
 	switch (caz) {
 	case 1: {
@@ -190,10 +187,7 @@ void loadToSimulare2() {
 		break;
 	}
 	}*/
-    oraseInfect.clear();
-    oraseSigure.clear();
-    oraseVindec.clear();
-
+    
     counterVii = 0;
     counterMorti = 0;
     counterInfectati = 0;
@@ -243,16 +237,17 @@ void loadToSimulare2() {
             std::deque<long long int> nouaCota;
             nouaCota.push_back(infectari);
             oras.setCota(nouaCota);
-            oraseInfect.insert({ key,oras });
+            oraseInfectHead.insert({ key,oras });
         }
         else
         {
-           oraseSigure.insert({ key,oras });
+          oraseSigureHead.insert({ key,oras });
         }
+        
 		populatieMaxima += peL;
 		
 	}
-	for (std::map<std::string, Oras>::iterator itr = oraseSigure.begin(); itr != oraseSigure.end(); itr++) {
+	for (std::map<std::string, Oras>::iterator itr = oraseSigureHead.begin(); itr != oraseSigureHead.end(); itr++) {
 
 
 		itr->second.textura.loadFromFile(setTextura(itr->second, populatieMaxima));
@@ -262,7 +257,7 @@ void loadToSimulare2() {
 		itr->second.shape.setSize(sf::Vector2f(marimeX, marimeY));
 		itr->second.shape.setFillColor(sf::Color(0, 255, 0));
 	}
-    for (std::map<std::string, Oras>::iterator itr = oraseInfect.begin(); itr != oraseInfect.end(); itr++) {
+    for (std::map<std::string, Oras>::iterator itr = oraseInfectHead.begin(); itr != oraseInfectHead.end(); itr++) {
 
 
         itr->second.textura.loadFromFile(setTextura(itr->second, populatieMaxima));
@@ -273,8 +268,8 @@ void loadToSimulare2() {
         itr->second.shape.setFillColor(sf::Color(255, 122, 0));
     }
     
+    
 	fisierIn.close();
-	
 }
 
 std::string getFisierNume(const std::string& fisierFolosit)
@@ -304,13 +299,21 @@ std::map<std::string, OmClass> getOameniDeced() {
     return oameniDecedatiHead;
 }
 
-std::map<std::string, Oras> getOraseSigure() {
-    return oraseSigure;
+/*std::map<std::string, Oras> getOraseSigure() {
+    return oraseSigureHead;
 }
 std::map<std::string, Oras> getOraseInfect() {
-    return oraseInfect;
+    return oraseInfectHead;
 }
 std::map<std::string, Oras> getOraseVindec()
 {
-    return oraseVindec;
+    return oraseVindecHead;
 }
+void resetOraseSigure()
+{
+    oraseSigureHead.clear();
+}
+void resetOraseInfect()
+{
+    oraseSigureHead.clear();
+}*/
