@@ -18,20 +18,8 @@ namespace fisier {
 }
 
 //std::string openFile();
-void loadToSimulare1();
+void loadToSimulare1(std::map<std::string, OmClass>& oameniSanatosiHead, std::map<std::string, OmClass>& oameniInfectatiHead, std::map<std::string, OmClass>& oameniVindecatiHead, std::map<std::string, OmClass>& oameniDecedatiHead);
 void loadToSimulare2(std::map<std::string, Oras>& oraseSigureHead, std::map<std::string, Oras>& oraseInfectHead);
-
-std::map<std::string, OmClass> getOameniSiguri();
-std::map<std::string, OmClass> getOameniInfect();
-std::map<std::string, OmClass> getOameniVindec();
-std::map<std::string, OmClass> getOameniDeced();
-
-std::map<std::string, Oras> getOraseSigure();
-std::map<std::string, Oras> getOraseInfect();
-std::map<std::string, Oras> getOraseVindec();
-
-void resetOraseSigure();
-void resetOraseInfect();
 
 
 

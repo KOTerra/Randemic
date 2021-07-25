@@ -382,11 +382,7 @@ input:
 
 	if (fisier::fisierIncarcat == true)
 	{
-		loadToSimulare1();
-		oameniSanatosi = getOameniSiguri();
-		oameniInfectati = getOameniInfect();
-		oameniVindecati = getOameniVindec();
-		oameniDecedati = getOameniDeced();
+		loadToSimulare1(oameniSanatosi, oameniInfectati, oameniVindecati, oameniDecedati);
 
 		counterInfectati = oameniInfectati.size();
 		counterVindecati = oameniVindecati.size();

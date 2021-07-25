@@ -16,10 +16,6 @@ bool fisier::fisierIncarcat = false;
 
 std::string setTextura(Oras& oras, long long populatieMaxima);
 
-std::map<std::string, OmClass> oameniSanatosiHead;
-std::map<std::string, OmClass> oameniInfectatiHead;
-std::map<std::string, OmClass> oameniVindecatiHead;
-std::map<std::string, OmClass> oameniDecedatiHead;
 
 void openFile()
 {
@@ -53,7 +49,7 @@ void openFile()
 	
 }
 
-void loadToSimulare1() {
+void loadToSimulare1(std::map<std::string, OmClass>& oameniSanatosiHead, std::map<std::string, OmClass>& oameniInfectatiHead, std::map<std::string, OmClass>& oameniVindecatiHead, std::map<std::string, OmClass>& oameniDecedatiHead) {
     /* std::string fisierFolosit = "";
     switch (caz) {
     case 1: {
@@ -286,34 +282,3 @@ std::string getFisierNume(const std::string& fisierFolosit)
     }
 }
 
-std::map<std::string, OmClass> getOameniSiguri() {
-    return oameniSanatosiHead;
-}
-std::map<std::string, OmClass> getOameniInfect() {
-    return oameniInfectatiHead;
-}
-std::map<std::string, OmClass> getOameniVindec() {
-    return oameniVindecatiHead;
-}
-std::map<std::string, OmClass> getOameniDeced() {
-    return oameniDecedatiHead;
-}
-
-/*std::map<std::string, Oras> getOraseSigure() {
-    return oraseSigureHead;
-}
-std::map<std::string, Oras> getOraseInfect() {
-    return oraseInfectHead;
-}
-std::map<std::string, Oras> getOraseVindec()
-{
-    return oraseVindecHead;
-}
-void resetOraseSigure()
-{
-    oraseSigureHead.clear();
-}
-void resetOraseInfect()
-{
-    oraseSigureHead.clear();
-}*/
