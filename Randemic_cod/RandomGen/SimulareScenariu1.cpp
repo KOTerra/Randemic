@@ -350,7 +350,6 @@ void setGroupImunity()
 			om.shape.setFillColor(sf::Color(0, 0, 255));
 			om.stare = "vindecat";
 			counterVindecati++;
-			//om.shape.setRotation(rand() % 90);
 			textCounter.setString("In viata: " + to_string(counterVii) +
 				"\nInfectati: " + to_string(counterInfectati) +
 				"\nVindecati: " + to_string(counterVindecati) +
@@ -438,7 +437,7 @@ font_text:
 	textNpc.setPosition(995, 95);
 	textCounter.setPosition(995, 300);
 
-	// inside the main loop, between window.clear() and window.display()
+
 	window.draw(textNpc);
 	window.draw(textCounter);
 
@@ -456,7 +455,7 @@ adaugOameni:
 display:
 	window.display();
 	drawOameni(window);
-	//aici incepe nebunia dar tot Strafer e mai misto #quierres?
+	//aici incepe nebunia
 
 
 
@@ -574,7 +573,6 @@ display:
 							om.shape.setFillColor(sf::Color(255, 125, 0));
 							om.stare = "infectat";
 							counterInfectati++;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +
@@ -596,7 +594,6 @@ display:
 							om.stare = "vindecat";
 							counterInfectati--;
 							counterVindecati++;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +
@@ -619,7 +616,6 @@ display:
 							counterMorti++;
 							counterVindecati--;
 							sim1::counterVii--;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +
@@ -641,7 +637,6 @@ display:
 							om.stare = "sanatos";
 							counterMorti--;
 							sim1::counterVii++;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +
@@ -722,7 +717,6 @@ display:
 							om.stare = "decedat";
 							counterMorti++;
 							sim1::counterVii--;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +
@@ -744,7 +738,6 @@ display:
 							om.stare = "sanatos";
 
 							counterInfectati--;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +
@@ -766,7 +759,6 @@ display:
 							om.stare = "infectat";
 							counterInfectati++;;
 							counterVindecati--;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +
@@ -789,7 +781,6 @@ display:
 							counterMorti--;
 							counterVindecati++;
 							sim1::counterVii++;
-							//om.shape.setRotation(rand() % 90);
 							textCounter.setString("In viata: " + to_string(counterVii) +
 								"\nInfectati: " + to_string(counterInfectati) +
 								"\nVindecati: " + to_string(counterVindecati) +

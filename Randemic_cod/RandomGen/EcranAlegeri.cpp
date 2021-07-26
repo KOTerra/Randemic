@@ -58,18 +58,6 @@ input:
 	srand(time(0));
 	ecranAleg::pauza = false;
 
-	//logo();
-	//cin >> infectabilitate >> timpRecuperare >> mortalitate;
-	//cout << "Introdu numarul de persoane:";
-	/*infectabilitate = 8;
-	timpRecuperare = 1000;
-	mortalitate = 20;
-	//cin>> nrNpcuri;
-	nrNpcuri = 100;
-	counterVii = nrNpcuri;
-
-	bool amClick = false;*/
-
 
 
 window:
@@ -144,7 +132,7 @@ textBoxuri:
 display:
 	window.display();
 
-	//aici incepe nebunia, dar tot Strafer e mai misto #quierres?
+	//aici incepe nebunia, dar tot Strafer e mai misto 
 	bool simOpen;
 	simOpen = false;
 
@@ -244,7 +232,7 @@ test:
 			bool scenariu2este = false;
 
 			switch (localScenariuCount) {
-			case 1: {//niste convertiri super ciudatele ca nu mergea stoi()
+			case 1: {//niste convertiri ciudatele ca nu mergea stoi()
 				scenariu1este = true;
 				scenariu2este = false;
 				std::string nN = butonText1.getText();

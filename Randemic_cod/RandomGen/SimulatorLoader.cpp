@@ -41,26 +41,16 @@ void openFile()
 		fisier::fisierFolosit = ofn.lpstrFile;
 		fisier::fisierIncarcat = true;
 		return;
-		//return ofn.lpstrFile;
+	
 	}
 
 	fisier::fisierIncarcat = false;
-	//return std::string(); 
+
 	
 }
 
 void loadToSimulare1(std::map<std::string, OmClass>& oameniSanatosiHead, std::map<std::string, OmClass>& oameniInfectatiHead, std::map<std::string, OmClass>& oameniVindecatiHead, std::map<std::string, OmClass>& oameniDecedatiHead) {
-    /* std::string fisierFolosit = "";
-    switch (caz) {
-    case 1: {
-        fisierFolosit = openFile();
-        break;
-    }
-    default: {
-        fisierFolosit = "Database/oameni.json";
-        break;
-    }
-    } */
+
         srand(time(0));
         oameniSanatosiHead.clear();
         oameniInfectatiHead.clear();
@@ -73,9 +63,9 @@ void loadToSimulare1(std::map<std::string, OmClass>& oameniSanatosiHead, std::ma
     reader.parse(fisierIn, val);
     const Json::Value& listaOameni = val["listaNPC"];
 
-    //std::map<std::string, OmClass> oameni;
+
     nrNpc = listaOameni.size();
-    //counterVii = nrNpc;
+   
     for (int i = 0; i < listaOameni.size(); i++) {
         OmClass om;
         std::string key = listaOameni[i]["ID"].asString();
@@ -120,7 +110,7 @@ void loadToSimulare1(std::map<std::string, OmClass>& oameniSanatosiHead, std::ma
         bool eGasit = listaOameni[i].isMember("stare");
         if (eGasit) 
         {
-            //nu ia bine stringul
+ 
            int val = listaOameni[i]["stare"].asInt();
             if (val==0)
             {
@@ -164,7 +154,6 @@ void loadToSimulare1(std::map<std::string, OmClass>& oameniSanatosiHead, std::ma
 
         }
 
-        //oameni.insert({key, om});
     }
 
     fisierIn.close();
@@ -172,17 +161,7 @@ void loadToSimulare1(std::map<std::string, OmClass>& oameniSanatosiHead, std::ma
 }
 
 void loadToSimulare2(std::map<std::string, Oras>& oraseSigureHead, std::map<std::string, Oras>& oraseInfectHead) {
-	/*std::string fisierFolosit = "";
-	switch (caz) {
-	case 1: {
-		fisierFolosit = openFile();
-		break;
-	}
-	default: {
-		fisierFolosit = "Database/orase.json";
-		break;
-	}
-	}*/
+
     
     counterVii = 0;
     counterMorti = 0;
@@ -217,8 +196,8 @@ void loadToSimulare2(std::map<std::string, Oras>& oraseSigureHead, std::map<std:
         
 		Oras oras = Oras(listaOrase[i]["denumire"].asString(),
 			peL,
-			peX, peY);//std::stof(listaOrase[i]["pX"].asString()), std::stod(listaOrase[i]["pY"].asString()));
-		
+			peX, peY);
+
 		oras.orasSprite.setPosition(sf::Vector2f(peX, peY));
 		oras.shape.setPosition(sf::Vector2f(oras.orasSprite.getPosition()));
 		std::string key = listaOrase[i]["ID"].asString();

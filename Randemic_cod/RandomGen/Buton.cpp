@@ -172,7 +172,7 @@ void Buton::inputLogic(int charTyped) {
 void Buton::deleteLastChar() {
     std::string t = text.str();
     std::string newT = "";
-    for (int i = 0; i < t.length() - 1; i++) {//prost io
+    for (int i = 0; i < t.length() - 1; i++) {
         newT += t[i];
     }
     text.str("");
