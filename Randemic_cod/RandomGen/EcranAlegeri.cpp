@@ -291,6 +291,11 @@ test:
 				std::string mrt = butonText3.getText();
 				stringstream strmrt(mrt);
 				strmrt >> mortalitate;
+				if (mortalitate > 100)
+				{
+					//pentru andy care omoara 2 oameni dintr-o infectare
+					mortalitate = 100;
+				}
 
 				std::string rec = butonText4.getText();
 				stringstream strrec(rec);

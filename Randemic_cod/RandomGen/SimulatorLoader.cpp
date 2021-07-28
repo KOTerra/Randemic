@@ -167,6 +167,7 @@ void loadToSimulare2(std::map<std::string, Oras>& oraseSigureHead, std::map<std:
     counterMorti = 0;
     counterInfectati = 0;
     counterVindecati = 0;
+    nrNpc = 0;
 	std::ifstream fisierIn(fisier::fisierFolosit);
 
 	Json::Reader reader;
@@ -201,6 +202,7 @@ void loadToSimulare2(std::map<std::string, Oras>& oraseSigureHead, std::map<std:
 		oras.orasSprite.setPosition(sf::Vector2f(peX, peY));
 		oras.shape.setPosition(sf::Vector2f(oras.orasSprite.getPosition()));
 		std::string key = listaOrase[i]["ID"].asString();
+        nrNpc += peL;
         if (listaOrase[i].isMember("infectati"))
         {
             std::string infect = listaOrase[i]["infectati"].asString();

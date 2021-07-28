@@ -109,6 +109,7 @@ void setGroupOrasImunity()
 		for (std::map<std::string, Oras>::iterator itr = sigur.begin(); itr != sigur.end(); itr++)
 		{
 			itr->second.setVindec(itr->second.getPopulatie() * imunitateGrup / 100);
+			counterVindecati += itr->second.getVindecati();
 		}
 	}
 
